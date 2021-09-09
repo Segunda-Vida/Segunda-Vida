@@ -5,7 +5,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<a className="navbar-brand" href="#">
-				Segunda Vida
+				Navbar
 			</a>
 			<button
 				className="navbar-toggler"
@@ -21,11 +21,9 @@ export const Navbar = () => {
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
-						<Link to="/Home">
-							<a className="nav-link" href="#">
-								Home <span className="sr-only">(current)</span>
-							</a>
-						</Link>
+						<a className="nav-link" href="#">
+							Home <span className="sr-only">(current)</span>
+						</a>
 					</li>
 					<li className="nav-item">
 						<a className="nav-link" href="#">
@@ -45,16 +43,21 @@ export const Navbar = () => {
 						</a>
 						<div className="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a className="dropdown-item" href="#">
-								Log in
+								Action
 							</a>
 							<a className="dropdown-item" href="#">
-								Crear cuenta
+								Another action
 							</a>
 							<div className="dropdown-divider" />
 							<a className="dropdown-item" href="#">
-								Recuperar contraseña
+								Something else here
 							</a>
 						</div>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">
+							Disabled
+						</a>
 					</li>
 				</ul>
 				<form className="form-inline my-2 my-lg-0">
@@ -62,6 +65,9 @@ export const Navbar = () => {
 					<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
 						Search
 					</button>
+					<Link to="/Perfil">
+						<button>Ver Perfil</button>
+					</Link>
 				</form>
 			</div>
 		</nav>
