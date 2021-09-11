@@ -1,9 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const login = () => {
+		actions.login(email, password);
+		setEmail("");
+		setPassword("");
+	};
 
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,44 +51,48 @@ export const Navbar = () => {
 							aria-hidden="true">
 							<div className="modal-dialog" role="document">
 								<div className="modal-content">
-									<form action="index.php" method="post">
-										<div className="modal-header">
-											<h5 className="modal-title" id="exampleModalLabel">
-												Hola
-											</h5>
-											<button
-												type="button"
-												className="close"
-												data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div className="modal-body">
-											<h4>Bienvenido a la ventana modal Boostrap 4</h4>
-											<div className="form-group">
-												<label htmlFor="exampleInputEmail1">Email</label>
+									<div className="modal-header">
+										<h5 className="modal-title" id="exampleModalLabel">
+											Hola
+										</h5>
+										<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div className="modal-body">
+										<h4>Bienvenido a la ventana modal Boostrap 4</h4>
+									</div>
+									<div className="text-center mt-5">
+										{store.isAuthenticate ? (
+											<div>
+												<h1>Bienvenido</h1>
+											</div>
+										) : (
+											<>
 												<input
 													type="email"
-													className="form-control"
-													name="email"
-													placeholder="Escribe tu email..."
+													placeholder="Ingresar correo electronico"
+													value={email}
+													onChange={e => setEmail(e.target.value)}
 												/>
-												<small id="emailHelp" className="form-text text-muted">
-													Escribe tu email. Esto es un ejemplo. Tu email no queda registrado
-													en ningun lugar.
-												</small>
-											</div>
-										</div>
-										<div className="modal-footer">
-											<button type="button" className="btn btn-secondary" data-dismiss="modal">
-												Cerrar
-											</button>
-											<button type="submit" name="submitSave" className="btn btn-primary">
-												Guardar cambios
-											</button>
-										</div>
-									</form>
+												<input
+													type="password"
+													placeholder="Ingresar contraseña"
+													value={password}
+													onChange={e => setPassword(e.target.value)}
+												/>
+												<button onClick={() => login()}>Entrar</button>
+											</>
+										)}
+									</div>
+									<div className="modal-footer">
+										<button type="button" className="btn btn-secondary" data-dismiss="modal">
+											Cerrar
+										</button>
+										<button type="submit" name="submitSave" className="btn btn-primary">
+											Guardar cambios
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
