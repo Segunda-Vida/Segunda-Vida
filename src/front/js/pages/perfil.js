@@ -6,6 +6,7 @@ export const Perfil = () => {
 		<div>
 			<Navbar />
 			<h1>Hola</h1>
+			<h2>Esta es my zona personal</h2>
 		</div>
 	);
 };

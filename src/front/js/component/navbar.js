@@ -31,6 +31,12 @@ export const Navbar = () => {
 			</button>
 
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
+				<form className="form-inline my-2 my-lg-0">
+					<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+					<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+						Search
+					</button>
+				</form>
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
 						<a className="nav-link" href="#">
@@ -60,13 +66,12 @@ export const Navbar = () => {
 										</button>
 									</div>
 									<div className="modal-body">
-										<h4>Bienvenido a la ventana modal Boostrap 4</h4>
+										<h4>Login</h4>
 									</div>
+
 									<div className="text-center mt-5">
 										{store.isAuthenticate ? (
-											<div>
-												<h1>Bienvenido</h1>
-											</div>
+											<div></div>
 										) : (
 											<>
 												<input
@@ -81,10 +86,13 @@ export const Navbar = () => {
 													value={password}
 													onChange={e => setPassword(e.target.value)}
 												/>
-												<button onClick={() => login()}>Entrar</button>
+												<Link to="/Perfil">
+													<button onClick={() => login()}>Entrar</button>
+												</Link>
 											</>
 										)}
 									</div>
+
 									<div className="modal-footer">
 										<button type="button" className="btn btn-secondary" data-dismiss="modal">
 											Cerrar
@@ -102,17 +110,11 @@ export const Navbar = () => {
 							{store.isAuthenticate ? (
 								<button onClick={() => actions.signOut()}>Cerrar sesión</button>
 							) : (
-								<p>Iniciar sesión</p>
+								<p></p>
 							)}
 						</div>
 					</li>
 				</ul>
-				<form className="form-inline my-2 my-lg-0">
-					<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-					<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Search
-					</button>
-				</form>
 			</div>
 		</nav>
 	);
