@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			api: "https://crimson-tortoise-pkfilieb.ws-eu16.gitpod.io",
+			api: "https://3001-yellow-vole-bn7y630s.ws-eu16.gitpod.io",
 			isAuthenticate: false
 		},
 		actions: {
