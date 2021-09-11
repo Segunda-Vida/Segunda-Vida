@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			api: "https://3001-olive-hookworm-d2rktjrv.ws-eu16.gitpod.io",
+			api: "https://crimson-tortoise-pkfilieb.ws-eu16.gitpod.io",
 			isAuthenticate: false
 		},
 		actions: {
