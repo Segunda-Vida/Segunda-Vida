@@ -71,7 +71,9 @@ export const Navbar = () => {
 
 									<div className="text-center mt-5">
 										{store.isAuthenticate ? (
-											<div></div>
+											<div>
+												<button onClick={() => actions.signOut()}>Cerrar sesión</button>
+											</div>
 										) : (
 											<>
 												<input

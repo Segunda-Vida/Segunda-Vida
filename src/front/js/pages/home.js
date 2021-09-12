@@ -26,19 +26,7 @@ export const Home = () => {
 					</div>
 				) : (
 					<>
-						<input
-							type="email"
-							placeholder="Ingresar correo electronico"
-							value={email}
-							onChange={e => setEmail(e.target.value)}
-						/>
-						<input
-							type="password"
-							placeholder="Ingresar contraseña"
-							value={password}
-							onChange={e => setPassword(e.target.value)}
-						/>
-						<button onClick={() => login()}>Entrar</button>
+						<h1>Registrate</h1>
 					</>
 				)}
 			</div>
