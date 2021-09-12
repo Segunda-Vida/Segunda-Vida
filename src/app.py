@@ -11,12 +11,23 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from flask_jwt_extended import JWTManager
+from flask_mail import Mail
+
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+#email config
+app.config['SECRET_KEY'] = 'top-secret!'
+app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'apikey'
+app.config['MAIL_PASSWORD'] = "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"
+app.config['MAIL_DEFAULT_SENDER'] = "gabyiy2000@yahoo.com"
+mail = Mail(app)
 
 
 # database condiguration

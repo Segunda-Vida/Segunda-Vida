@@ -16,9 +16,11 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<a className="navbar-brand" href="#">
-				Navbar
-			</a>
+			<Link to="/Home">
+				<a className="navbar-brand" href="#">
+					Navbar
+				</a>
+			</Link>
 			<button
 				className="navbar-toggler"
 				type="button"
@@ -102,19 +104,28 @@ export const Navbar = () => {
 										<button type="submit" name="submitSave" className="btn btn-primary">
 											Guardar cambios
 										</button>
+										<div>
+											<input type="email" placeholder="Ingresar correo electronico" />
+											<input type="password" placeholder="Ingresar contrasena" />
+											<button type="submit" name="submitSave" className="btn btn-primary">
+												Registrar
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li>
-						<div className="ml-auto">
-							{store.isAuthenticate ? (
-								<button onClick={() => actions.signOut()}>Cerrar sesión</button>
-							) : (
-								<p></p>
-							)}
-						</div>
+						<Link to="/Home">
+							<div className="ml-auto">
+								{store.isAuthenticate ? (
+									<button onClick={() => actions.signOut()}>Cerrar sesión</button>
+								) : (
+									<p></p>
+								)}
+							</div>
+						</Link>
 					</li>
 				</ul>
 			</div>
