@@ -5,8 +5,9 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token, JWTManager
-from app import mail
 from flask_mail import Message
+from werkzeug.utils import secure_filename
+import base64
 
 api = Blueprint('api', __name__)
 
@@ -67,3 +68,22 @@ def recovery_pasword():
     msg.send(msg)
 
     return jsonify({"msg":"Correo enviado"}),200
+
+@api.route('/upload/profile/', methods=['POST'])
+def fileUpload():
+    target = os.path.join(UPLOAD_FOLDER)
+    if not os.path.isdir(target):
+        os.mkdir(target)
+    file = request.files['File']
+    ##imagen com otexto
+    imageString = base64.b64encode(file.read())
+    imageString = imageString.decode('ascii')
+
+    print(imageString)
+
+    result = {
+        "image": imageString
+    }
+
+    return jsonify(result)
+
