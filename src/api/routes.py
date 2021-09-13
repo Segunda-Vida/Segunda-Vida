@@ -8,9 +8,11 @@ from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_tok
 from flask_mail import Message
 from werkzeug.utils import secure_filename
 import base64
+import os
 
 api = Blueprint('api', __name__)
 
+UPLOAD_FOLDER="uploads/"
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
