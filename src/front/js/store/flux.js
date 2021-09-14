@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			api: "https://3001-tan-porcupine-veeg7hps.ws-eu16.gitpod.io",
+			api: "https://3001-aqua-lion-mfssvyag.ws-eu16.gitpod.io",
 			isAuthenticate: false
 		},
 		actions: {

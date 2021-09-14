@@ -17,9 +17,9 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 			<Link to="/Home">
-				<a className="navbar-brand" href="#">
-					Navbar
-				</a>
+				<button className="btn btn-outline-success my-2 my-sm0" type="submit" href="#">
+					Segunda Vida
+				</button>
 			</Link>
 			<button
 				className="navbar-toggler"
@@ -34,21 +34,31 @@ export const Navbar = () => {
 
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<form className="form-inline my-2 my-lg-0">
-					<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+					<input
+						className="form-control mr-sm-2"
+						type="search"
+						placeholder="Search"
+						aria-label="Busca tu producto"
+					/>
 					<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-						Search
+						<i className="fas fa-search"></i>
 					</button>
 				</form>
-				<ul className="navbar-nav mr-auto">
+				<ul className="navbar-nav">
 					<li className="nav-item active">
 						<a className="nav-link" href="#">
-							Home <span className="sr-only">(current)</span>
+							<button className="btn btn-outline-success my-2 my-sm0" type="submit">
+								<i className="fas fa-home"></i>
+							</button>
 						</a>
 					</li>
-					<li>
-						<div className="container"></div>
-						<button className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-							Iniciar sesión
+					<li className="nav-item active" id="li1">
+						<button
+							className="btn btn-outline-success my-2 my-sm-0"
+							type="submit"
+							data-toggle="modal"
+							data-target="#exampleModal">
+							<i className="fas fa-sign-in-alt"> Iniciar sesión</i>
 						</button>
 						<div
 							className="modal fade"
