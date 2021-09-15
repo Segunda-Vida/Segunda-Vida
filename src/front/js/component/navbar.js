@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-
+	$("#exampleModal").modal("hide");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -54,13 +54,15 @@ export const Navbar = () => {
 					</li>
 					<li className="nav-item active" id="li1">
 						{store.isAuthenticate ? (
-							<div className="No conectado">
-								<button
-									className="btn btn-outline-success my-2 my-sm0"
-									type="submit"
-									onClick={() => actions.signOut()}>
-									Cerrar sesión
-								</button>
+							<div>
+								<Link to="/Home">
+									<button
+										className="btn btn-outline-success my-2 my-sm0"
+										type="submit"
+										onClick={() => actions.signOut()}>
+										Cerrar sesión
+									</button>
+								</Link>
 							</div>
 						) : (
 							<div>
@@ -123,20 +125,18 @@ export const Navbar = () => {
 											</div>
 
 											<div className="modal-footer">
-												<button
-													type="button"
-													className="btn btn-secondary"
-													data-dismiss="modal">
-													Cerrar
-												</button>
-												<button type="submit" name="submitSave" className="btn btn-primary">
-													Guardar cambios
-												</button>
 												<div>
-													<input type="email" placeholder="Ingresar correo electronico" />
-													<input type="password" placeholder="Ingresar contrasena" />
-													<button type="submit" name="submitSave" className="btn btn-primary">
+													<button
+														type="submit"
+														name="submitSave"
+														className="btn btn-outline-success my-2 my-sm-0">
 														Registrar
+													</button>
+													<button
+														type="submit"
+														name="submitSave"
+														className="btn btn-outline-success my-2 my-sm-0">
+														Recuperar contraseña
 													</button>
 												</div>
 											</div>
@@ -145,17 +145,6 @@ export const Navbar = () => {
 								</div>
 							</div>
 						)}
-					</li>
-					<li>
-						<Link to="/Home">
-							<div className="ml-auto">
-								{store.isAuthenticate ? (
-									<button onClick={() => actions.signOut()}>Cerrar sesión</button>
-								) : (
-									<p></p>
-								)}
-							</div>
-						</Link>
 					</li>
 				</ul>
 			</div>
