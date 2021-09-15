@@ -122,7 +122,11 @@ export const Navbar = () => {
 																onChange={e => setPassword(e.target.value)}
 															/>
 															<Link to="/Perfil">
-																<button onClick={() => login()}>Entrar</button>
+																<button
+																	className="btn btn-outline-success my-2 my-sm-0"
+																	onClick={() => login()}>
+																	Entrar
+																</button>
 															</Link>
 														</>
 													)}
@@ -133,13 +137,18 @@ export const Navbar = () => {
 														<button
 															type="submit"
 															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0">
+															className="btn btn-outline-success my-2 my-sm-0"
+															data-toggle="modal"
+															data-target="#myModal2">
 															Registrar
 														</button>
+
 														<button
 															type="submit"
 															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0">
+															className="btn btn-outline-success my-2 my-sm-0"
+															data-toggle="modal"
+															data-target="#myModal3">
 															Recuperar contraseña
 														</button>
 													</div>
@@ -154,111 +163,35 @@ export const Navbar = () => {
 				</div>
 			</nav>
 			<div>
-				<a data-toggle="modal" href="#myModal" className="btn btn-primary">
-					Launch modal
-				</a>
-
-				<div className="modal  fade" id="myModal">
-					<div className="modal-dialog modal-lg">
-						<div className="modal-content">
-							<div className="modal-header">
-								<h4 className="modal-title">Modal title</h4>
-								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
-									×
-								</button>
-							</div>
-							<div className="container"></div>
-							<div className="modal-body">
-								<>
-									<input
-										type="email"
-										placeholder="Ingresar correo electronico"
-										value={email}
-										onChange={e => setEmail(e.target.value)}
-									/>
-									<input
-										type="password"
-										placeholder="Ingresar contraseña"
-										value={password}
-										onChange={e => setPassword(e.target.value)}
-									/>
-									<Link to="/Perfil">
-										<button onClick={() => login()}>Entrar</button>
-									</Link>
-								</>{" "}
-								<a
-									data-toggle="modal"
-									href="#myModal2"
-									data-dismiss="modal"
-									className="btn btn-primary close">
-									Launch modal
-								</a>
-								<a
-									data-toggle="modal"
-									href="#myModal3"
-									data-dismiss="modal"
-									className="btn btn-primary close">
-									Launch modal
-								</a>
-							</div>
-
-							<div className="modal-footer">
-								<a href="#" data-dismiss="modal" className="btn">
-									Close
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div className="modal" id="myModal2" data-backdrop="static">
 					<div className="modal-dialog">
 						<div className="modal-content">
 							<div className="modal-header">
-								<h4 className="modal-title">2nd Modal title</h4>
+								<h4 className="modal-title">Registrarse</h4>
 								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
 									×
 								</button>
 							</div>
 							<div className="container"></div>
 							<div className="modal-body">
-								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
-								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
-								Content for the dialog / modal goes here.
+								Con un simple Nickname, email y contraseña podrás completar tu registro.
 							</div>
 							<div className="modal-footer">
-								<a href="#" data-dismiss="modal" className="btn">
-									Close
-								</a>
-								<a href="#" className="btn btn-primary">
-									Save changes
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="modal" id="myModal2">
-					<div className="modal-dialog">
-						<div className="modal-content">
-							<div className="modal-header">
-								<h4 className="modal-title">2nd Modal title</h4>
-								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
-									×
+								<input
+									type="email"
+									placeholder="Ingresar correo electronico"
+									value={email}
+									onChange={e => setEmail(e.target.value)}
+								/>
+								<input
+									type="password"
+									placeholder="Ingresar contraseña"
+									value={password}
+									onChange={e => setPassword(e.target.value)}
+								/>
+								<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+									¡Comienza ya!
 								</button>
-							</div>
-							<div className="container"></div>
-							<div className="modal-body">
-								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
-								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
-								Content for the dialog / modal goes here.
-							</div>
-							<div className="modal-footer">
-								<a href="#" data-dismiss="modal" className="btn">
-									Close
-								</a>
-								<a href="#" className="btn btn-primary">
-									Save changes
-								</a>
 							</div>
 						</div>
 					</div>
