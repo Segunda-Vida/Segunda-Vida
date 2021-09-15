@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	$("#exampleModal").modal("hide");
+	$("#myModal").modal("hide");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -168,7 +169,23 @@ export const Navbar = () => {
 							</div>
 							<div className="container"></div>
 							<div className="modal-body">
-								Content for the dialog / modal goes here.
+								<>
+									<input
+										type="email"
+										placeholder="Ingresar correo electronico"
+										value={email}
+										onChange={e => setEmail(e.target.value)}
+									/>
+									<input
+										type="password"
+										placeholder="Ingresar contraseña"
+										value={password}
+										onChange={e => setPassword(e.target.value)}
+									/>
+									<Link to="/Perfil">
+										<button onClick={() => login()}>Entrar</button>
+									</Link>
+								</>{" "}
 								<a
 									data-toggle="modal"
 									href="#myModal2"
@@ -220,7 +237,7 @@ export const Navbar = () => {
 						</div>
 					</div>
 				</div>
-				<div className="modal" id="myModal2" data-backdrop="static">
+				<div className="modal" id="myModal2">
 					<div className="modal-dialog">
 						<div className="modal-content">
 							<div className="modal-header">
