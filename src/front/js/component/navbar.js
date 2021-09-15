@@ -152,79 +152,113 @@ export const Navbar = () => {
 					</ul>
 				</div>
 			</nav>
-			<a data-toggle="modal" href="#myModal" className="btn btn-primary">
-				Launch modal
-			</a>
+			<div>
+				<a data-toggle="modal" href="#myModal" className="btn btn-primary">
+					Launch modal
+				</a>
 
-			<div className="modal  fade" id="myModal">
-				<div className="modal-dialog modal-lg">
-					<div className="modal-content">
-						<div className="modal-header">
-							<h4 className="modal-title">Modal title</h4>
-							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
+				<div className="modal  fade" id="myModal">
+					<div className="modal-dialog modal-lg">
+						<div className="modal-content">
+							<div className="modal-header">
+								<h4 className="modal-title">Modal title</h4>
+								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
+									×
+								</button>
+							</div>
+							<div className="container"></div>
+							<div className="modal-body">
+								Content for the dialog / modal goes here.
+								<a
+									data-toggle="modal"
+									href="#myModal2"
+									data-dismiss="modal"
+									className="btn btn-primary close">
+									Launch modal
+								</a>
+								<a
+									data-toggle="modal"
+									href="#myModal3"
+									data-dismiss="modal"
+									className="btn btn-primary close">
+									Launch modal
+								</a>
+							</div>
+
+							<div className="modal-footer">
+								<a href="#" data-dismiss="modal" className="btn">
+									Close
+								</a>
+							</div>
 						</div>
-						<div className="container"></div>
-						<div className="modal-body">
-							Content for the dialog / modal goes here.
-							<a
-								data-toggle="modal"
-								href="#myModal2"
-								data-dismiss="modal"
-								className="btn btn-primary close">
-								Launch modal
-							</a>
+					</div>
+				</div>
+
+				<div className="modal" id="myModal2" data-backdrop="static">
+					<div className="modal-dialog">
+						<div className="modal-content">
+							<div className="modal-header">
+								<h4 className="modal-title">2nd Modal title</h4>
+								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
+									×
+								</button>
+							</div>
+							<div className="container"></div>
+							<div className="modal-body">
+								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
+								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
+								Content for the dialog / modal goes here.
+							</div>
+							<div className="modal-footer">
+								<a href="#" data-dismiss="modal" className="btn">
+									Close
+								</a>
+								<a href="#" className="btn btn-primary">
+									Save changes
+								</a>
+							</div>
 						</div>
-						<div className="modal-footer">
-							<a href="#" data-dismiss="modal" className="btn">
-								Close
-							</a>
+					</div>
+				</div>
+				<div className="modal" id="myModal2" data-backdrop="static">
+					<div className="modal-dialog">
+						<div className="modal-content">
+							<div className="modal-header">
+								<h4 className="modal-title">2nd Modal title</h4>
+								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
+									×
+								</button>
+							</div>
+							<div className="container"></div>
+							<div className="modal-body">
+								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
+								Content for the dialog / modal goes here. Content for the dialog / modal goes here.
+								Content for the dialog / modal goes here.
+							</div>
+							<div className="modal-footer">
+								<a href="#" data-dismiss="modal" className="btn">
+									Close
+								</a>
+								<a href="#" className="btn btn-primary">
+									Save changes
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="modal" id="myModal2" data-backdrop="static">
+
+			<div className="modal" id="myModal3" data-backdrop="static">
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h4 className="modal-title">2nd Modal title</h4>
+							<h4 className="modal-title">3nd Modal title</h4>
 							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
 								×
 							</button>
 						</div>
 						<div className="container"></div>
-						<div className="modal-body">
-							Content for the dialog / modal goes here. Content for the dialog / modal goes here. Content
-							for the dialog / modal goes here. Content for the dialog / modal goes here. Content for the
-							dialog / modal goes here.
-						</div>
-						<div className="modal-footer">
-							<a href="#" data-dismiss="modal" className="btn">
-								Close
-							</a>
-							<a href="#" className="btn btn-primary">
-								Save changes
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="modal" id="myModal2" data-backdrop="static">
-				<div className="modal-dialog">
-					<div className="modal-content">
-						<div className="modal-header">
-							<h4 className="modal-title">2nd Modal title</h4>
-							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-						</div>
-						<div className="container"></div>
-						<div className="modal-body">
-							Content for the dialog / modal goes here. Content for the dialog / modal goes here. Content
-							for the dialog / modal goes here. Content for the dialog / modal goes here. Content for the
-							dialog / modal goes here.
-						</div>
+						<div className="modal-body">goes here.</div>
 						<div className="modal-footer">
 							<a href="#" data-dismiss="modal" className="btn">
 								Close
