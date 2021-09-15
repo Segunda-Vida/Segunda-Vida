@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			api: "https://3001-aqua-lion-mfssvyag.ws-eu16.gitpod.io",
+			api: "",
 			isAuthenticate: false
 		},
 		actions: {
@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			login: (email, password) => {
 				const store = getStore();
 
-				fetch(`${store.api}/api/login`, {
+				fetch(process.env.BACKEND_URL + "/api/login", {
 					method: "POST",
 					headers: {
 						"Content-type": "application/json"
@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			uploadFile: formData => {
 				const store = getStore();
 
-				fetch(`${store.api}/upload/profile`, {
+				fetch(process.env.BACKEND_URL + "/upload/profile", {
 					method: "POST",
 					headers: {
 						"Content-Type": "multipart/form-data"

@@ -53,78 +53,98 @@ export const Navbar = () => {
 						</a>
 					</li>
 					<li className="nav-item active" id="li1">
-						<button
-							className="btn btn-outline-success my-2 my-sm-0"
-							type="submit"
-							data-toggle="modal"
-							data-target="#exampleModal">
-							<i className="fas fa-sign-in-alt"> Iniciar sesión</i>
-						</button>
-						<div
-							className="modal fade"
-							id="exampleModal"
-							tabIndex="-1"
-							role="dialog"
-							aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
-							<div className="modal-dialog" role="document">
-								<div className="modal-content">
-									<div className="modal-header">
-										<h5 className="modal-title" id="exampleModalLabel">
-											Hola
-										</h5>
-										<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div className="modal-body">
-										<h4>Login</h4>
-									</div>
-
-									<div className="text-center mt-5">
-										{store.isAuthenticate ? (
-											<div>
-												<button onClick={() => actions.signOut()}>Cerrar sesión</button>
+						{store.isAuthenticate ? (
+							<div className="No conectado">
+								<button
+									className="btn btn-outline-success my-2 my-sm0"
+									type="submit"
+									onClick={() => actions.signOut()}>
+									Cerrar sesión
+								</button>
+							</div>
+						) : (
+							<div>
+								<button
+									className="btn btn-outline-success my-2 my-sm-0"
+									type="submit"
+									data-toggle="modal"
+									data-target="#exampleModal">
+									<i className="fas fa-sign-in-alt"> Iniciar sesión</i>
+								</button>
+								<div
+									className="modal fade"
+									id="exampleModal"
+									tabIndex="-1"
+									role="dialog"
+									aria-labelledby="exampleModalLabel"
+									aria-hidden="true">
+									<div className="modal-dialog" role="document">
+										<div className="modal-content">
+											<div className="modal-header">
+												<h5 className="modal-title" id="exampleModalLabel">
+													Hola
+												</h5>
+												<button
+													type="button"
+													className="close"
+													data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
 											</div>
-										) : (
-											<>
-												<input
-													type="email"
-													placeholder="Ingresar correo electronico"
-													value={email}
-													onChange={e => setEmail(e.target.value)}
-												/>
-												<input
-													type="password"
-													placeholder="Ingresar contraseña"
-													value={password}
-													onChange={e => setPassword(e.target.value)}
-												/>
-												<Link to="/Perfil">
-													<button onClick={() => login()}>Entrar</button>
-												</Link>
-											</>
-										)}
-									</div>
+											<div className="modal-body">
+												<h4>Login</h4>
+											</div>
 
-									<div className="modal-footer">
-										<button type="button" className="btn btn-secondary" data-dismiss="modal">
-											Cerrar
-										</button>
-										<button type="submit" name="submitSave" className="btn btn-primary">
-											Guardar cambios
-										</button>
-										<div>
-											<input type="email" placeholder="Ingresar correo electronico" />
-											<input type="password" placeholder="Ingresar contrasena" />
-											<button type="submit" name="submitSave" className="btn btn-primary">
-												Registrar
-											</button>
+											<div className="text-center mt-5">
+												{store.isAuthenticate ? (
+													<div>
+														<button onClick={() => actions.signOut()}>Cerrar sesión</button>
+													</div>
+												) : (
+													<>
+														<input
+															type="email"
+															placeholder="Ingresar correo electronico"
+															value={email}
+															onChange={e => setEmail(e.target.value)}
+														/>
+														<input
+															type="password"
+															placeholder="Ingresar contraseña"
+															value={password}
+															onChange={e => setPassword(e.target.value)}
+														/>
+														<Link to="/Perfil">
+															<button onClick={() => login()}>Entrar</button>
+														</Link>
+													</>
+												)}
+											</div>
+
+											<div className="modal-footer">
+												<button
+													type="button"
+													className="btn btn-secondary"
+													data-dismiss="modal">
+													Cerrar
+												</button>
+												<button type="submit" name="submitSave" className="btn btn-primary">
+													Guardar cambios
+												</button>
+												<div>
+													<input type="email" placeholder="Ingresar correo electronico" />
+													<input type="password" placeholder="Ingresar contrasena" />
+													<button type="submit" name="submitSave" className="btn btn-primary">
+														Registrar
+													</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						)}
 					</li>
 					<li>
 						<Link to="/Home">
