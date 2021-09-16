@@ -14,8 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			api: "",
-			isAuthenticate: false
+			isAuthenticate: false,
+			isRegistered: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -101,6 +101,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("data", data);
 					})
 					.catch(error => console.log("[ERROR TO UPLOADO FILE]", error));
+			},
+			register: (nickname, email, password) => {
+				const store = getStore();
+
+				fetch(process.env.BACKEND_URL + "/api/register", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						nickname: nickname,
+						email: email,
+						password: password
+					})
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(data => {
+						setStore({ message: data.msg });
+						setStore({ isRegistered: true });
+					});
 			}
 		}
 	};

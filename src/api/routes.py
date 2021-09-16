@@ -47,11 +47,12 @@ def sign_up():
     if body is None:
         return jsonify({"msg": "Body is empty or null"})
 
+    nickname = body["nickname"]
     email = body["email"]
     password = body["password"]
-    is_active = body["is_active"]
 
-    User.create(email, password, is_active)
+
+    User.create(nickname, email, password)
 
     return jsonify({"msg": "User created"}), 200
 
@@ -64,8 +65,8 @@ def recovery_pasword():
    
     email = body["email"]
     password = User.randomPassword(email)
-    msg = Message('Recuperar contrasana', recipients=[email])
-    msg.body = 'Su contrasana tempor es ' + password
+    msg = Message('Recuperar contraseña', recipients=[email])
+    msg.body = 'Su contraseña temporal es ' + password
     msg.html = '<p>This is a test email!</p>'
     msg.send(msg)
 

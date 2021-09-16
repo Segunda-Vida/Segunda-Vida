@@ -8,9 +8,18 @@ export const Navbar = () => {
 	$("#myModal").modal("hide");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [nickname, setNickname] = useState("");
+	const [recover, setRecover] = useState(false);
 
 	const login = () => {
 		actions.login(email, password);
+		setEmail("");
+		setPassword("");
+	};
+
+	const register = () => {
+		actions.register(nickname, email, password);
+		setNickname("");
 		setEmail("");
 		setPassword("");
 	};
@@ -163,7 +172,13 @@ export const Navbar = () => {
 				</div>
 			</nav>
 			<div>
-				<div className="modal" id="myModal2" data-backdrop="static">
+				<div
+					className="modal fade"
+					id="myModal2"
+					tabIndex="-1"
+					role="dialog"
+					aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
 					<div className="modal-dialog">
 						<div className="modal-content">
 							<div className="modal-header">
@@ -178,6 +193,13 @@ export const Navbar = () => {
 							</div>
 							<div className="modal-footer">
 								<input
+									type="nickname"
+									placeholder="Ingresar nickname"
+									value={nickname}
+									onChange={e => setNickname(e.target.value)}
+								/>
+
+								<input
 									type="email"
 									placeholder="Ingresar correo electronico"
 									value={email}
@@ -189,7 +211,12 @@ export const Navbar = () => {
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
-								<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+								<button
+									className="btn btn-outline-success my-2 my-sm-0"
+									data-dismiss="modal"
+									aria-hidden="true"
+									type="submit"
+									onClick={() => register()}>
 									¡Comienza ya!
 								</button>
 							</div>
