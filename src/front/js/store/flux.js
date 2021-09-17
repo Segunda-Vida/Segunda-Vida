@@ -123,6 +123,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						setStore({ message: data.msg });
+
 						setStore({ isRegistered: true });
 					});
 			}

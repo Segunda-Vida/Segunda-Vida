@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -24,6 +24,11 @@ export const Navbar = () => {
 		setPassword("");
 	};
 
+	useEffect(() => {
+		if (store.message !== null) {
+			alert(store.message);
+		}
+	}, store.message);
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
