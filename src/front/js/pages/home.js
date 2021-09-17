@@ -27,7 +27,7 @@ export const Home = () => {
 					return resp.json();
 				}
 			})
-			.then(resp => setProducts(resp.data));
+			.then(json => setProducts(json.data));
 	}, []);
 
 	const onChangeHandler = text => {
@@ -45,6 +45,27 @@ export const Home = () => {
 	return (
 		<div className="container">
 			<Navbar />
+			<div className="text-center mt-5">
+				<div className="container">
+					<input
+						type="text"
+						className="col-md-12 input"
+						onChange={e => onChangeHandler(e.target.value)}
+						value={text}
+						onBlur={() => setSuggestions([])}
+					/>
+				</div>
+
+				{suggestions &&
+					suggestions.map((suggestion, i) => (
+						<div
+							onClick={() => setText(suggestion.name)}
+							key={i}
+							className="suggestion col-md-12 justify-content-md-center">
+							{suggestion.name}
+						</div>
+					))}
+			</div>
 			<div className="text-center mt-5">
 				{store.isAuthenticate ? (
 					<div>
@@ -97,27 +118,6 @@ export const Home = () => {
 						</p>
 					</div>
 				</div>
-			</div>
-			<div className="text-center mt-5">
-				<div className="container">
-					<input
-						type="text"
-						className="col-md-12 input"
-						onChange={e => onChangeHandler(e.target.value)}
-						value={text}
-						onBlur={() => setSuggestions([])}
-					/>
-				</div>
-
-				{suggestions &&
-					suggestions.map((suggestion, i) => (
-						<div
-							onClick={() => setText(suggestion.name)}
-							key={i}
-							className="suggestion col-md-12 justify-content-md-center">
-							{suggestion.name}
-						</div>
-					))}
 			</div>
 		</div>
 	);
