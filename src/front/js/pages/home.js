@@ -19,15 +19,10 @@ export const Home = () => {
 	const [products, setProducts] = useState([]);
 	const [text, setText] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
+	setProducts(actions.buscador());
 
 	useEffect(() => {
-		fetch("https://3001-silver-wildcat-d6360fbn.ws-eu16.gitpod.io/api/products")
-			.then(resp => {
-				if (resp.ok) {
-					return resp.json();
-				}
-			})
-			.then(json => setProducts(json.data));
+		products;
 	}, []);
 
 	const onChangeHandler = text => {

@@ -128,22 +128,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ isRegistered: true });
 					});
 			},
-			buscador: (id, name, brand) => {
+			buscador: () => {
 				const store = getStore();
 
-				fetch(process.env.BACKEND_URL + "/api/products", {
-					method: "GET",
-					headers: {
-						"Content-type": "aplication/json"
-					},
-					body: JSON.stringify({
-						id: id,
-						name: name,
-						brand: brand
+				fetch(process.env.BACKEND_URL + "/api/products")
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
 					})
-				}).then(json => {
-					setStore({ products: json.data });
-				});
+					.then(json => {
+						console.log("data", json);
+						setStore({ products: json.data });
+					});
 			}
 		}
 	};
