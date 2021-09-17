@@ -29,6 +29,7 @@ export const Navbar = () => {
 			alert(store.message);
 		}
 	}, store.message);
+
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -115,48 +116,31 @@ export const Navbar = () => {
 												</div>
 
 												<div className="text-center mt-5">
-													{store.isAuthenticate ? (
-														<div>
-															<button onClick={() => actions.signOut()}>
-																Cerrar sesión
+													<>
+														<input
+															type="email"
+															placeholder="Ingresar correo electronico"
+															value={email}
+															onChange={e => setEmail(e.target.value)}
+														/>
+														<input
+															type="password"
+															placeholder="Ingresar contraseña"
+															value={password}
+															onChange={e => setPassword(e.target.value)}
+														/>
+														<Link to="/Perfil">
+															<button
+																className="btn btn-outline-success my-2 my-sm-0"
+																onClick={() => login()}>
+																Entrar
 															</button>
-														</div>
-													) : (
-														<>
-															<input
-																type="email"
-																placeholder="Ingresar correo electronico"
-																value={email}
-																onChange={e => setEmail(e.target.value)}
-															/>
-															<input
-																type="password"
-																placeholder="Ingresar contraseña"
-																value={password}
-																onChange={e => setPassword(e.target.value)}
-															/>
-															<Link to="/Perfil">
-																<button
-																	className="btn btn-outline-success my-2 my-sm-0"
-																	onClick={() => login()}>
-																	Entrar
-																</button>
-															</Link>
-														</>
-													)}
+														</Link>
+													</>
 												</div>
 
 												<div className="modal-footer">
-													<div>
-														<button
-															type="submit"
-															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0"
-															data-toggle="modal"
-															data-target="#myModal2">
-															Registrar
-														</button>
-
+													{store.isRegistered ? (
 														<button
 															type="submit"
 															name="submitSave"
@@ -165,7 +149,16 @@ export const Navbar = () => {
 															data-target="#myModal3">
 															Recuperar contraseña
 														</button>
-													</div>
+													) : (
+														<button
+															type="submit"
+															name="submitSave"
+															className="btn btn-outline-success my-2 my-sm-0"
+															data-toggle="modal"
+															data-target="#myModal2">
+															Registrar
+														</button>
+													)}
 												</div>
 											</div>
 										</div>
