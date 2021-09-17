@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
@@ -14,6 +14,32 @@ export const Home = () => {
 		actions.login(email, password);
 		setEmail("");
 		setPassword("");
+	};
+
+	const [products, setProducts] = useState([]);
+	const [text, setText] = useState("");
+	const [suggestions, setSuggestions] = useState([]);
+
+	useEffect(() => {
+		fetch("https://3001-gray-dog-op0bsqpo.ws-eu16.gitpod.io/api/product")
+			.then(resp => {
+				if (resp.ok) {
+					return resp.json();
+				}
+			})
+			.then(resp => setProducts(resp.data));
+	}, []);
+
+	const onChangeHandler = text => {
+		let matches = [];
+		if (text.length > 0) {
+			matches = products.filter(product => {
+				const regex = new RegExp(`${text}`, "gi");
+				return product.name.match(regex);
+			});
+		}
+		setSuggestions(matches);
+		setText(text);
 	};
 
 	return (
@@ -71,6 +97,27 @@ export const Home = () => {
 						</p>
 					</div>
 				</div>
+			</div>
+			<div className="text-center mt-5">
+				<div className="container">
+					<input
+						type="text"
+						className="col-md-12 input"
+						onChange={e => onChangeHandler(e.target.value)}
+						value={text}
+						onBlur={() => setSuggestions([])}
+					/>
+				</div>
+
+				{suggestions &&
+					suggestions.map((suggestion, i) => (
+						<div
+							onClick={() => setText(suggestion.name)}
+							key={i}
+							className="suggestion col-md-12 justify-content-md-center">
+							{suggestion.name}
+						</div>
+					))}
 			</div>
 		</div>
 	);
