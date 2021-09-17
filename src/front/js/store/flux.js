@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			products: [],
 			message: null,
 			demo: [
 				{
@@ -126,6 +127,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 						setStore({ isRegistered: true });
 					});
+			},
+			buscador: (id, name, brand) => {
+				const store = getStore();
+
+				fetch(process.env.BACKEND_URL + "/api/products", {
+					method: "GET",
+					headers: {
+						"Content-type": "aplication/json"
+					},
+					body: JSON.stringify({
+						id: id,
+						name: name,
+						brand: brand
+					})
+				}).then(json => {
+					setStore({ products: json.data });
+				});
 			}
 		}
 	};

@@ -21,7 +21,7 @@ export const Home = () => {
 	const [suggestions, setSuggestions] = useState([]);
 
 	useEffect(() => {
-		fetch("https://3001-gray-dog-op0bsqpo.ws-eu16.gitpod.io/api/products")
+		fetch("https://3001-silver-wildcat-d6360fbn.ws-eu16.gitpod.io/api/products")
 			.then(resp => {
 				if (resp.ok) {
 					return resp.json();
