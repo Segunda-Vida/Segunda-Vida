@@ -4,6 +4,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Navbar } from "../component/navbar";
 
+import { Link } from "react-router-dom";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
@@ -16,19 +17,17 @@ export const Home = () => {
 		setPassword("");
 	};
 
-	const [products, setProducts] = useState([]);
 	const [text, setText] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
-	setProducts(actions.buscador());
 
 	useEffect(() => {
-		products;
+		actions.buscador();
 	}, []);
 
 	const onChangeHandler = text => {
 		let matches = [];
 		if (text.length > 0) {
-			matches = products.filter(product => {
+			matches = store.products.filter(product => {
 				const regex = new RegExp(`${text}`, "gi");
 				return product.name.match(regex);
 			});
@@ -47,18 +46,14 @@ export const Home = () => {
 						className="col-md-12 input"
 						onChange={e => onChangeHandler(e.target.value)}
 						value={text}
-						onBlur={() => setSuggestions([])}
 					/>
 				</div>
 
 				{suggestions &&
 					suggestions.map((suggestion, i) => (
-						<div
-							onClick={() => setText(suggestion.name)}
-							key={i}
-							className="suggestion col-md-12 justify-content-md-center">
-							{suggestion.name}
-						</div>
+						<Link key={i} to={`/products/${suggestion.name}`}>
+							<div className="suggestion col-md-12 justify-content-md-center">{suggestion.name}</div>
+						</Link>
 					))}
 			</div>
 			<div className="text-center mt-5">

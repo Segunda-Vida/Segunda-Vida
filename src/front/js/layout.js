@@ -10,7 +10,7 @@ import { ProducDetail } from "./pages/producDetail";
 import { Perfil } from "./pages/perfil";
 
 import { Footer } from "./component/footer";
-
+import Products from "./pages/products";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -24,6 +24,9 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Inicio />
+						</Route>
+						<Route exact path="/products/:text">
+							<Products />
 						</Route>
 						<Route exact path="/home">
 							<Home />
