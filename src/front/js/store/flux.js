@@ -138,6 +138,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => console.log("data", data))
 					.catch(error => console.error("[error when recovery password]", error));
+			},
+			uploadFile: formData => {
+				const store = getStore();
+
+				fetch(process.env.BACKEND_URL + "/upload/profile", {
+					method: "POST",
+					headers: {
+						"Content-Type": "multipart/form-data"
+					},
+					body: formData
+				})
+					.then(resp => {
+						console.log("respuesta", resp);
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(data => {
+						console.log("data", data);
+					})
+					.catch(error => console.log("[ERROR TO UPLOADO FILE]", error));
 			}
 		}
 	};
