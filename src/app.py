@@ -7,12 +7,12 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db
+from api.models import db, User
 from api.routes import api
 from api.admin import setup_admin
 from flask_jwt_extended import JWTManager
-from flask_mail import Mail
-
+from flask_mail import Mail, Message
+import random
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
@@ -20,15 +20,6 @@ static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 #email config
-app.config['SECRET_KEY'] = 'top-secret!'
-app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'apikey'
-app.config['MAIL_PASSWORD'] = "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"
-app.config['MAIL_DEFAULT_SENDER'] = "gabyiy2000@yahoo.com"
-mail = Mail(app)
-
 
 # database condiguration
 if os.getenv("DATABASE_URL") is not None:
@@ -39,6 +30,15 @@ else:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db)
 db.init_app(app)
+
+app.config['SECRET_KEY'] = 'top-secret!'
+app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'apikey'
+app.config['MAIL_PASSWORD'] = ""
+app.config['MAIL_DEFAULT_SENDER'] = "martigracia2018@gmail.com"
+mail = Mail(app)
 
 # Allow CORS requests to this API
 CORS(app)
@@ -65,6 +65,20 @@ def sitemap():
         return generate_sitemap(app)
     return send_from_directory(static_file_dir, 'index.html')
 
+@app.route("/forgot-password",methods=["POST"])
+
+def recovery_pasword():
+    body =request.get_json()
+    if body is None:
+        return jsonify({"msg":"Body is empty or null"}), 400
+   
+    email = body["email"]
+    password = User.randomPassword(email)
+    msg = Message('Recuperar contraseña', recipients=[email])
+    msg.body = 'Su contraseña temporal es ' + password
+    mail.send(msg)
+
+    return jsonify({"msg":"Correo enviado"}),200
 # any other endpoint will try to serve it like a static file
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):

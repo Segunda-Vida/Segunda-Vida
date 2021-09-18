@@ -56,22 +56,6 @@ def sign_up():
 
     return jsonify({"msg": "User created"}), 200
 
-@api.route("/forgot-password",methods=["POST"])
-
-def recovery_pasword():
-    body =request.get_json()
-    if body is None:
-        return jsonify({"msg":"Body is empty or null"})
-   
-    email = body["email"]
-    password = User.randomPassword(email)
-    msg = Message('Recuperar contraseña', recipients=[email])
-    msg.body = 'Su contraseña temporal es ' + password
-    msg.html = '<p>This is a test email!</p>'
-    msg.send(msg)
-
-    return jsonify({"msg":"Correo enviado"}),200
-
 @api.route('/upload/profile/', methods=['POST'])
 def fileUpload():
     target = os.path.join(UPLOAD_FOLDER)

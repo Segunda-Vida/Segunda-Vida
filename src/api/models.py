@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+import random
+from flask import jsonify
 
 db = SQLAlchemy()
 
@@ -28,6 +30,9 @@ class User(db.Model):
 
     def randomPassword(email):
         user = User.query.filter_by(email=email).first()
+        print(user)
+        if user is None:
+            return jsonify({"msg": "el usuario no existe"}), 404
         password = ''.join((random.choice('abcdxyzpqr') for i in range(5)))
         user.password = password
         db.session.commit()

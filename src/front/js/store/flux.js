@@ -141,6 +141,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("data", json);
 						setStore({ products: json.data });
 					});
+			},
+			forgotPassword: email => {
+				const store = getStore();
+				fetch(process.env.BACKEND_URL + "/forgot-password", {
+					method: "POST",
+					headers: {
+						"Content-type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email
+					})
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(data => console.log("data", data))
+					.catch(error => console.error("[error when recovery password]", error));
 			}
 		}
 	};

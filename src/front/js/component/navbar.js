@@ -10,6 +10,8 @@ export const Navbar = () => {
 	const [password, setPassword] = useState("");
 	const [nickname, setNickname] = useState("");
 	const [recover, setRecover] = useState(false);
+	const [showForgotPassword, setShowForgotPassword] = useState(false);
+	const [emailForgot, setEmailForgot] = useState("");
 
 	const login = () => {
 		actions.login(email, password);
@@ -29,6 +31,12 @@ export const Navbar = () => {
 			alert(store.message);
 		}
 	}, store.message);
+
+	const forgotPassword = () => {
+		actions.forgotPassword(emailForgot);
+		setEmailForgot("");
+		setShowForgotPassword(!showForgotPassword);
+	};
 
 	return (
 		<div>
@@ -227,20 +235,31 @@ export const Navbar = () => {
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h4 className="modal-title">3nd Modal title</h4>
+							<h4 className="modal-title">Recuperar contraseña</h4>
 							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
 								×
 							</button>
 						</div>
 						<div className="container"></div>
-						<div className="modal-body">goes here.</div>
+						<div className="modal-body">Introduce tu mail para recuperación de contraseña</div>
 						<div className="modal-footer">
-							<a href="#" data-dismiss="modal" className="btn">
-								Close
-							</a>
-							<a href="#" className="btn btn-primary">
-								Save changes
-							</a>
+							<input
+								type="email"
+								placeholder="Ingresar correo electronico"
+								value={emailForgot}
+								onChange={e => setEmailForgot(e.target.value)}
+							/>
+							<button
+								className="btn btn-outline-success my-2 my-sm-0"
+								data-dismiss="modal"
+								aria-hidden="true"
+								type="submit"
+								onClick={() => forgotPassword()}>
+								Recuperar contraseña
+							</button>
+							<p style={{ cursor: "pointer" }} onClick={() => setShowForgotPassword(!showForgotPassword)}>
+								Iniciar sesión
+							</p>
 						</div>
 					</div>
 				</div>
