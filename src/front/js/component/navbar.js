@@ -38,11 +38,34 @@ export const Navbar = () => {
 		setShowForgotPassword(!showForgotPassword);
 	};
 
+	const [text, setText] = useState("");
+	const [suggestions, setSuggestions] = useState([]);
+
+	useEffect(() => {
+		actions.buscador();
+	}, []);
+
+	const onChangeHandler = text => {
+		let matches = [];
+		if (text.length > 0) {
+			matches = store.products.filter(product => {
+				const regex = new RegExp(`${text}`, "gi");
+				return product.name.match(regex);
+			});
+		}
+		setSuggestions(matches);
+		setText(text);
+	};
+
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<Link to="/Home">
-					<button className="btn btn-outline-success my-2 my-sm0" type="submit" href="#">
+					<button
+						className="btn btn-outline-success my-2 my-sm0"
+						type="submit"
+						href="#"
+						style={{ marginRight: "5px" }}>
 						Segunda Vida
 					</button>
 				</Link>
@@ -59,15 +82,22 @@ export const Navbar = () => {
 
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<form className="form-inline my-2 my-lg-0">
-						<input
-							className="form-control mr-sm-2"
-							type="search"
-							placeholder="Search"
-							aria-label="Busca tu producto"
-						/>
-						<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-							<i className="fas fa-search"></i>
-						</button>
+						<div>
+							<input
+								type="text"
+								className="col-md-12 input"
+								onChange={e => onChangeHandler(e.target.value)}
+								value={text}
+							/>
+						</div>
+						{suggestions &&
+							suggestions.map((suggestion, i) => (
+								<Link key={i} to={`/products/${suggestion.name}`}>
+									<div className="suggestion col-md-12 justify-content-md-center">
+										{suggestion.name}
+									</div>
+								</Link>
+							))}
 					</form>
 					<ul className="navbar-nav">
 						<li className="nav-item active">
@@ -148,16 +178,15 @@ export const Navbar = () => {
 												</div>
 
 												<div className="modal-footer">
-													{store.isRegistered ? (
-														<button
-															type="submit"
-															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0"
-															data-toggle="modal"
-															data-target="#myModal3">
-															Recuperar contraseña
-														</button>
-													) : (
+													<button
+														type="submit"
+														name="submitSave"
+														className="btn btn-outline-success my-2 my-sm-0"
+														data-toggle="modal"
+														data-target="#myModal3">
+														Recuperar contraseña
+													</button>
+													{store.isRegistered ? null : (
 														<button
 															type="submit"
 															name="submitSave"

@@ -40,21 +40,7 @@ export const Home = () => {
 		<div className="container">
 			<Navbar />
 			<div className="text-center mt-5">
-				<div className="container">
-					<input
-						type="text"
-						className="col-md-12 input"
-						onChange={e => onChangeHandler(e.target.value)}
-						value={text}
-					/>
-				</div>
-
-				{suggestions &&
-					suggestions.map((suggestion, i) => (
-						<Link key={i} to={`/products/${suggestion.name}`}>
-							<div className="suggestion col-md-12 justify-content-md-center">{suggestion.name}</div>
-						</Link>
-					))}
+				<div className="container"></div>
 			</div>
 			<div className="text-center mt-5">
 				{store.isAuthenticate ? (
