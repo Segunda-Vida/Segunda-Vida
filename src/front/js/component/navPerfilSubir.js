@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Navbar = () => {
+export const NavPerfilSubir = () => {
 	const { store, actions } = useContext(Context);
 	$("#exampleModal").modal("hide");
 	$("#myModal").modal("hide");
@@ -110,10 +110,7 @@ export const Navbar = () => {
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
-									<Link to="/SubirProductos">
-										<button>Subir Productos</button>
-									</Link>
-									<Link to="Perfil">
+									<Link to="/Perfil">
 										<button>Perfil</button>
 									</Link>
 									<Link to="/Home">
