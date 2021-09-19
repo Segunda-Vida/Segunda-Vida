@@ -111,10 +111,22 @@ export const Navbar = () => {
 							{store.isAuthenticate ? (
 								<div>
 									<Link to="/SubirProductos">
-										<button>Subir Productos</button>
+										<button
+											className="btn btn-outline-success my-2 my-sm0"
+											type="submit"
+											href="#"
+											style={{ marginRight: "5px" }}>
+											Subir Productos
+										</button>
 									</Link>
 									<Link to="Perfil">
-										<button>Perfil</button>
+										<button
+											className="btn btn-outline-success my-2 my-sm0"
+											type="submit"
+											href="#"
+											style={{ marginRight: "5px" }}>
+											Perfil
+										</button>
 									</Link>
 									<Link to="/Home">
 										<button
