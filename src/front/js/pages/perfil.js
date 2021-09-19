@@ -60,7 +60,7 @@ export const Perfil = () => {
 				/>
 				<Image
 					cloudName="dguclmq6v"
-					publicId="https://res.cloudinary.com/dguclmq6v/image/upload/v1632050972/alqbld47suxdeidb3i5y.jpg"
+					publicId=""
 				/>
 			</div>
 		</div>
