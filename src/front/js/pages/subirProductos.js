@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import Axios from "axios";
 import { Image } from "cloudinary-react";
@@ -105,8 +105,6 @@ export const SubirProductos = () => {
 								<button type="submit" onClick={() => pushProduct()}>
 									Subir
 								</button>
-								<input type="file" />
-								<button type="submit">Anade imagen</button>
 							</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">
