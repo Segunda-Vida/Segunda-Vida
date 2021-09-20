@@ -43,15 +43,22 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
     brand = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.String(200), nullable=False)
 
     def __repr__(self):
         return '<Product %r>' % self.name
+    
+  
+     
     
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
-            "brand": self.brand
+            "brand": self.brand,
+            "price": self.price,
+            "description": self.description
         }
     
     def getAllProducts():
@@ -59,24 +66,10 @@ class Product(db.Model):
         products = list(map(lambda product: product.serialize(), products))
         return products
 
-class SubirProductos(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    nombre = db.Column(db.String(200), nullable=False)
-    precio = db.Column(db.String(200), nullable=False)
-    descripcion = db.Column(db.String(200), nullable=False)
-
-    def __repr__(self):
-        return "<SubirProducts %r>" % self.nombre
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "nombre": self.nombre,
-            "precio": self.precio,
-            "descripcion": self.descripcion
-        }    
-    def createP(nombre, precio, descripcion):
-        subirProductos = SubirProductos(nombre = nombre, precio = precio, descripcion = descripcion)
+    def createP(name, price, description):
+        subirProductos = SubirProductos(name = name, price = price, descrption = description)
         db.session.add(subirProductos)
         db.session.commit()
-     
+
+          
+    
