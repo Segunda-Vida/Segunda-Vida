@@ -5,33 +5,47 @@ import Axios from "axios";
 import { Image } from "cloudinary-react";
 
 export const Perfil = () => {
+	const [nickname, setNickname] = useState("");
+
 	return (
-		<div>
-			<Navbar />
-			<h1>Hola</h1>
-			<div className="modal" tabIndex="-1">
-				<div Name="modal-dialog">
-					<div className="modal-content">
-						<div className="modal-header">
-							<h5 className="modal-title">Modal title</h5>
-							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div className="modal-body">
-							<p>Modal body text goes here.</p>
-						</div>
-						<div className="modal-footer">
-							<button type="button" className="btn btn-secondary" data-dismiss="modal">
-								Close
-							</button>
-							<button type="button" className="btn btn-primary">
-								Save changes
-							</button>
-						</div>
-					</div>
+		<div className="container">
+			<div style={{ marginBottom: "30px" }}>
+				<Navbar />
+				<h1>Tu perfil</h1>
+				<h5>Aquí podrás ver y editar tus datos de perfil</h5>
+			</div>
+			<h6>Imágenes de perfil</h6>
+			<div className="column">
+				<div className="row" style={{ alignItems: "center" }}>
+					<p>Foto principal</p>
+					<button className="btn btn-outline-success my-2 my-sm0" type="submit" href="#">
+						{" "}
+						<i className="fas fa-upload"> Cargar imagen</i>
+					</button>
+				</div>
+
+				<h6>Información pública</h6>
+				<div>
+					<ul>
+						<li style={{ margin: "20px" }}>
+							<input type="text" placeholder="Ingresar Nickname" value={nickname} />
+						</li>
+						<li style={{ margin: "20px" }}>
+							<input type="text" placeholder="Dirección de envío" />
+						</li>
+						<li style={{ margin: "20px" }}>
+							<input type="email" placeholder="Mail de contacto" />
+						</li>
+						<li style={{ margin: "20px" }}>
+							<input type="password" placeholder="Modificar password" />
+						</li>
+						<button className="btn btn-outline-success my-2 my-sm0" type="submit" href="#">
+							<i className="fas fa-save"> Validar</i>
+						</button>
+					</ul>
 				</div>
 			</div>
+			<div></div>
 		</div>
 	);
 };
