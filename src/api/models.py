@@ -59,3 +59,19 @@ class Product(db.Model):
         products = list(map(lambda product: product.serialize(), products))
         return products
 
+class SubirProductos(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    nombre = db.Column(db.String(200), nullable=False)
+    precio = db.Column(db.String(200), nullable=False)
+    descripcion = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return "<SubirProducts %r>" % self.nombre
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "nombre": self.nombre,
+            "precio": self.precio,
+            "descripcion": self.descripcion
+        }    
