@@ -295,9 +295,9 @@ export const NavPerfilSubir = () => {
 								onClick={() => forgotPassword()}>
 								Recuperar contraseña
 							</button>
-							<p style={{ cursor: "pointer" }} onClick={() => setShowForgotPassword(!showForgotPassword)}>
-								Iniciar sesión
-							</p>
+							<p
+								style={{ cursor: "pointer" }}
+								onClick={() => setShowForgotPassword(!showForgotPassword)}></p>
 						</div>
 					</div>
 				</div>

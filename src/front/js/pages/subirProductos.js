@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { NavPerfilSubir } from "../component/navPerfilSubir";
 import Axios from "axios";
 import { Image } from "cloudinary-react";
+import { Navbar } from "../component/navbar";
 
 export const SubirProductos = () => {
 	const { store, actions } = useContext(Context);
@@ -37,7 +38,7 @@ export const SubirProductos = () => {
 	};
 	return (
 		<div>
-			<NavPerfilSubir />
+			<Navbar />
 			<div>
 				<h1>Electrodomesticos</h1>
 				<div className="card-deck">
