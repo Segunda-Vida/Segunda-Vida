@@ -67,7 +67,7 @@ class Product(db.Model):
         return products
 
     def createP(name, price, description):
-        subirProductos = SubirProductos(name = name, price = price, descrption = description)
+        subirProductos = SubirProductos(name = name, price = price, descrption = description, brand = brand)
         db.session.add(subirProductos)
         db.session.commit()
 

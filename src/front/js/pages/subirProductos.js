@@ -10,6 +10,9 @@ export const SubirProductos = () => {
 	const [file, setFile] = useState("");
 	const [selected, setSelected] = useState(false);
 
+	const [name,setName] = useState("")
+	const []
+
 	const changeFile = event => {
 		setFile(event.target.files[0]);
 		setSelected(true);

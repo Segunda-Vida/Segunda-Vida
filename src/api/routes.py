@@ -62,11 +62,12 @@ def subir_p():
     if body is None:
         return jsonify({"msg": "Boddy is empty or null"})
     
-    nombre = body["nombre"]
-    precio = body["preco"]
-    descripcion = body["descripcion"]
+    name = body["name"]
+    price = body["price"]
+    description = body["description"]
+    brand = body["brand"]
 
-    SubirProductos.createP(nombre, precio, descripcion)
+    Product.createP(name, price, description,brand)
 
     return jsonify({"msg": "Producto subido"}),200
 
