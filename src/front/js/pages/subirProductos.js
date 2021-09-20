@@ -48,7 +48,13 @@ export const SubirProductos = () => {
 									setImageSelected(e.target.files[0]);
 								}}
 							/>
-							<button onClick={uploadImage}>Upload Image</button>
+							<button
+								className="btn btn-outline-success my-2 my-sm0"
+								type="submit"
+								href="#"
+								onClick={uploadImage}>
+								Upload Image
+							</button>
 						</div>
 						<Image
 							cloudName="dguclmq6v"
@@ -74,7 +80,13 @@ export const SubirProductos = () => {
 									setImageSelected(e.target.files[0]);
 								}}
 							/>
-							<button onClick={uploadImage}>Upload Image</button>
+							<button
+								className="btn btn-outline-success my-2 my-sm0"
+								type="submit"
+								href="#"
+								onClick={uploadImage}>
+								Upload Image
+							</button>
 						</div>
 						<Image
 							cloudName="dguclmq6v"
@@ -115,7 +127,13 @@ export const SubirProductos = () => {
 								setImageSelected(e.target.files[0]);
 							}}
 						/>
-						<button onClick={uploadImage}>Upload Image</button>
+						<button
+							className="btn btn-outline-success my-2 my-sm0"
+							type="submit"
+							href="#"
+							onClick={uploadImage}>
+							Upload Image
+						</button>
 					</div>
 					<Image
 						cloudName="dguclmq6v"
@@ -141,7 +159,13 @@ export const SubirProductos = () => {
 								setImageSelected(e.target.files[0]);
 							}}
 						/>
-						<button onClick={uploadImage}>Upload Image</button>
+						<button
+							className="btn btn-outline-success my-2 my-sm0"
+							type="submit"
+							href="#"
+							onClick={uploadImage}>
+							Upload Image
+						</button>
 					</div>
 					<Image
 						cloudName="dguclmq6v"
