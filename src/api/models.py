@@ -75,3 +75,8 @@ class SubirProductos(db.Model):
             "precio": self.precio,
             "descripcion": self.descripcion
         }    
+    def createP(nombre, precio, descripcion):
+        subirProductos = SubirProductos(nombre = nombre, precio = precio, descripcion = descripcion)
+        db.session.add(subirProductos)
+        db.session.commit()
+     

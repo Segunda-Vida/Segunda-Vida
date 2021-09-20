@@ -56,6 +56,20 @@ def sign_up():
 
     return jsonify({"msg": "User created"}), 200
 
+@api.route("/subirProductos",methods=["POST"])
+def subir_p():
+    body = request.get_json()
+    if body is None:
+        return jsonify({"msg": "Boddy is empty or null"})
+    
+    nombre = body["nombre"]
+    precio = body["preco"]
+    descripcion = body["descripcion"]
+
+    SubirProductos.createP(nombre, precio, descripcion)
+
+    return jsonify({"msg": "Producto subido"}),200
+
 @api.route('/upload/profile/', methods=['POST'])
 def fileUpload():
     target = os.path.join(UPLOAD_FOLDER)
