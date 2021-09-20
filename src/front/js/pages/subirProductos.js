@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
-import { NavPerfilSubir } from "../component/navPerfilSubir";
 import Axios from "axios";
 import { Image } from "cloudinary-react";
 import { Navbar } from "../component/navbar";
