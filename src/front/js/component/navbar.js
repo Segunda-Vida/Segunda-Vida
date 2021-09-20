@@ -66,7 +66,7 @@ export const Navbar = () => {
 						type="submit"
 						href="#"
 						style={{ marginRight: "5px" }}>
-						Segunda Vida
+						<i className="fas fa-home"> Segunda Vida</i>
 					</button>
 				</Link>
 				<button
@@ -100,13 +100,6 @@ export const Navbar = () => {
 							))}
 					</form>
 					<ul className="navbar-nav">
-						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								<button className="btn btn-outline-success my-2 my-sm0" type="submit">
-									<i className="fas fa-home"></i>
-								</button>
-							</a>
-						</li>
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
@@ -116,7 +109,7 @@ export const Navbar = () => {
 											type="submit"
 											href="#"
 											style={{ marginRight: "5px" }}>
-											Subir Productos
+											<i className="fas fa-upload"> Subir Productos</i>
 										</button>
 									</Link>
 									<Link to="Perfil">
@@ -125,7 +118,7 @@ export const Navbar = () => {
 											type="submit"
 											href="#"
 											style={{ marginRight: "5px" }}>
-											Perfil
+											<i className="fas fa-users"> Perfil</i>
 										</button>
 									</Link>
 									<Link to="/Home">
@@ -133,7 +126,7 @@ export const Navbar = () => {
 											className="btn btn-outline-success my-2 my-sm0"
 											type="submit"
 											onClick={() => actions.signOut()}>
-											Cerrar sesión
+											<i className="fas fa-sign-out-alt"> Cerrar sesión</i>
 										</button>
 									</Link>
 								</div>
@@ -189,7 +182,7 @@ export const Navbar = () => {
 															<button
 																className="btn btn-outline-success my-2 my-sm-0"
 																onClick={() => login()}>
-																Entrar
+																<i className="fas fa-sign-in-alt"> Entrar</i>
 															</button>
 														</Link>
 													</>
@@ -202,7 +195,7 @@ export const Navbar = () => {
 														className="btn btn-outline-success my-2 my-sm-0"
 														data-toggle="modal"
 														data-target="#myModal3">
-														Recuperar contraseña
+														<i className="fas fa-key"> Recuperar contraseña</i>
 													</button>
 													{store.isRegistered ? null : (
 														<button
@@ -211,7 +204,7 @@ export const Navbar = () => {
 															className="btn btn-outline-success my-2 my-sm-0"
 															data-toggle="modal"
 															data-target="#myModal2">
-															Registrar
+															<i className="fas fa-address-book"> Registrar</i>
 														</button>
 													)}
 												</div>
