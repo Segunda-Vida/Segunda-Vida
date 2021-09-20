@@ -58,3 +58,4 @@ class Product(db.Model):
         products = Product.query.all()
         products = list(map(lambda product: product.serialize(), products))
         return products
+
