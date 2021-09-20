@@ -106,6 +106,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ isRegistered: true });
 					});
 			},
+			pushProduct: (name, price, brand, description) => {
+				const store = getStore();
+
+				fetch(process.env.BACKEND_URL + "/api/products", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						name: name,
+						price: price,
+						brand: brand,
+						description: description
+					})
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(json => {
+						console.log("json", json);
+					});
+			},
 			buscador: () => {
 				const store = getStore();
 

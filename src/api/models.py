@@ -66,9 +66,9 @@ class Product(db.Model):
         products = list(map(lambda product: product.serialize(), products))
         return products
 
-    def createP(name, price, description):
-        subirProductos = SubirProductos(name = name, price = price, descrption = description, brand = brand)
-        db.session.add(subirProductos)
+    def createP(name, price, description, brand):
+        product = Product(name = name, price = price, descrption = description, brand = brand)
+        db.session.add(product)
         db.session.commit()
 
           

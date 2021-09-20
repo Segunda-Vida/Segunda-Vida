@@ -56,7 +56,7 @@ def sign_up():
 
     return jsonify({"msg": "User created"}), 200
 
-@api.route("/subirProductos",methods=["POST"])
+@api.route("/products",methods=["POST"])
 def subir_p():
     body = request.get_json()
     if body is None:

@@ -10,9 +10,18 @@ export const SubirProductos = () => {
 	const [file, setFile] = useState("");
 	const [selected, setSelected] = useState(false);
 
-	const [name,setName] = useState("")
-	const []
+	const [name, setName] = useState("");
+	const [price, setPrice] = useState("");
+	const [brand, setBrand] = useState("");
+	const [description, setDescription] = useState("");
 
+	const pushProduct = () => {
+		actions.pushProduct(name, price, brand, description);
+		setBrand("");
+		setName("");
+		setPrice("");
+		setDescription("");
+	};
 	const changeFile = event => {
 		setFile(event.target.files[0]);
 		setSelected(true);
@@ -66,15 +75,38 @@ export const SubirProductos = () => {
 								</button>
 							</div>
 							<div className="modal-body">
-								<input type="text" placeholder="nombre del producto" />
-								<button>Anadir nombre</button>
-								<input type="number" placeholder="precio del producto" />
-								<button>Precio</button>
+								<input
+									type="text"
+									placeholder="nombre del producto"
+									value={name}
+									onChange={e => setName(e.target.value)}
+								/>
 
-								<input type="text" placeholder="description del producto" />
-								<button>Anadir description</button>
+								<input
+									type="number"
+									placeholder="precio del producto"
+									value={price}
+									onChange={e => setPrice(e.target.value)}
+								/>
+
+								<input
+									type="text"
+									placeholder="el brand del producto"
+									value={brand}
+									onChange={e => setBrand(e.target.value)}
+								/>
+
+								<input
+									type="text"
+									placeholder="description del producto"
+									value={description}
+									onChange={e => setDescription(e.target.value)}
+								/>
+								<button type="submit" onClick={() => pushProduct()}>
+									Subir
+								</button>
 								<input type="file" />
-								<button>Anair imagen</button>
+								<button type="submit">Anade imagen</button>
 							</div>
 							<div className="modal-footer">
 								<button type="button" className="btn btn-secondary" data-dismiss="modal">
