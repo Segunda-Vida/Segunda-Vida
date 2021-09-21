@@ -16,7 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			isAuthenticate: false,
-			isRegistered: false
+			isRegistered: false,
+			isProfile: process.env.BACKEND_URL + "/perfil"
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
