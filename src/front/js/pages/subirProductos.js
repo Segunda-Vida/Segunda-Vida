@@ -6,7 +6,7 @@ import { Navbar } from "../component/navbar";
 
 export const SubirProductos = () => {
 	const { store, actions } = useContext(Context);
-
+	$("#myModal4").modal("hide");
 	const [file, setFile] = useState("");
 	const [selected, setSelected] = useState(false);
 
@@ -54,13 +54,13 @@ export const SubirProductos = () => {
 					type="button"
 					className="btn  btn-outline-success my-2 my-sm0"
 					data-toggle="modal"
-					data-target="#exampleModal">
+					data-target="#myModal4">
 					Electrodomesticos
 				</button>
 
 				<div
 					className="modal fade"
-					id="exampleModal"
+					id="myModal4"
 					tabIndex="-1"
 					aria-labelledby="exampleModalLabel"
 					aria-hidden="true">

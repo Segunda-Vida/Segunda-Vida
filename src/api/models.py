@@ -67,7 +67,7 @@ class Product(db.Model):
         return products
 
     def createP(name, price, description, brand):
-        product = Product(name = name, price = price, descrption = description, brand = brand)
+        product = Product(name = name, price = price, description = description, brand = brand)
         db.session.add(product)
         db.session.commit()
 

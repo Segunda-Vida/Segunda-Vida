@@ -26,12 +26,6 @@ export const Navbar = () => {
 		setPassword("");
 	};
 
-	useEffect(() => {
-		if (store.message !== null) {
-			alert(store.message);
-		}
-	}, store.message);
-
 	const forgotPassword = () => {
 		actions.forgotPassword(emailForgot);
 		setEmailForgot("");
