@@ -172,13 +172,12 @@ export const Navbar = () => {
 															value={password}
 															onChange={e => setPassword(e.target.value)}
 														/>
-														<Link to="/Perfil">
-															<button
-																className="btn btn-outline-success my-2 my-sm-0"
-																onClick={() => login()}>
-																<i className="fas fa-sign-in-alt"> Entrar</i>
-															</button>
-														</Link>
+
+														<button
+															className="btn btn-outline-success my-2 my-sm-0"
+															onClick={() => login()}>
+															<i className="fas fa-sign-in-alt"> Entrar</i>
+														</button>
 													</>
 												</div>
 
