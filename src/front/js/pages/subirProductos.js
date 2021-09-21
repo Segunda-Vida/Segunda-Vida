@@ -62,6 +62,7 @@ export const SubirProductos = () => {
 					className="modal fade"
 					id="myModal4"
 					tabIndex="-1"
+					role="dialog"
 					aria-labelledby="exampleModalLabel"
 					aria-hidden="true">
 					<div className="modal-dialog">
