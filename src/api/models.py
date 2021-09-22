@@ -70,6 +70,12 @@ class Product(db.Model):
         product = Product(name = name, price = price, description = description, brand = brand)
         db.session.add(product)
         db.session.commit()
+    
+    def getProduct(id):
+        product = Product.query.get(id)
+        if product is None:
+            return {"msg":"Este producto no existe"}
+        product = Product.serialize(product)
+        return product
 
-          
     

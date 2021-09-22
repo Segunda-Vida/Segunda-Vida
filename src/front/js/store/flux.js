@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			products: [],
 			message: null,
+			product: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -184,6 +185,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("data", data);
 					})
 					.catch(error => console.log("[ERROR TO UPLOADO FILE]", error));
+			},
+			getProduct: id => {
+				const store = getStore();
+
+				fetch(process.env.BACKEND_URL + `/api/product/${id}`, {
+					headers: ["GET"],
+					headers: {
+						"Content-type": "application/json"
+					}
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(resp => {
+						console.log("resp", resp);
+
+						setStore({ product: resp });
+					});
 			}
 		}
 	};

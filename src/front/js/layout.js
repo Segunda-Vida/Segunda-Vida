@@ -6,8 +6,8 @@ import { Home } from "./pages/home";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Inicio } from "./pages/inicio";
-import { ProducDetail } from "./pages/producDetail";
 import { Perfil } from "./pages/perfil";
+import { ProductDetail } from "./pages/productDetail";
 
 import { Footer } from "./component/footer";
 import Products from "./pages/products";
@@ -35,9 +35,10 @@ const Layout = () => {
 						<Route exact path="/home">
 							<Home />
 						</Route>
-						<Route exact path="/producDetail">
-							<ProducDetail />
+						<Route exact path="/productDetail/:id">
+							<ProductDetail />
 						</Route>
+
 						<Route exact path="/perfil">
 							<Perfil />
 						</Route>

@@ -95,3 +95,10 @@ def getProducts():
     products = Product.getAllProducts()
 
     return jsonify({"data": products})
+
+@api.route("/product/<int:id>",methods=["GET"])
+def getProduct(id):
+
+    product = Product.getProduct(id)
+    return jsonify(product),200
+
