@@ -55,16 +55,17 @@ export const SubirProductos = () => {
 						type="button"
 						className="btn  btn-outline-success my-2 my-sm0"
 						data-toggle="modal"
-						data-target="#myModal4">
+						data-target="#staticBackdrop">
 						<i className="fas fa-bath"> Electrodomesticos</i>
 					</button>
 					<h1></h1>
 					<div
 						className="modal fade"
-						id="myModal4"
+						id="staticBackdrop"
+						data-backdrop="static"
+						data-keyboard="false"
 						tabIndex="-1"
-						role="dialog"
-						aria-labelledby="exampleModalLabel"
+						aria-labelledby="staticBackdropLabel"
 						aria-hidden="true">
 						<div className="modal-dialog">
 							<div className="modal-content">
