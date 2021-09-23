@@ -264,8 +264,8 @@ export const SubirProductos = () => {
 				</div>
 			</div>
 			<div>
-				<Link to="/ProductDetail">
-					<button>Tus productos en venta</button>
+				<Link to="/ProductDetail/1">
+					<button>Entrar</button>
 				</Link>
 			</div>
 			<div>

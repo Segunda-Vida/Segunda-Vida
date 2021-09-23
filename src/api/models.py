@@ -77,5 +77,10 @@ class Product(db.Model):
             return {"msg":"Este producto no existe"}
         product = Product.serialize(product)
         return product
+    
+    def getPrAll():
+        products = Product.query.all()
+        products = list(map(lambda product : product.serialize(), products))
+        return products
 
     

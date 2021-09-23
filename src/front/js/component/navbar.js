@@ -191,16 +191,15 @@ export const Navbar = () => {
 														data-target="#myModal3">
 														<i className="fas fa-key"> Recuperar contraseña</i>
 													</button>
-													{store.isRegistered ? null : (
-														<button
-															type="submit"
-															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0"
-															data-toggle="modal"
-															data-target="#myModal2">
-															<i className="fas fa-address-book"> Registrar</i>
-														</button>
-													)}
+
+													<button
+														type="submit"
+														name="submitSave"
+														className="btn btn-outline-success my-2 my-sm-0"
+														data-toggle="modal"
+														data-target="#myModal2">
+														<i className="fas fa-address-book"> Registrar</i>
+													</button>
 												</div>
 											</div>
 										</div>

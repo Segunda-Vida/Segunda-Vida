@@ -36,6 +36,10 @@ export const Home = () => {
 		setText(text);
 	};
 
+	useEffect(() => {
+		actions.getPrAll();
+	}, []);
+
 	return (
 		<div className="container">
 			<Navbar />
@@ -54,9 +58,9 @@ export const Home = () => {
 				)}
 			</div>
 
-			<Link to="/ProductDetail/1">
-				<button>Entrar</button>
-			</Link>
+			{store.list.map(item => {
+				return <div key={item.id}>{item.name}</div>;
+			})}
 		</div>
 	);
 };

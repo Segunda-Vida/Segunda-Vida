@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			list: [],
 			products: [],
 			message: null,
 			product: [],
@@ -204,6 +205,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("resp", resp);
 
 						setStore({ product: resp });
+					});
+			},
+			getPrAll: () => {
+				const store = getStore();
+
+				fetch(process.env.BACKEND_URL + "/api/product")
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(json => {
+						console.log("producto", json);
+						setStore({ list: json.producto });
 					});
 			}
 		}
