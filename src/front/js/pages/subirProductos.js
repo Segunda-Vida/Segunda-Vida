@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import Axios from "axios";
 import { Image } from "cloudinary-react";
 import { Navbar } from "../component/navbar";
+import { Link } from "react-router-dom";
 
 export const SubirProductos = () => {
 	const { store, actions } = useContext(Context);
@@ -262,7 +263,11 @@ export const SubirProductos = () => {
 					</div>
 				</div>
 			</div>
-
+			<div>
+				<Link to="/ProductDetail">
+					<button>Tus productos en venta</button>
+				</Link>
+			</div>
 			<div>
 				<h1>Electrodomesticos</h1>
 				<div className="card-deck">
