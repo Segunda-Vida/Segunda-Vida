@@ -5,6 +5,7 @@ import "../../styles/home.scss";
 import { Navbar } from "../component/navbar";
 
 import { Link } from "react-router-dom";
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
@@ -59,7 +60,22 @@ export const Home = () => {
 			</div>
 
 			{store.list.map(item => {
-				return <div key={item.id}>{item.name}</div>;
+				return (
+					<div className="card-deck" key={item.id}>
+						<div className="card">
+							<img src="..." className="card-img-top" alt="..." />
+							<div className="card-body">
+								<h5 className="card-title"> {item.name}</h5>
+								<p className="card-text">{item.description}</p>
+								<p className="card-text">
+									<Link to={`/productDetail/${item.id}`}>
+										<button>Para mas detalla pincha aquy</button>
+									</Link>
+								</p>
+							</div>
+						</div>
+					</div>
+				);
 			})}
 		</div>
 	);
