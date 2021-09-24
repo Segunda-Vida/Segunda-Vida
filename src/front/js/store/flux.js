@@ -171,9 +171,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				fetch(process.env.BACKEND_URL + "/upload/profile", {
 					method: "POST",
-					headers: {
-						"Content-Type": "multipart/form-data"
-					},
+
 					body: formData
 				})
 					.then(resp => {

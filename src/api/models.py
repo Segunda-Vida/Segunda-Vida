@@ -10,6 +10,7 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     nickname = db. Column(db.String(16), unique=True, nullable= False)
 
+
     def __repr__(self):
         return '<User %r>' % self.email
 
@@ -45,6 +46,8 @@ class Product(db.Model):
     brand = db.Column(db.String(100), nullable=False)
     price = db.Column(db.String(200), nullable=False)
     description = db.Column(db.String(200), nullable=False)
+    product_image_url = db.Column(db.String(255), unique=False, nullable=True)
+
 
     def __repr__(self):
         return '<Product %r>' % self.name
@@ -58,7 +61,8 @@ class Product(db.Model):
             "name": self.name,
             "brand": self.brand,
             "price": self.price,
-            "description": self.description
+            "description": self.description,
+            " product_image_url": self. product_image_url
         }
     
     def getAllProducts():

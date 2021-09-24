@@ -9,19 +9,14 @@ from flask_mail import Message
 from werkzeug.utils import secure_filename
 import base64
 import os
+import cloudinary
+import cloudinary.uploader
 
 api = Blueprint('api', __name__)
 
 UPLOAD_FOLDER="uploads/"
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend"
-    }
-
-    return jsonify(response_body), 200
 
 @api.route('/login', methods=['POST'])
 def sign_in():
@@ -38,7 +33,7 @@ def sign_in():
         return jsonify({"msg": "Error to create access token"})
 
 
-    return jsonify({"token": token}), 200
+        return jsonify({"token": token}), 200
 
 
 @api.route('/register', methods=['POST'])
@@ -108,3 +103,33 @@ def getPrAll():
     product = Product.getPrAll()
 
     return jsonify({"producto": product}), 200
+
+
+@api.route('/hello', methods=['POST', 'GET'])
+def handle_hello():
+
+    response_body = {
+        "message": "Hello! I'm a message that came from the backend"
+    }
+
+    return jsonify(response_body), 200
+
+@api.route('/profile/image/', methods=["POST"])
+def upload_image():
+    
+    image = request.files['File']
+
+    if image is None:
+        return jsonify({"msg": "Error to get image"}), 400
+    
+    upload_result = cloudinary.uploader.upload(image)
+
+    image = Product.query.get(1)
+
+    image.product_image_url = upload_result['secure_url']
+
+    db.session.commit()
+
+    return jsonify({"msg": "image upload fine"}), 200
+
+   
