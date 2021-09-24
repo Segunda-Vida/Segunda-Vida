@@ -33,7 +33,7 @@ def sign_in():
         return jsonify({"msg": "Error to create access token"})
 
 
-        return jsonify({"token": token}), 200
+    return jsonify({"token": token}), 200
 
 
 @api.route('/register', methods=['POST'])
