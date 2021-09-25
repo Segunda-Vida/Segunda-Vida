@@ -66,17 +66,13 @@ export const Home = () => {
 				return (
 					<div className="card-deck" key={item.id}>
 						<div className="card">
-							<img
-								src={item.product_image_url}
-								className="card-img-top"
-								style={{ width: "100px", height: "160px" }}
-							/>
+							<img src={images[0]} className="card-img-top" style={{ width: "100px", height: "160px" }} />
 							<div className="card-body">
 								<h5 className="card-title"> {item.name}</h5>
 								<p className="card-text">{item.description}</p>
 								<p className="card-text">
 									<Link to={`/productDetail/${item.id}`}>
-										<button>Para mas detalla pincha aquy</button>
+										<button>Para mas detalla pincha aquí</button>
 									</Link>
 								</p>
 							</div>
