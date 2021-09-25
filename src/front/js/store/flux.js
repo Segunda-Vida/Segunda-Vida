@@ -109,20 +109,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ isRegistered: true });
 					});
 			},
-			pushProduct: (name, price, brand, description) => {
+			pushProduct: form => {
 				const store = getStore();
 
 				fetch(process.env.BACKEND_URL + "/api/products", {
 					method: "POST",
 					headers: {
-						"Content-Type": "application/json"
+						Authorization: `Bearer ${localStorage.getItem("token")}`
 					},
-					body: JSON.stringify({
-						name: name,
-						price: price,
-						brand: brand,
-						description: description
-					})
+					body: form
 				})
 					.then(resp => {
 						if (resp.ok) {

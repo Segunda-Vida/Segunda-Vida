@@ -17,7 +17,15 @@ export const SubirProductos = () => {
 	const [description, setDescription] = useState("");
 
 	const pushProduct = () => {
-		actions.pushProduct(name, price, brand, description);
+		const formData = new FormData();
+		console.log(file);
+		formData.append("File", file);
+		formData.append("name", name);
+		formData.append("price", price);
+		formData.append("brand", brand);
+		formData.append("description", description);
+		actions.pushProduct(formData);
+
 		setBrand("");
 		setName("");
 		setPrice("");
@@ -28,13 +36,7 @@ export const SubirProductos = () => {
 		setSelected(true);
 	};
 
-	const uploadFile = () => {
-		const formData = new FormData();
-
-		formData.append("File", file);
-
-		actions.uploadFile(formData);
-	};
+	const uploadFile = () => {};
 
 	const [imageSelected, setImageSelected] = useState("");
 
@@ -106,6 +108,13 @@ export const SubirProductos = () => {
 										value={description}
 										onChange={e => setDescription(e.target.value)}
 									/>
+									<input
+										type="file"
+										onChange={e => {
+											changeFile(e);
+										}}
+									/>
+
 									<button type="submit" onClick={() => pushProduct()}>
 										Subir
 									</button>

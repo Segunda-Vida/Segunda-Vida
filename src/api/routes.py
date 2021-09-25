@@ -4,7 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User,Product
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token, JWTManager
+from flask_jwt_extended import jwt_required,get_jwt_identity,create_access_token, JWTManager
 from flask_mail import Message
 from werkzeug.utils import secure_filename
 import base64
@@ -52,17 +52,25 @@ def sign_up():
     return jsonify({"msg": "User created"}), 200
 
 @api.route("/products",methods=["POST"])
+@jwt_required()
 def subir_p():
-    body = request.get_json()
-    if body is None:
-        return jsonify({"msg": "Boddy is empty or null"})
+   
+    image = request.files['File']
+    print(image)
+    if image is None:
+        return jsonify({"msg": "Error to get image"}), 400
     
-    name = body["name"]
-    price = body["price"]
-    description = body["description"]
-    brand = body["brand"]
+    name = request.form["name"]
+    price = request.form["price"]
+    description = request.form["description"]
+    brand = request.form["brand"]
 
-    Product.createP(name, price, description,brand)
+    upload_result = cloudinary.uploader.upload(image)
+
+    image_url =upload_result['secure_url']
+    user_id= get_jwt_identity()
+
+    Product.createP(name, price, description,brand,image_url,user_id)
 
     return jsonify({"msg": "Producto subido"}),200
 
@@ -114,17 +122,21 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+
 @api.route('/profile/image/', methods=["POST"])
 def upload_image():
+    body=request.get_json()
+    image_id=body["image_id"]
     
     image = request.files['File']
+
 
     if image is None:
         return jsonify({"msg": "Error to get image"}), 400
     
     upload_result = cloudinary.uploader.upload(image)
 
-    image = Product.query.get(1)
+    image = Product.query.get(image_id)
 
     image.product_image_url = upload_result['secure_url']
 
