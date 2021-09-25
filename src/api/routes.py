@@ -11,6 +11,7 @@ import base64
 import os
 import cloudinary
 import cloudinary.uploader
+import json
 
 api = Blueprint('api', __name__)
 
@@ -54,23 +55,30 @@ def sign_up():
 @api.route("/products",methods=["POST"])
 @jwt_required()
 def subir_p():
-   
-    image = request.files['File']
-    print(image)
-    if image is None:
-        return jsonify({"msg": "Error to get image"}), 400
+    file_info = request.form["file_info"]
+    images = []
+
+    for i in range(int(file_info)):
+        image = request.files["file-" + str(i)]
     
+        if image is None:
+            return jsonify({"msg": "Error to get image"}), 400
+
+        upload_result = cloudinary.uploader.upload(image)
+
+        image_url =upload_result['secure_url']    
+
+        images.append(image_url)
+
     name = request.form["name"]
     price = request.form["price"]
     description = request.form["description"]
     brand = request.form["brand"]
-
-    upload_result = cloudinary.uploader.upload(image)
-
-    image_url =upload_result['secure_url']
+    
+    
     user_id= get_jwt_identity()
 
-    Product.createP(name, price, description,brand,image_url,user_id)
+    Product.createP(name, price, description,brand,json.dumps(images),user_id)
 
     return jsonify({"msg": "Producto subido"}),200
 

@@ -47,7 +47,7 @@ class Product(db.Model):
     brand = db.Column(db.String(100), nullable=False)
     price = db.Column(db.String(200), nullable=False)   
     description = db.Column(db.String(200), nullable=False)
-    product_image_url = db.Column(db.String(255), unique=False, nullable=True)
+    product_image_url = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey("user.id"))
 
     def __repr__(self):

@@ -60,10 +60,17 @@ export const Home = () => {
 			</div>
 
 			{store.list.map(item => {
+				let images = JSON.parse(item.product_image_url);
+				console.log(images);
+
 				return (
 					<div className="card-deck" key={item.id}>
 						<div className="card">
-							<img src="..." className="card-img-top" alt="..." />
+							<img
+								src={item.product_image_url}
+								className="card-img-top"
+								style={{ width: "100px", height: "160px" }}
+							/>
 							<div className="card-body">
 								<h5 className="card-title"> {item.name}</h5>
 								<p className="card-text">{item.description}</p>

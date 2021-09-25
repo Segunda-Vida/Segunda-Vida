@@ -16,7 +16,11 @@ export const ProductDetail = () => {
 			<Navbar />
 			<div className="card-deck">
 				<div className="card">
-					<img src="..." className="card-img-top" alt="..." />
+					<img
+						src={store.product.product_image_url}
+						className="card-img-top"
+						style={{ width: "100px", height: "160px" }}
+					/>
 					<div className="card-body">
 						<h1 className="card-title">Nombre: {store.product.name}</h1>
 						<p className="card-text">

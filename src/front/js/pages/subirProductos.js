@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export const SubirProductos = () => {
 	const { store, actions } = useContext(Context);
 	$("#myModal4").modal("hide");
-	const [file, setFile] = useState("");
+	const [file, setFile] = useState([]);
 	const [selected, setSelected] = useState(false);
 
 	const [name, setName] = useState("");
@@ -19,7 +19,11 @@ export const SubirProductos = () => {
 	const pushProduct = () => {
 		const formData = new FormData();
 		console.log(file);
-		formData.append("File", file);
+		for (let i = 0; i < file.length; i++) {
+			formData.append(`file-${i}`, file[i]);
+		}
+
+		formData.append("file_info", file.length);
 		formData.append("name", name);
 		formData.append("price", price);
 		formData.append("brand", brand);
@@ -31,9 +35,14 @@ export const SubirProductos = () => {
 		setPrice("");
 		setDescription("");
 	};
+
 	const changeFile = event => {
-		setFile(event.target.files[0]);
-		setSelected(true);
+		if (event.target.files.length > 3) {
+			alert("Solo puedes subir 3 imágenes");
+		} else {
+			setFile(event.target.files);
+			setSelected(true);
+		}
 	};
 
 	const uploadFile = () => {};
@@ -113,6 +122,7 @@ export const SubirProductos = () => {
 										onChange={e => {
 											changeFile(e);
 										}}
+										multiple
 									/>
 
 									<button type="submit" onClick={() => pushProduct()}>
@@ -276,163 +286,6 @@ export const SubirProductos = () => {
 				<Link to="/ProductDetail/1">
 					<button>Entrar</button>
 				</Link>
-			</div>
-			<div>
-				<h1>Electrodomesticos</h1>
-				<div className="card-deck">
-					<div className="card">
-						<div>
-							<input
-								type="file"
-								onChange={e => {
-									setImageSelected(e.target.files[0]);
-								}}
-							/>
-							<button
-								className="btn btn-outline-success my-2 my-sm0"
-								type="submit"
-								href="#"
-								onClick={uploadImage}>
-								Upload Image
-							</button>
-						</div>
-						<Image
-							cloudName="dguclmq6v"
-							publicId="https://res.cloudinary.com/dguclmq6v/image/upload/v1632062372/gscm9epg7acifjg7ohzz.jpg"
-						/>
-						<div className="card-body">
-							<h5 className="card-title">Card title</h5>
-							<p className="card-text">
-								This is a longer card with supporting text below as a natural lead-in to additional
-								content. This content is a little bit longer.
-							</p>
-							<p className="card-text">
-								<small className="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-
-					<div className="card">
-						<div>
-							<input
-								type="file"
-								onChange={e => {
-									setImageSelected(e.target.files[0]);
-								}}
-							/>
-							<button
-								className="btn btn-outline-success my-2 my-sm0"
-								type="submit"
-								href="#"
-								onClick={uploadImage}>
-								Upload Image
-							</button>
-						</div>
-						<Image
-							cloudName="dguclmq6v"
-							publicId="https://res.cloudinary.com/dguclmq6v/image/upload/v1632062372/gscm9epg7acifjg7ohzz.jpg"
-						/>
-
-						<div className="card-body">
-							<h5 className="card-title">Card title</h5>
-
-							<p className="card-text">
-								<small className="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-					<div className="card">
-						<img src="..." className="card-img-top" alt="..." />
-						<div className="card-body">
-							<h5 className="card-title">Card title</h5>
-							<p className="card-text">
-								This is a wider card with supporting text below as a natural lead-in to additional
-								content. This card has even longer content than the first to show that equal height
-								action.
-							</p>
-							<p className="card-text">
-								<small className="text-muted">Last updated 3 mins ago</small>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<h1>Coches y motos</h1>
-			<div className="card-deck">
-				<div className="card">
-					<div>
-						<input
-							type="file"
-							onChange={e => {
-								setImageSelected(e.target.files[0]);
-							}}
-						/>
-						<button
-							className="btn btn-outline-success my-2 my-sm0"
-							type="submit"
-							href="#"
-							onClick={uploadImage}>
-							Upload Image
-						</button>
-					</div>
-					<Image
-						cloudName="dguclmq6v"
-						publicId="https://res.cloudinary.com/dguclmq6v/image/upload/v1632064037/vdhmz8jdtoy9ue0zo3is.jpg"
-					/>
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">
-							This is a longer card with supporting text below as a natural lead-in to additional content.
-							This content is a little bit longer.
-						</p>
-						<p className="card-text">
-							<small className="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-				</div>
-
-				<div className="card">
-					<div>
-						<input
-							type="file"
-							onChange={e => {
-								setImageSelected(e.target.files[0]);
-							}}
-						/>
-						<button
-							className="btn btn-outline-success my-2 my-sm0"
-							type="submit"
-							href="#"
-							onClick={uploadImage}>
-							Upload Image
-						</button>
-					</div>
-					<Image
-						cloudName="dguclmq6v"
-						publicId="https://res.cloudinary.com/dguclmq6v/image/upload/v1632064037/vdhmz8jdtoy9ue0zo3is.jpg"
-					/>
-
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-
-						<p className="card-text">
-							<small className="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-				</div>
-				<div className="card">
-					<img src="..." className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">
-							This is a wider card with supporting text below as a natural lead-in to additional content.
-							This card has even longer content than the first to show that equal height action.
-						</p>
-						<p className="card-text">
-							<small className="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	);
