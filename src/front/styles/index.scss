@@ -1,3 +1,55 @@
 /* 
     General Styles
 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.checkout-page {
+    background: #fff;
+    width: 60vw;
+    height: 80vh;
+    border: 1px solid #eaeaea;
+    padding: 42px
+}
+
+.head-block {
+    display: flex;
+    border-bottom: 1px solid #eaeaea;
+    text-align: 'center';
+    padding-bottom: 10px;
+    color: #000;
+}
+
+.description {
+    width: 40%;
+}
+
+.quantity {
+    width: 20%;
+}
+
+.remove {
+    width: 20%;
+}
+
+.price {
+    width: 20%;
+}
+
+.item {
+    display: flex;
+    height: 130px;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea
+}
+
+.total {
+    text-align: right;
+    margin-top: 55px;
+    color: #424140
+}

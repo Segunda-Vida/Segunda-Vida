@@ -97,6 +97,15 @@ export const Navbar = () => {
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
+									<Link to="/CheckoutPage">
+										<button
+											className="btn btn-outline-success my-2 my-sm0"
+											type="submit"
+											href="#"
+											style={{ marginRight: "5px" }}>
+											<i className="fas fa-upload"> Pagar</i>
+										</button>
+									</Link>
 									<Link to="/SubirProductos">
 										<button
 											className="btn btn-outline-success my-2 my-sm0"
