@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StripeButton from "../component/StripeButton.js";
 
-const CheckoutPage = () => {
+export const CheckoutPage = () => {
 	const [cart, setCart] = useState([
 		{
 			id: 1,
@@ -53,5 +53,3 @@ const CheckoutPage = () => {
 		</div>
 	);
 };
-
-export default CheckoutPage;
