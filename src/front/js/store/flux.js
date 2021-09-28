@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			list: [],
 			products: [],
 			message: null,
-			product: [],
+			product: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -184,21 +184,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				fetch(process.env.BACKEND_URL + `/api/product/${id}`, {
-					headers: ["GET"],
+					method: "GET",
 					headers: {
 						"Content-type": "application/json"
 					}
 				})
 					.then(resp => {
+						console.log("resp sin json", resp);
 						if (resp.ok) {
 							return resp.json();
 						}
 					})
-					.then(resp => {
-						console.log("resp", resp);
+					.then(data => {
+						console.log("resp", { ...data });
+						console.log(JSON.parse(data.product_image_url)[0]);
 
-						setStore({ product: resp });
-					});
+						setStore({
+							product: { ...data, product_image_url: JSON.parse(data.product_image_url) }
+						});
+					})
+					.catch(error => console.error("[ERROR IN GET PRODUCT D]", error));
 			},
 			getPrAll: () => {
 				const store = getStore();

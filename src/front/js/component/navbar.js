@@ -4,7 +4,6 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
-	$("#exampleModal").modal("hide");
 	$("#myModal").modal("hide");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -12,6 +11,8 @@ export const Navbar = () => {
 	const [recover, setRecover] = useState(false);
 	const [showForgotPassword, setShowForgotPassword] = useState(false);
 	const [emailForgot, setEmailForgot] = useState("");
+
+	const hideSignIn = () => $("#exampleModal").modal("hide");
 
 	const login = () => {
 		actions.login(email, password);
@@ -136,6 +137,7 @@ export const Navbar = () => {
 							) : (
 								<div>
 									<button
+										onClick={() => hideSignIn()}
 										className="btn btn-outline-success my-2 my-sm-0"
 										type="submit"
 										data-toggle="modal"
@@ -193,6 +195,7 @@ export const Navbar = () => {
 
 												<div className="modal-footer">
 													<button
+														onClick={() => hideSignIn()}
 														type="submit"
 														name="submitSave"
 														className="btn btn-outline-success my-2 my-sm-0"
@@ -202,6 +205,7 @@ export const Navbar = () => {
 													</button>
 
 													<button
+														onClick={() => hideSignIn()}
 														type="submit"
 														name="submitSave"
 														className="btn btn-outline-success my-2 my-sm-0"

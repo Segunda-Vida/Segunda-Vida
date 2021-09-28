@@ -72,10 +72,7 @@ export const Home = () => {
 								<p className="card-text">{item.description}</p>
 								<p className="card-text">
 									<Link to={`/productDetail/${item.id}`}>
-										<button
-											type="submit"
-											name="submitSave"
-											className="btn btn-outline-success my-2 my-sm-0">
+										<button name="submitSave" className="btn btn-outline-success my-2 my-sm-0">
 											Para mas detalles, click aquí
 										</button>
 									</Link>
