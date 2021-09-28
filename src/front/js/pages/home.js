@@ -64,9 +64,16 @@ export const Home = () => {
 				console.log(images);
 
 				return (
-					<div className="card-deck" key={item.id}>
+					<div
+						className="container-fluid "
+						key={item.id}
+						style={{ width: "18rem", display: "inline-flex", flexDirection: "column", margin: "30px" }}>
 						<div className="card">
-							<img src={images[0]} className="card-img-top" style={{ width: "100px", height: "160px" }} />
+							<img
+								src={images[0]}
+								className="card-img-top"
+								style={{ width: "100px", height: "160px", alignSelf: "center" }}
+							/>
 							<div className="card-body">
 								<h5 className="card-title"> {item.name}</h5>
 								<p className="card-text">{item.description}</p>

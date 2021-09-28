@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StripeButton from "../component/StripeButton.js";
+import { StripeButton } from "../component/StripeButton.js";
 
 export const CheckoutPage = () => {
 	const [cart, setCart] = useState([

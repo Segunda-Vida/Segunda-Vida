@@ -98,7 +98,7 @@ export const Navbar = () => {
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
-									<Link to="/CheckoutPage">
+									<Link to="/checkout">
 										<button
 											className="btn btn-outline-success my-2 my-sm0"
 											type="submit"
@@ -185,9 +185,14 @@ export const Navbar = () => {
 														/>
 														<Link to="/Perfil">
 															<button
-																className="btn btn-outline-success my-2 my-sm-0"
-																onClick={() => login()}>
-																<i className="fas fa-sign-in-alt"> Entrar</i>
+																onClick={() => hideSignIn()}
+																className="btn btn-outline-success my-2 my-sm-0">
+																<i
+																	onClick={() => login()}
+																	className="fas fa-sign-in-alt">
+																	{" "}
+																	Entrar
+																</i>
 															</button>
 														</Link>
 													</>
