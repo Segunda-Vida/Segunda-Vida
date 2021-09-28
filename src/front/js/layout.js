@@ -8,7 +8,7 @@ import injectContext from "./store/appContext";
 import { Inicio } from "./pages/inicio";
 import { Perfil } from "./pages/perfil";
 import { ProductDetail } from "./pages/productDetail";
-
+import { ProductProfile } from "./pages/productProfile";
 import { Footer } from "./component/footer";
 import Products from "./pages/products";
 import { SubirProductos } from "./pages/subirProductos";
@@ -44,6 +44,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/perfil">
 							<Perfil />
+						</Route>
+						<Route exact path="/productProfile/:user_id?">
+							<ProductProfile />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

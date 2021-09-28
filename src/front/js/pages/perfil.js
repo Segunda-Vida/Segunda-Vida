@@ -1,11 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar";
-import Axios from "axios";
-import { Image } from "cloudinary-react";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export const Perfil = () => {
 	const [nickname, setNickname] = useState("");
+
+	const { store, actions } = useContext(Context);
+
+	const { user_id } = useParams();
+
+	useEffect(user_id => {
+		actions.getPrUser(user_id);
+	}, []);
 
 	return (
 		<div className="container">
@@ -45,7 +53,16 @@ export const Perfil = () => {
 					</ul>
 				</div>
 			</div>
-			<div></div>
+			<div>
+				<Link to="/productProfile">
+					<button
+						onClick={() => {
+							store.user_p;
+						}}>
+						VAAAAAAA
+					</button>
+				</Link>
+			</div>
 		</div>
 	);
 };

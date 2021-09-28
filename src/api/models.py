@@ -89,4 +89,10 @@ class Product(db.Model):
         products = list(map(lambda product : product.serialize(), products))
         return products
 
+    def getPrUser(user_id):
+        product = Product.query.get(user_id)
+        if product is None:
+            return {"msg":"Este producto no existe"}
+        product = Product.serialize(product)
+        return product
     

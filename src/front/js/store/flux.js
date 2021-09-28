@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			products: [],
 			message: null,
 			product: null,
+			user_p: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -217,6 +218,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(json => {
 						console.log("producto", json);
 						setStore({ list: json.producto });
+					});
+			},
+			getPrUser: user_id => {
+				const store = getStore();
+				fetch(process.env.BACKEND_URL + `/api/product/${1}`, {
+					method: "GET",
+					headers: {
+						"Content-type": "application/json"
+					}
+				})
+					.then(resp => {
+						console.log("resp NO", resp);
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(info => {
+						console.log("info", info);
+						setStore({ user_p: info });
 					});
 			}
 		}
