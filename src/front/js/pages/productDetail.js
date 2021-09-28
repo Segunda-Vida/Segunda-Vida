@@ -15,6 +15,14 @@ export const ProductDetail = () => {
 			console.log("producto detail", store.product);
 		}, 3000);
 	}, []);
+
+	const otherImages = array => {
+		let temp = [];
+		for (let i = 1; i < array.length; i++) {
+			temp.push(array[i]);
+		}
+		return temp;
+	};
 	return !!store.product ? (
 		<div>
 			<div className="container" style={{ margin: "50px" }}>
@@ -40,6 +48,9 @@ export const ProductDetail = () => {
 						</p>
 					</div>
 				</div>
+				{otherImages(store.product.product_image_url).map((item, key) => (
+					<img key={key} src={item} />
+				))}
 			</div>
 		</div>
 	) : (
