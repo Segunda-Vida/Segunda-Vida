@@ -11,7 +11,7 @@ export const Perfil = () => {
 
 	const { user_id } = useParams();
 
-	useEffect(user_id => {
+	useEffect(() => {
 		actions.getPrUser(user_id);
 	}, []);
 
@@ -54,13 +54,8 @@ export const Perfil = () => {
 				</div>
 			</div>
 			<div>
-				<Link to="/productProfile">
-					<button
-						onClick={() => {
-							store.user_p;
-						}}>
-						VAAAAAAA
-					</button>
+				<Link to={`/productProfile/${user_id}`}>
+					<button>VAAAAAAA</button>
 				</Link>
 			</div>
 		</div>

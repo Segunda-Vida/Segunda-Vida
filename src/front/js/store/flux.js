@@ -222,7 +222,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getPrUser: user_id => {
 				const store = getStore();
-				fetch(process.env.BACKEND_URL + `/api/product/${1}`, {
+				fetch(process.env.BACKEND_URL + `/api/product/${user_id}`, {
 					method: "GET",
 					headers: {
 						"Content-type": "application/json"
