@@ -75,8 +75,15 @@ export const Home = () => {
 								style={{ width: "100px", height: "160px", alignSelf: "center" }}
 							/>
 							<div className="card-body">
-								<h5 className="card-title"> {item.name}</h5>
-								<p className="card-text">{item.description}</p>
+								<h5
+									className="card-title"
+									style={{ borderBottom: "3px solid green", textAlign: "center" }}>
+									{" "}
+									{item.name}
+								</h5>
+								<p className="card-text" style={{ borderBottom: "1px solid black" }}>
+									{item.description}
+								</p>
 								<p className="card-text">
 									<Link to={`/productDetail/${item.id}`}>
 										<button name="submitSave" className="btn btn-outline-success my-2 my-sm-0">

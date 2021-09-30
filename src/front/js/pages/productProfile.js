@@ -10,8 +10,7 @@ export const ProductProfile = () => {
 	const { user_id } = useParams();
 
 	useEffect(() => {
-		actions.getProduct(id);
-		actions.getPrAll(user_id);
+		actions.getPrUser(user_id);
 	}, []);
 
 	return (

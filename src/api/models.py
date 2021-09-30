@@ -90,7 +90,7 @@ class Product(db.Model):
         return products
 
     def getPrUser(user_id):
-        product = Product.query.get(user_id)
+        product = Product.query.filter_by(user_id)
         if product is None:
             return {"msg":"Este producto no existe"}
         product = Product.serialize(product)
