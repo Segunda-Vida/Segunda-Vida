@@ -98,13 +98,43 @@ export const Navbar = () => {
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
+									<button
+										className="btn btn-outline-success my-2 my-sm0"
+										type="submit"
+										href="#"
+										style={{ marginRight: "5px" }}>
+										<i className="fas fa-shopping-cart"> Carrito</i>
+										<span> ({store.cart.length})</span>
+										<div
+											className={store.cart.length > 0 ? "dropdown-menu show" : "d-none"}
+											aria-labelledby="dropdownMenuButton"
+											style={{ display: "list-item" }}>
+											{store.cart.map((item, index) => {
+												return (
+													<div className="container" key={index}>
+														<li className="drop-item" href="#" style={{ display: "none" }}>
+															{item.name}
+														</li>
+														<button
+															data-display="static"
+															onClick={() => {
+																actions.quitCart(item);
+															}}>
+															<i className="fas fa-trash-alt"></i>
+														</button>
+													</div>
+												);
+											})}
+										</div>
+									</button>
+
 									<Link to="/checkout">
 										<button
 											className="btn btn-outline-success my-2 my-sm0"
 											type="submit"
 											href="#"
 											style={{ marginRight: "5px" }}>
-											<i className="fas fa-upload"> Pagar</i>
+											<i className="fab fa-cc-stripe"> Pagar</i>
 										</button>
 									</Link>
 									<Link to="/SubirProductos">

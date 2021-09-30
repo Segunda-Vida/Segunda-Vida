@@ -10,7 +10,7 @@ export const ProductDetail = () => {
 
 	useEffect(() => {
 		actions.getProduct(id);
-
+		actions.getPrAll();
 		setTimeout(() => {
 			console.log("producto detail", store.product);
 		}, 3000);
@@ -25,6 +25,7 @@ export const ProductDetail = () => {
 	};
 	return !!store.product ? (
 		<div>
+			<Navbar />
 			<div className="container" style={{ margin: "50px" }}>
 				<div className="card-deck, row">
 					<div className="card, col-6">
@@ -36,16 +37,29 @@ export const ProductDetail = () => {
 					<div className="card-body">
 						<h1 className="card-title">Nombre: {store.product.name}</h1>
 						<p className="card-text">
-							<h3>Marca</h3>
-							<h4>{store.product.brand}</h4>
-							<h3>Description</h3>
-							<h4>{store.product.description}</h4>
-							<h3>Precio</h3>
-							<h4>{store.product.price}</h4>
+							<h3>Marca: {store.product.brand}</h3>
+
+							<h3>Description: {store.product.description}</h3>
+
+							<h3>Precio: {store.product.price}</h3>
 						</p>
-						<p className="card-text">
-							<small className="text-muted">Last updated 3 mins ago</small>
-						</p>
+
+						{store.cart.length > 0 && store.cart.includes(store.product) ? (
+							<button className="btn btn-warning" style={{ marginRight: "5px" }}>
+								<i className="fas fa-cart-arrow-down"> Ya en el carrito</i>
+							</button>
+						) : (
+							<button
+								className="btn btn-outline-success my-2 my-sm0"
+								type="submit"
+								href="#"
+								style={{ marginRight: "5px" }}>
+								<i className="fas fa-cart-arrow-down" onClick={() => actions.AddCart(store.product)}>
+									{" "}
+									Añadir al carrito
+								</i>
+							</button>
+						)}
 					</div>
 				</div>
 				{otherImages(store.product.product_image_url).map((item, key) => (

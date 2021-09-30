@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import Products from "./pages/products";
 import { SubirProductos } from "./pages/subirProductos";
 import { CheckoutPage } from "./pages/checkout";
+import { Cart } from "./pages/cart";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -47,6 +48,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/productProfile">
 							<ProductProfile />
+						</Route>
+						<Route exact path="/cart">
+							<Cart />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

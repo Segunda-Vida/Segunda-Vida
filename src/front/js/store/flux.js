@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			cart: [],
 			list: [],
 			products: [],
 			message: null,
@@ -239,6 +240,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("info", info);
 						setStore({ user_p: info });
 					});
+			},
+			AddCart: newItem => {
+				let storeCopy = getStore();
+				let cartAdd = storeCopy.cart.concat(newItem);
+				setStore({ cart: cartAdd });
+			},
+			quitCart: element => {
+				let storeCopy = getStore();
+				let quitCart = storeCopy.cart.filter((item, index) => {
+					return item !== element;
+				});
+				setStore({ cart: quitCart });
 			}
 		}
 	};
