@@ -220,12 +220,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ list: json.producto });
 					});
 			},
-			getPrUser: user_id => {
+			getPrUser: () => {
 				const store = getStore();
-				fetch(process.env.BACKEND_URL + `/api/productP/${user_id}`, {
+				fetch(process.env.BACKEND_URL + `/api/productP`, {
 					method: "GET",
 					headers: {
-						"Content-type": "application/json"
+						"Content-type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
 					}
 				})
 					.then(resp => {

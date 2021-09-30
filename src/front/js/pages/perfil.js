@@ -54,7 +54,7 @@ export const Perfil = () => {
 				</div>
 			</div>
 			<div>
-				<Link to={`/productProfile/${user_id}`}>
+				<Link to={`/productProfile`}>
 					<button>VAAAAAAA</button>
 				</Link>
 			</div>

@@ -153,9 +153,9 @@ def upload_image():
 
     return jsonify({"msg": "image upload fine"}), 200
 
-@api.route("/productP/<int:user_id>", methods=["GET"])
-@jwt_required
-def getPrUser(user_id):
-        product = Product.getProduct(user_id)
+@api.route("/productP", methods=["GET"])
+@jwt_required()
+def getPrUser():
         user_id= get_jwt_identity()
+        product = Product.getPrUser(user_id)
         return jsonify(product),200
