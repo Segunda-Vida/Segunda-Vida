@@ -10,7 +10,7 @@ export const Cart = () => {
 
 	const removeItem = () => console.log("remove");
 
-	const total = store.cart.reduce((acc, cur) => acc + cur.id * cur.price, 0);
+	const total = store.cart.reduce((acc, cur) => acc + 1 * cur.price, 0);
 
 	useEffect(() => {
 		actions.getProduct(id);
@@ -32,33 +32,54 @@ export const Cart = () => {
 		<div>
 			<Navbar />
 
-			{store.cart.map((item, key) => (
-				<div className="container" style={{ margin: "50px" }} key={key}>
-					<div className="card-deck, row">
-						<div className="card, col-6">
-							<div>
-								<img src={item.product_image_url[0]} className="card-img-top" alt="..." />
+			<div className="container">
+				<div className="table" style={{ border: "3px solid green", display: "table" }}>
+					<div className="theader" style={{ display: "table-header-group" }}>
+						<div className="tr" style={{ display: "table-row" }}>
+							<div className="th" style={{ display: "table-cell" }}>
+								<strong>Imagen</strong>
 							</div>
-						</div>
-
-						<div className="card-body">
-							<h1 className="card-title">Nombre: {item.name}</h1>
-							<p className="card-text">
-								<h3>Marca: {item.brand}</h3>
-
-								<h3>Description: {item.description}</h3>
-
-								<div className="remove" onClick={() => removeItem(item)}>
-									X
-								</div>
-
-								<h3>Precio: {item.price}</h3>
-							</p>
+							<div className="th" style={{ display: "table-cell" }}>
+								<strong>Producto</strong>
+							</div>
+							<div className="th" style={{ display: "table-cell" }}>
+								<strong>Precio</strong>
+							</div>
+							<div className="th" style={{ display: "table-cell" }}></div>
 						</div>
 					</div>
+
+					<div className="tbody" style={{ display: "table-row-group" }}>
+						{store.cart.map((item, key) => (
+							<div className="tr" style={{ display: "table-row" }} key={key}>
+								<div className="td" style={{ display: "table-cell" }}>
+									<img src={item.product_image_url[0]} style={{ height: "50px", width: "50px" }} />
+								</div>
+								<div className="td" style={{ display: "table-cell" }}>
+									{item.name}
+								</div>
+								<div className="td" style={{ display: "table-cell" }}>
+									{item.price}
+								</div>
+
+								<div className="td" style={{ display: "table-cell" }}>
+									<button
+										className="remove btn btn-outline-success my-2 my-sm0"
+										onClick={() => actions.quitCart(item)}
+										type="submit"
+										href="#">
+										<i className="far fa-trash-alt"></i>
+									</button>
+								</div>
+							</div>
+						))}
+					</div>
 				</div>
-			))}
-			<div className="total">Total: ${total}</div>
+			</div>
+
+			<div className="total" style={{ alignSelf: "center" }}>
+				Total: ${total}
+			</div>
 			<StripeButton totalAmount={total} />
 		</div>
 	);
