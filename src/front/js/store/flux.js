@@ -243,8 +243,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			AddCart: newItem => {
 				let storeCopy = getStore();
-				let cartAdd = storeCopy.cart.concat(newItem);
-				setStore({ cart: cartAdd });
+				let cart = storeCopy.cart;
+				if (cart.length > 0) {
+					for (let i = 0; i < cart.length; i++) {
+						if (cart[i].id === newItem.id) {
+							alert("El producto esta en el carito");
+						} else {
+							let item = { ...newItem, quantity: 1 };
+							cart.push(item);
+							localStorage.setItem("cart", JSON.stringify(cart));
+							setStore({ cart: cart });
+						}
+					}
+				} else {
+					let item = { ...newItem, quantity: 1 };
+					cart.push(item);
+					localStorage.setItem("cart", JSON.stringify(cart));
+					setStore({ cart: cart });
+				}
 			},
 			quitCart: element => {
 				let storeCopy = getStore();
