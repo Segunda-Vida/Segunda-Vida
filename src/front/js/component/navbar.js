@@ -111,15 +111,6 @@ export const Navbar = () => {
 										</button>
 									</Link>
 
-									<Link to="/checkout">
-										<button
-											className="btn btn-outline-success my-2 my-sm0"
-											type="submit"
-											href="#"
-											style={{ marginRight: "5px" }}>
-											<i className="fab fa-cc-stripe"> Pagar</i>
-										</button>
-									</Link>
 									<Link to="/SubirProductos">
 										<button
 											className="btn btn-outline-success my-2 my-sm0"

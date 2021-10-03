@@ -33,19 +33,21 @@ export const Cart = () => {
 			<Navbar />
 
 			<div className="container">
-				<div className="table" style={{ border: "3px solid green", display: "table" }}>
+				<div className="table" style={{ border: "3px solid green", display: "table", marginTop: "50px" }}>
 					<div className="theader" style={{ display: "table-header-group" }}>
 						<div className="tr" style={{ display: "table-row" }}>
-							<div className="th" style={{ display: "table-cell" }}>
+							<div className="th" style={{ display: "table-cell", borderBottom: "3px solid green" }}>
 								<strong>Imagen</strong>
 							</div>
-							<div className="th" style={{ display: "table-cell" }}>
+							<div className="th" style={{ display: "table-cell", borderBottom: "3px solid green" }}>
 								<strong>Producto</strong>
 							</div>
-							<div className="th" style={{ display: "table-cell" }}>
+							<div className="th" style={{ display: "table-cell", borderBottom: "3px solid green" }}>
 								<strong>Precio</strong>
 							</div>
-							<div className="th" style={{ display: "table-cell" }}></div>
+							<div
+								className="th"
+								style={{ display: "table-cell", borderBottom: "3px solid green" }}></div>
 						</div>
 					</div>
 
@@ -76,12 +78,12 @@ export const Cart = () => {
 					</div>
 					<div className="tfooter" style={{ display: "table-footer-group", justifyContent: "center" }}>
 						<div className="tr" style={{ display: "table-row" }}>
-							<div className="td" style={{ display: "table-cell" }}></div>
-							<div className="td" style={{ display: "table-cell" }}></div>
-							<div className="td" style={{ display: "table-cell" }}>
+							<div className="td" style={{ display: "table-cell", borderTop: "3px solid green" }}></div>
+							<div className="td" style={{ display: "table-cell", borderTop: "3px solid green" }}></div>
+							<div className="td" style={{ display: "table-cell", borderTop: "3px solid green" }}>
 								<strong>Total: {total}€</strong>
 							</div>
-							<div className="td" style={{ display: "table-cell" }}>
+							<div className="td" style={{ display: "table-cell", borderTop: "3px solid green" }}>
 								<StripeButton totalAmount={total} />
 							</div>
 						</div>

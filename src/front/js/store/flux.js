@@ -247,7 +247,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (cart.length > 0) {
 					for (let i = 0; i < cart.length; i++) {
 						if (cart[i].id === newItem.id) {
-							alert("El producto esta en el carito");
+							alert("El producto ya está en el carrito");
 						} else {
 							let item = { ...newItem, quantity: 1 };
 							cart.push(item);
