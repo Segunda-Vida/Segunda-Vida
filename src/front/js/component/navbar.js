@@ -78,11 +78,11 @@ export const Navbar = () => {
 				</button>
 
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<form className="form-inline my-2 my-lg-0">
+					<form className="form-inline my-2 my-lg-0 ">
 						<div>
 							<input
 								type="text"
-								className="col-md-12 input"
+								className="col-md-12 input  border border-success rounded form-control"
 								onChange={e => onChangeHandler(e.target.value)}
 								value={text}
 							/>
@@ -96,7 +96,7 @@ export const Navbar = () => {
 								</Link>
 							))}
 					</form>
-					<ul className="navbar-nav">
+					<ul className="navbar-nav ml-auto">
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
