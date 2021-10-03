@@ -5,6 +5,7 @@ import "../../styles/home.scss";
 import { Navbar } from "../component/navbar";
 
 import { Link } from "react-router-dom";
+import { nominalTypeHack } from "prop-types";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -39,24 +40,28 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.getPrAll();
+		actions.getPrUser();
+		actions.getUserNick();
 	}, []);
 
 	return (
 		<div>
 			<Navbar />
 			<div className="container">
-				<div className="text-center mt-5">
-					<div className="container"></div>
-				</div>
+				<div className="text-center mt-5"></div>
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
 						<div>
-							<h1>Bienvenido</h1>
+							{store.user_nick.map((item, key) => (
+								<div key={key}>
+									<h2>Hola {item.nickname} Bienvenido</h2>
+								</div>
+							))}
 						</div>
 					) : (
-						<>
-							<h1>Registrate</h1>
-						</>
+						<div>
+							<h1>Bienvenido</h1>
+						</div>
 					)}
 				</div>
 

@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			message: null,
 			product: null,
 			user_p: [],
+			user_nick: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -268,6 +269,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return item !== element;
 				});
 				setStore({ cart: quitCart });
+			},
+			getUserNick: () => {
+				const store = getStore();
+				fetch(process.env.BACKEND_URL + "/api/user", {
+					method: "GET",
+					headers: {
+						"Content-type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						}
+					})
+					.then(resp => {
+						console.log("userNik", resp);
+						setStore({ user_nick: resp.nicks });
+					});
 			}
 		}
 	};

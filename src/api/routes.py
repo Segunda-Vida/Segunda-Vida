@@ -159,3 +159,11 @@ def getPrUser():
         user_id= get_jwt_identity()
         product = Product.getPrUser(user_id)
         return jsonify(product),200
+
+@api.route("/user",methods=["GET"])
+@jwt_required()
+def getUserNick():
+    usersNicks= get_jwt_identity()
+    usersNicks = User.getUserNick()
+    return jsonify({"nicks": usersNicks})
+   

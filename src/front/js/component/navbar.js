@@ -82,7 +82,7 @@ export const Navbar = () => {
 						<div>
 							<input
 								type="text"
-								className="col-md-12 input  border border-success rounded form-control"
+								className="col-md-12 input  border border-success rounded form-control input-lg"
 								onChange={e => onChangeHandler(e.target.value)}
 								value={text}
 							/>
@@ -187,18 +187,15 @@ export const Navbar = () => {
 															value={password}
 															onChange={e => setPassword(e.target.value)}
 														/>
-														<Link to="/Perfil">
-															<button
-																onClick={() => hideSignIn()}
-																className="btn btn-outline-success my-2 my-sm-0">
-																<i
-																	onClick={() => login()}
-																	className="fas fa-sign-in-alt">
-																	{" "}
-																	Entrar
-																</i>
-															</button>
-														</Link>
+
+														<button
+															onClick={() => hideSignIn()}
+															className="btn btn-outline-success my-2 my-sm-0">
+															<i onClick={() => login()} className="fas fa-sign-in-alt">
+																{" "}
+																Entrar
+															</i>
+														</button>
 													</>
 												</div>
 

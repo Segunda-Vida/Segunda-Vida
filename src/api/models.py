@@ -19,6 +19,7 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "nickname":self.nickname,
             # do not serialize the password, its a security breach
         }
     def getUser(email, password):
@@ -40,6 +41,11 @@ class User(db.Model):
         db.session.commit()
 
         return password
+    
+    def getUserNick():
+        usersNicks= User.query.all()
+        usersNicks = list(map(lambda user : user.serialize(), usersNicks))
+        return usersNicks
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -96,3 +102,4 @@ class Product(db.Model):
         product = list(map(lambda product : product.serialize(), product))
         return product
     
+  
