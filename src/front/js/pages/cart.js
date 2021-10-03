@@ -74,13 +74,20 @@ export const Cart = () => {
 							</div>
 						))}
 					</div>
+					<div className="tfooter" style={{ display: "table-footer-group", justifyContent: "center" }}>
+						<div className="tr" style={{ display: "table-row" }}>
+							<div className="td" style={{ display: "table-cell" }}></div>
+							<div className="td" style={{ display: "table-cell" }}></div>
+							<div className="td" style={{ display: "table-cell" }}>
+								<strong>Total: {total}€</strong>
+							</div>
+							<div className="td" style={{ display: "table-cell" }}>
+								<StripeButton totalAmount={total} />
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div className="total" style={{ alignSelf: "center" }}>
-				Total: ${total}
-			</div>
-			<StripeButton totalAmount={total} />
 		</div>
 	);
 };
