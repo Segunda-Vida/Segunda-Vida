@@ -82,7 +82,7 @@ export const Navbar = () => {
 						<div>
 							<input
 								type="text"
-								className="col-md-12 input  border border-success rounded form-control input-lg"
+								className="col-md-12 input   rounded form-control input-lg"
 								onChange={e => onChangeHandler(e.target.value)}
 								value={text}
 							/>
