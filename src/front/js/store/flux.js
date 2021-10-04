@@ -285,8 +285,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					})
 					.then(resp => {
-						console.log("userNik", resp);
-						setStore({ user_nick: resp.nicks });
+						if (resp) {
+							console.log("userNik", resp);
+							setStore({ user_nick: resp.nicks });
+						} else {
+							setStore({ user_nick: resp });
+						}
 					});
 			}
 		}

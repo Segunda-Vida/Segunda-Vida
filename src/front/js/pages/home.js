@@ -52,11 +52,12 @@ export const Home = () => {
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
 						<div>
-							{store.user_nick.map((item, key) => (
-								<div key={key}>
-									<h2>Hola {item.nickname} Bienvenido</h2>
-								</div>
-							))}
+							{!!store.user_nick &&
+								store.user_nick.map((item, key) => (
+									<div key={key}>
+										<h2>Hola {item.nickname} Bienvenido</h2>
+									</div>
+								))}
 						</div>
 					) : (
 						<div>
