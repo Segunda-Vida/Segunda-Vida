@@ -40,9 +40,11 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.getPrAll();
-		actions.getPrUser();
 		actions.getUserNick();
-	}, []);
+		if (store.isAuthenticate) {
+			actions.getPrUser();
+		}
+	}, [store.isAuthenticate]);
 
 	return (
 		<div>

@@ -76,7 +76,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			signOut: () => {
 				localStorage.removeItem("token");
-				setStore({ isAuthenticate: false });
+				setStore({ isAuthenticate: false, user_nick: [] });
 			},
 
 			verifySession: () => {

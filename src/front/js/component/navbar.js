@@ -17,6 +17,7 @@ export const Navbar = () => {
 	const hideSignIn = () => $("#exampleModal").modal("hide");
 
 	const login = () => {
+		hideSignIn();
 		actions.login(email, password);
 		setEmail("");
 		setPassword("");
@@ -188,9 +189,7 @@ export const Navbar = () => {
 															onChange={e => setPassword(e.target.value)}
 														/>
 
-														<button
-															onClick={() => hideSignIn()}
-															className="btn btn-outline-success my-2 my-sm-0">
+														<button className="btn btn-outline-success my-2 my-sm-0">
 															<i onClick={() => login()} className="fas fa-sign-in-alt">
 																{" "}
 																Entrar
