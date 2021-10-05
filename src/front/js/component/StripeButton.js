@@ -3,6 +3,7 @@ import StripeCheckout from "react-stripe-checkout";
 import PropTypes from "prop-types";
 
 export const StripeButton = props => {
+	console.log(props.totalAmount);
 	const getToken = token => {
 		console.log("pago", token);
 	};
@@ -17,7 +18,9 @@ export const StripeButton = props => {
 			panelLabel="Pagar ahora"
 			token={getToken}
 			stripeKey="pk_test_Dt4ZBItXSZT1EzmOd8yCxonL"
-			amount={props.totalAmount}
+			amount={parseInt(props.totalAmount * 100)}
+			currency="EUR"
+			locale="es"
 		/>
 	);
 };

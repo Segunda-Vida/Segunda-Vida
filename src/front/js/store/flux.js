@@ -250,15 +250,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (cart[i].id === newItem.id) {
 							alert("El producto ya está en el carrito");
 						} else {
-							let item = { ...newItem, quantity: 1 };
-							cart.push(item);
+							cart.push(newItem);
 							localStorage.setItem("cart", JSON.stringify(cart));
 							setStore({ cart: cart });
 						}
 					}
 				} else {
-					let item = { ...newItem, quantity: 1 };
-					cart.push(item);
+					cart.push(newItem);
 					localStorage.setItem("cart", JSON.stringify(cart));
 					setStore({ cart: cart });
 				}

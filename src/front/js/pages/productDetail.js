@@ -31,12 +31,29 @@ export const ProductDetail = () => {
 				<div className="card-deck, row">
 					<div className="card, col-6">
 						<div>
-							<img src={store.product.product_image_url[0]} className="card-img-top" alt="..." />
+							<img
+								src={store.product.product_image_url[0]}
+								className="card-img-top"
+								alt="..."
+								style={{ width: "100px", height: "200px", margin: "5px", border: "1px solid black" }}
+							/>
+							{otherImages(store.product.product_image_url).map((item, key) => (
+								<img
+									key={key}
+									src={item}
+									style={{
+										width: "100px",
+										height: "200px",
+										margin: "5px",
+										border: "1px solid black"
+									}}
+								/>
+							))}
 						</div>
 					</div>
 
 					<div className="card-body">
-						<h1 className="card-title">Nombre: {store.product.name}</h1>
+						<h3 className="card-title">Nombre: {store.product.name}</h3>
 						<p className="card-text">
 							<h3>Marca: {store.product.brand}</h3>
 
@@ -63,9 +80,6 @@ export const ProductDetail = () => {
 						)}
 					</div>
 				</div>
-				{otherImages(store.product.product_image_url).map((item, key) => (
-					<img key={key} src={item} />
-				))}
 			</div>
 		</div>
 	) : (

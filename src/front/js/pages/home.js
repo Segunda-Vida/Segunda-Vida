@@ -50,7 +50,6 @@ export const Home = () => {
 		<div>
 			<Navbar />
 			<div className="container">
-				<div className="text-center mt-5"></div>
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
 						<div>
@@ -76,7 +75,7 @@ export const Home = () => {
 							className="container-fluid "
 							key={item.id}
 							style={{ width: "18rem", display: "inline-flex", flexDirection: "column", margin: "30px" }}>
-							<div className="card">
+							<div className="card" style={{ border: "1px solid black" }}>
 								<img
 									src={images[0]}
 									className="card-img-top"

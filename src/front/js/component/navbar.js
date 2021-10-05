@@ -90,7 +90,7 @@ export const Navbar = () => {
 						</div>
 						{suggestions &&
 							suggestions.map((suggestion, i) => (
-								<Link key={i} to={`/products/${suggestion.name}`}>
+								<Link key={i} to="/productDetail/:id?">
 									<div className="suggestion col-md-12 justify-content-md-center">
 										{suggestion.name}
 									</div>
