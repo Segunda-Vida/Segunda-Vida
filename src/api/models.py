@@ -42,10 +42,10 @@ class User(db.Model):
 
         return password
     
-    def getUserNick():
-        usersNicks= User.query.all()
-        usersNicks = list(map(lambda user : user.serialize(), usersNicks))
-        return usersNicks
+    def getUserNick(user_id):
+        usersNicks= User.query.filter_by(id=user_id).first()
+        user =  usersNicks.serialize()
+        return user
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
