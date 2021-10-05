@@ -17,7 +17,7 @@ export const StripeButton = props => {
 			description={`Tu total es ${props.totalAmount}`}
 			panelLabel="Pagar ahora"
 			token={getToken}
-			stripeKey="pk_test_Dt4ZBItXSZT1EzmOd8yCxonL"
+			stripeKey="pk_test_51JhJX3IHIDAJZNNpBOQGK09lpcxR0mnbaLwZ9garvNQ6SgxyQQEaWEeDFPMZwqMZeG4OhIpuWG0Wmy3HUVAWjuJ300Eqw3gDlE"
 			amount={parseInt(props.totalAmount * 100)}
 			currency="EUR"
 			locale="es"

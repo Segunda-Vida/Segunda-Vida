@@ -29,27 +29,51 @@ export const ProductDetail = () => {
 			<Navbar />
 			<div className="container" style={{ margin: "50px" }}>
 				<div className="card-deck, row">
-					<div className="card, col-6">
-						<div>
-							<img
-								src={store.product.product_image_url[0]}
-								className="card-img-top"
-								alt="..."
-								style={{ width: "100px", height: "200px", margin: "5px", border: "1px solid black" }}
-							/>
-							{otherImages(store.product.product_image_url).map((item, key) => (
+					<div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+						<div className="carousel-inner">
+							<div className="carousel-item active">
 								<img
-									key={key}
-									src={item}
+									src={store.product.product_image_url[0]}
+									className="card-img-top"
+									alt="..."
 									style={{
-										width: "100px",
-										height: "200px",
+										width: "200px",
+										height: "400px",
 										margin: "5px",
 										border: "1px solid black"
 									}}
 								/>
+							</div>
+							{otherImages(store.product.product_image_url).map((item, key) => (
+								<div className="carousel-item" key={key}>
+									<img
+										src={item}
+										style={{
+											width: "200px",
+											height: "400px",
+											margin: "5px",
+											border: "1px solid black"
+										}}
+									/>
+								</div>
 							))}
 						</div>
+						<a
+							className="carousel-control-prev"
+							href="#carouselExampleControls"
+							role="button"
+							data-slide="prev">
+							<span className="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span className="sr-only">Previous</span>
+						</a>
+						<a
+							className="carousel-control-next"
+							href="#carouselExampleControls"
+							role="button"
+							data-slide="next">
+							<span className="carousel-control-next-icon" aria-hidden="true"></span>
+							<span className="sr-only">Next</span>
+						</a>
 					</div>
 
 					<div className="card-body">
