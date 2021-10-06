@@ -157,7 +157,7 @@ export const Navbar = () => {
 										aria-labelledby="exampleModalLabel"
 										aria-hidden="true">
 										<div className="modal-dialog" role="document">
-											<div className="modal-content">
+											<div className="modal-content" style={{ width: "600px" }}>
 												<div className="modal-header">
 													<h5 className="modal-title" id="exampleModalLabel">
 														Hola
@@ -175,27 +175,32 @@ export const Navbar = () => {
 												</div>
 
 												<div className="text-center mt-5">
-													<>
+													<div style={{ display: "flex" }}>
 														<input
+															className="form-control"
 															type="email"
 															placeholder="Ingresar correo electronico"
 															value={email}
+															style={{ width: "250px", margin: "10px" }}
 															onChange={e => setEmail(e.target.value)}
 														/>
 														<input
+															className="form-control"
 															type="password"
 															placeholder="Ingresar contraseña"
 															value={password}
+															style={{ width: "200px", margin: "10px" }}
 															onChange={e => setPassword(e.target.value)}
 														/>
-
-														<button className="btn btn-outline-success my-2 my-sm-0">
+														<button
+															className="btn btn-outline-success my-2 my-sm-0"
+															style={{ margin: "10px" }}>
 															<i onClick={() => login()} className="fas fa-sign-in-alt">
 																{" "}
 																Entrar
 															</i>
 														</button>
-													</>
+													</div>
 												</div>
 
 												<div className="modal-footer">
@@ -205,18 +210,20 @@ export const Navbar = () => {
 														name="submitSave"
 														className="btn btn-outline-success my-2 my-sm-0"
 														data-toggle="modal"
-														data-target="#myModal3">
-														<i className="fas fa-key"> Recuperar contraseña</i>
+														data-target="#myModal2"
+														style={{ margin: "140px" }}>
+														<i className="fas fa-address-book"> Registrar</i>
 													</button>
-
+													<br />
 													<button
 														onClick={() => hideSignIn()}
 														type="submit"
 														name="submitSave"
 														className="btn btn-outline-success my-2 my-sm-0"
 														data-toggle="modal"
-														data-target="#myModal2">
-														<i className="fas fa-address-book"> Registrar</i>
+														data-target="#myModal3"
+														style={{ margin: "140px" }}>
+														<i className="fas fa-key"> Recuperar contraseña</i>
 													</button>
 												</div>
 											</div>

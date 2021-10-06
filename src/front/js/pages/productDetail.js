@@ -29,7 +29,7 @@ export const ProductDetail = () => {
 			<Navbar />
 			<center>
 				<div className="container">
-					<div className="card-deck">
+					<div className="card-deck" style={{ display: "inline-block" }}>
 						<div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 							<div className="carousel-inner">
 								<div className="carousel-item active">
@@ -39,7 +39,7 @@ export const ProductDetail = () => {
 										alt="..."
 										style={{
 											width: "300px",
-											height: "600px",
+											height: "400px",
 											margin: "5px",
 											border: "1px solid black"
 										}}
@@ -51,7 +51,7 @@ export const ProductDetail = () => {
 											src={item}
 											style={{
 												width: "300px",
-												height: "600px",
+												height: "400px",
 												margin: "5px",
 												border: "1px solid black"
 											}}
