@@ -170,7 +170,7 @@ export const Navbar = () => {
 														<span aria-hidden="true">&times;</span>
 													</button>
 												</div>
-												<div className="modal-body">
+												<div className="modal-body" style={{ textAlign: "center" }}>
 													<h4>Login</h4>
 												</div>
 
@@ -203,28 +203,32 @@ export const Navbar = () => {
 													</div>
 												</div>
 
-												<div className="modal-footer">
-													<button
-														onClick={() => hideSignIn()}
-														type="submit"
-														name="submitSave"
-														className="btn btn-outline-success my-2 my-sm-0"
-														data-toggle="modal"
-														data-target="#myModal2"
-														style={{ margin: "140px" }}>
-														<i className="fas fa-address-book"> Registrar</i>
-													</button>
-													<br />
-													<button
-														onClick={() => hideSignIn()}
-														type="submit"
-														name="submitSave"
-														className="btn btn-outline-success my-2 my-sm-0"
-														data-toggle="modal"
-														data-target="#myModal3"
-														style={{ margin: "140px" }}>
-														<i className="fas fa-key"> Recuperar contraseña</i>
-													</button>
+												<div
+													className="modal-footer"
+													style={{ display: "block", textAlign: "center" }}>
+													<div style={{ margin: "10px" }}>
+														<button
+															onClick={() => hideSignIn()}
+															type="submit"
+															name="submitSave"
+															className="btn btn-outline-success my-2 my-sm-0"
+															data-toggle="modal"
+															data-target="#myModal2">
+															<i className="fas fa-address-book"> Registrar</i>
+														</button>
+													</div>
+													<div style={{ margin: "10px" }}>
+														<button
+															onClick={() => hideSignIn()}
+															type="submit"
+															name="submitSave"
+															className="btn btn-outline-success my-2 my-sm-0"
+															data-toggle="modal"
+															data-target="#myModal3"
+															style={{ margin: "20px" }}>
+															<i className="fas fa-key"> Recuperar contraseña</i>
+														</button>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -257,6 +261,7 @@ export const Navbar = () => {
 							</div>
 							<div className="modal-footer">
 								<input
+									className="form-control"
 									type="nickname"
 									placeholder="Ingresar nickname"
 									value={nickname}
@@ -264,25 +269,29 @@ export const Navbar = () => {
 								/>
 
 								<input
+									className="form-control"
 									type="email"
 									placeholder="Ingresar correo electronico"
 									value={email}
 									onChange={e => setEmail(e.target.value)}
 								/>
 								<input
+									className="form-control"
 									type="password"
 									placeholder="Ingresar contraseña"
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
-								<button
-									className="btn btn-outline-success my-2 my-sm-0"
-									data-dismiss="modal"
-									aria-hidden="true"
-									type="submit"
-									onClick={() => register()}>
-									¡Comienza ya!
-								</button>
+								<div style={{ justifyContent: "center" }}>
+									<button
+										className="btn btn-outline-success my-2 my-sm-0"
+										data-dismiss="modal"
+										aria-hidden="true"
+										type="submit"
+										onClick={() => register()}>
+										¡Comienza ya!
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -302,6 +311,7 @@ export const Navbar = () => {
 						<div className="modal-body">Introduce tu mail para recuperación de contraseña</div>
 						<div className="modal-footer">
 							<input
+								className="form-control"
 								type="email"
 								placeholder="Ingresar correo electronico"
 								value={emailForgot}
