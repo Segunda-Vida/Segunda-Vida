@@ -22,6 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			isAuthenticate: false,
 			isRegistered: false,
+			isBougth: false,
 			isProfile: process.env.BACKEND_URL + "/perfil"
 		},
 		actions: {
@@ -290,6 +291,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 							setStore({ user_nick: "" });
 						}
 					});
+			},
+			siEstaComprado: () => {
+				let gord = 0;
 			}
 		}
 	};

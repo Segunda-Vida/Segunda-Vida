@@ -84,7 +84,10 @@ export const Cart = () => {
 								<strong>Total: {total}€</strong>
 							</div>
 							<div className="td" style={{ display: "table-cell", borderTop: "1px solid green" }}>
-								<StripeButton totalAmount={total} />
+								<button>
+									{" "}
+									<StripeButton totalAmount={total} />
+								</button>
 							</div>
 						</div>
 					</div>
