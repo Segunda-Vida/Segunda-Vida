@@ -91,51 +91,58 @@ export const SubirProductos = () => {
 								</div>
 								<div className="modal-body">
 									<input
+										className="form-control"
 										type="text"
 										placeholder="nombre del producto"
 										value={name}
+										style={{ marginBottom: "10px" }}
 										onChange={e => setName(e.target.value)}
 									/>
 
 									<input
+										className="form-control"
 										type="number"
 										placeholder="precio del producto"
 										value={price}
+										style={{ marginBottom: "10px" }}
 										onChange={e => setPrice(e.target.value)}
 									/>
 
 									<input
+										className="form-control"
 										type="text"
 										placeholder="el brand del producto"
 										value={brand}
+										style={{ marginBottom: "10px" }}
 										onChange={e => setBrand(e.target.value)}
 									/>
 
 									<input
+										className="form-control"
 										type="text"
-										placeholder="description del producto"
+										placeholder="descripcion del producto"
 										value={description}
+										style={{ marginBottom: "10px" }}
 										onChange={e => setDescription(e.target.value)}
 									/>
-									<input
-										type="file"
-										onChange={e => {
-											changeFile(e);
-										}}
-										multiple
-									/>
 
-									<button type="submit" onClick={() => pushProduct()}>
-										Subir
-									</button>
-								</div>
-								<div className="modal-footer">
-									<button type="button" className="btn btn-secondary" data-dismiss="modal">
-										Close
-									</button>
-									<button type="button" className="btn btn-primary">
-										Save changes
-									</button>
+									<div style={{ display: "flex" }}>
+										<input
+											className="form-control "
+											type="file"
+											style={{ marginBottom: "10px" }}
+											onChange={e => {
+												changeFile(e);
+											}}
+											multiple
+										/>
+										<h1
+											className="btn btn-outline-success my-2 my-sm-0"
+											type="submit"
+											onClick={() => pushProduct()}>
+											Subir
+										</h1>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -169,6 +176,7 @@ export const SubirProductos = () => {
 								</div>
 								<div className="modal-body">
 									<input
+										className="form-control"
 										type="text"
 										placeholder="nombre del producto"
 										value={name}
@@ -176,6 +184,7 @@ export const SubirProductos = () => {
 									/>
 
 									<input
+										className="form-control"
 										type="number"
 										placeholder="precio del producto"
 										value={price}
@@ -183,6 +192,7 @@ export const SubirProductos = () => {
 									/>
 
 									<input
+										className="form-control"
 										type="text"
 										placeholder="el brand del producto"
 										value={brand}
@@ -190,6 +200,7 @@ export const SubirProductos = () => {
 									/>
 
 									<input
+										className="form-control"
 										type="text"
 										placeholder="description del producto"
 										value={description}
@@ -239,6 +250,7 @@ export const SubirProductos = () => {
 								</div>
 								<div className="modal-body">
 									<input
+										className="form-control"
 										type="text"
 										placeholder="nombre del producto"
 										value={name}
@@ -246,6 +258,7 @@ export const SubirProductos = () => {
 									/>
 
 									<input
+										className="form-control"
 										type="number"
 										placeholder="precio del producto"
 										value={price}
@@ -253,6 +266,7 @@ export const SubirProductos = () => {
 									/>
 
 									<input
+										className="form-control"
 										type="text"
 										placeholder="el brand del producto"
 										value={brand}
@@ -260,6 +274,7 @@ export const SubirProductos = () => {
 									/>
 
 									<input
+										className="form-control"
 										type="text"
 										placeholder="description del producto"
 										value={description}

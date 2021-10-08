@@ -160,14 +160,14 @@ export const Navbar = () => {
 											<div className="modal-content" style={{ width: "600px" }}>
 												<div className="modal-header">
 													<h5 className="modal-title" id="exampleModalLabel">
-														Hola
+														Bienvenidos a Segunda Vida
 													</h5>
 													<button
 														type="button"
-														className="close"
+														className="close "
 														data-dismiss="modal"
 														aria-label="Close">
-														<span aria-hidden="true">&times;</span>
+														<i className="fas fa-sign-out-alt"></i>
 													</button>
 												</div>
 												<div className="modal-body" style={{ textAlign: "center" }}>
@@ -252,7 +252,7 @@ export const Navbar = () => {
 							<div className="modal-header">
 								<h4 className="modal-title">Registrarse</h4>
 								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
-									×
+									<i className="fas fa-sign-out-alt"></i>
 								</button>
 							</div>
 							<div className="container"></div>
@@ -304,7 +304,7 @@ export const Navbar = () => {
 						<div className="modal-header">
 							<h4 className="modal-title">Recuperar contraseña</h4>
 							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
-								×
+								<i className="fas fa-sign-out-alt"></i>
 							</button>
 						</div>
 						<div className="container"></div>
