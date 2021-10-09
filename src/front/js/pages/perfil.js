@@ -13,6 +13,7 @@ export const Perfil = () => {
 
 	useEffect(() => {
 		actions.getPrUser(user_id);
+		actions.devolProd();
 	}, []);
 
 	$("#myModal4").modal("hide");
@@ -61,6 +62,7 @@ export const Perfil = () => {
 				<div className="row">
 					<div className="col" style={{ textAlign: "center" }}>
 						<div style={{ display: "block" }}>
+							<h1>{store.devolutionProd.name}lol</h1>
 							<div>
 								<button
 									type="button"

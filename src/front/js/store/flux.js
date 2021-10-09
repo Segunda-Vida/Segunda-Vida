@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			devolutionProd: [],
 			cart: [],
 			list: [],
 			products: [],
@@ -295,24 +296,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					});
 			},
-			devolProd: newItem => {
+			devolProd: () => {
+				const store = getStore();
+
 				let storeCopy = getStore();
-				let cart = storeCopy.cart;
-				if (cart.length > 0) {
-					for (let i = 0; i < cart.length; i++) {
-						if (cart[i].id === newItem.id) {
-							alert("El producto ya está en el carrito");
-						} else {
-							cart.push(newItem);
-							localStorage.setItem("cart", JSON.stringify(cart));
-							setStore({ cart: cart });
-						}
-					}
-				} else {
-					cart.push(newItem);
-					localStorage.setItem("cart", JSON.stringify(cart));
-					setStore({ cart: cart });
-				}
+				let devolutionProd = storeCopy.cart;
+				setStore({ devolutionProd: devolutionProd });
+				console.log("dev prod", devolutionProd);
 			}
 		}
 	};
