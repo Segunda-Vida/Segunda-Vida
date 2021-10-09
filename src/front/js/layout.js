@@ -11,7 +11,7 @@ import { ProductDetail } from "./pages/productDetail";
 import { ProductProfile } from "./pages/productProfile";
 import { Footer } from "./component/footer";
 import Products from "./pages/products";
-import { SubirProductos } from "./pages/subirProductos";
+
 import { CheckoutPage } from "./pages/checkout";
 import { Cart } from "./pages/cart";
 //create your first component
@@ -28,9 +28,7 @@ const Layout = () => {
 						<Route exact path="/">
 							<Inicio />
 						</Route>
-						<Route exact path="/subirProductos">
-							<SubirProductos />
-						</Route>
+
 						<Route exact path="/products/:text">
 							<Products />
 						</Route>

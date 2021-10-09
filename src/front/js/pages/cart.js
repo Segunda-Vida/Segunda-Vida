@@ -17,17 +17,14 @@ export const Cart = () => {
 		actions.getPrAll();
 	}, []);
 
-	useEffect(() => {
-		actions.getProduct(id);
-		actions.getPrAll();
-	}, []);
-	const otherImages = array => {
+	const otherImages = imgList => {
 		let temp = [];
-		for (let i = 1; i < array.length; i++) {
-			temp.push(array[i]);
+		for (let i = 1; i < imgList.length; i++) {
+			temp.push(imgList[i]);
 		}
 		return temp;
 	};
+
 	return (
 		<div>
 			<Navbar />

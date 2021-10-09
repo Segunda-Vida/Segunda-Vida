@@ -269,6 +269,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 				setStore({ cart: quitCart });
 			},
+			deleteCart: () => {
+				setStore({ cart: [] });
+			},
 			getUserNick: () => {
 				const store = getStore();
 				fetch(process.env.BACKEND_URL + "/api/user", {
@@ -292,8 +295,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					});
 			},
-			siEstaComprado: () => {
-				let gord = 0;
+			devolProd: newItem => {
+				let storeCopy = getStore();
+				let cart = storeCopy.cart;
+				if (cart.length > 0) {
+					for (let i = 0; i < cart.length; i++) {
+						if (cart[i].id === newItem.id) {
+							alert("El producto ya está en el carrito");
+						} else {
+							cart.push(newItem);
+							localStorage.setItem("cart", JSON.stringify(cart));
+							setStore({ cart: cart });
+						}
+					}
+				} else {
+					cart.push(newItem);
+					localStorage.setItem("cart", JSON.stringify(cart));
+					setStore({ cart: cart });
+				}
 			}
 		}
 	};

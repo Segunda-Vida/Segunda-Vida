@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import StripeCheckout from "react-stripe-checkout";
-import PropTypes from "prop-types";
+import PropTypes, { element } from "prop-types";
+import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const StripeButton = props => {
-	console.log(props.totalAmount);
+	const { store, actions } = useContext(Context);
+
+	let history = useHistory();
+
 	const getToken = token => {
 		console.log("pago", token);
+		if (token) {
+			actions.devolProd();
+			actions.deleteCart();
+			history.push("/home");
+			alert("Tu compra se ha realizado correctamente");
+		} else {
+			console.log("No se ha podido realizar tu compra");
+		}
 	};
 
 	return (

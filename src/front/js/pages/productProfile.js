@@ -47,7 +47,7 @@ export const ProductProfile = () => {
 									style={{ width: "100px", height: "160px", alignSelf: "center" }}
 								/>
 								<div className="card-body">
-									<h5 className="card-title"> {item.user_id}</h5>
+									<h5 className="card-title"> {item.name}</h5>
 									<p className="card-text">{item.description}</p>
 									<p className="card-text">
 										<Link to={`/productDetail/${item.id}`}>

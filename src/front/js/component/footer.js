@@ -6,7 +6,7 @@ export const Footer = () => (
 		style={{ position: "fixed", height: "100px", width: "100%", bottom: "0" }}>
 		<div style={{ display: "flex" }}>
 			<div style={{ width: "300px", justifyContent: "left" }}>
-				<p>Términos y condiciones</p>
+				<p style={{ marginTop: "20px" }}>Términos y condiciones</p>
 			</div>
 
 			<div
