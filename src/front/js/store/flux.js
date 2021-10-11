@@ -255,12 +255,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 							cart.push(newItem);
 							localStorage.setItem("cart", JSON.stringify(cart));
 							setStore({ cart: cart });
+							setStore({ devolutionProd: cart });
 						}
 					}
 				} else {
 					cart.push(newItem);
 					localStorage.setItem("cart", JSON.stringify(cart));
 					setStore({ cart: cart });
+					setStore({ devolutionProd: cart });
 				}
 			},
 			quitCart: element => {
@@ -269,6 +271,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return item !== element;
 				});
 				setStore({ cart: quitCart });
+				setStore({ devolutionProd: quitCart });
 			},
 			deleteCart: () => {
 				setStore({ cart: [] });
@@ -295,14 +298,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 							setStore({ user_nick: "" });
 						}
 					});
-			},
-			devolProd: () => {
-				const store = getStore();
-
-				let storeCopy = getStore();
-				let devolutionProd = storeCopy.cart;
-				setStore({ devolutionProd: devolutionProd });
-				console.log("dev prod", devolutionProd);
 			}
 		}
 	};

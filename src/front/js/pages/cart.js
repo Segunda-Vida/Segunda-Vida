@@ -11,6 +11,7 @@ export const Cart = () => {
 	const removeItem = () => console.log("remove");
 
 	const total = store.cart.reduce((acc, cur) => acc + 1 * cur.price, 0);
+	const iva = store.cart.reduce((acc, cur) => acc + 1 * cur.price * 1.21, 0);
 
 	useEffect(() => {
 		actions.getProduct(id);
@@ -45,6 +46,9 @@ export const Cart = () => {
 							<div
 								className="th"
 								style={{ display: "table-cell", borderBottom: "1px solid green" }}></div>
+							<div
+								className="th"
+								style={{ display: "table-cell", borderBottom: "1px solid green" }}></div>
 						</div>
 					</div>
 
@@ -70,6 +74,7 @@ export const Cart = () => {
 										<i className="far fa-trash-alt"></i>
 									</button>
 								</div>
+								<div className="td" style={{ display: "table-cell" }}></div>
 							</div>
 						))}
 					</div>
@@ -78,13 +83,13 @@ export const Cart = () => {
 							<div className="td" style={{ display: "table-cell", borderTop: "1px solid green" }}></div>
 							<div className="td" style={{ display: "table-cell", borderTop: "1px solid green" }}></div>
 							<div className="td" style={{ display: "table-cell", borderTop: "1px solid green" }}>
-								<strong>Total: {total}€</strong>
+								<strong>Total sin IVA: {total}€</strong>
 							</div>
 							<div className="td" style={{ display: "table-cell", borderTop: "1px solid green" }}>
-								<button>
-									{" "}
-									<StripeButton totalAmount={total} />
-								</button>
+								<strong>Total con Iva: {iva}€</strong>
+							</div>
+							<div className="td" style={{ display: "table-cell", borderTop: "1px solid green" }}>
+								<StripeButton totalAmount={iva} />
 							</div>
 						</div>
 					</div>
