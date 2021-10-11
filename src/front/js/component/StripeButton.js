@@ -12,6 +12,7 @@ export const StripeButton = props => {
 	const getToken = token => {
 		console.log("pago", token);
 		if (token) {
+			actions.devProd();
 			actions.deleteCart();
 			history.push("/home");
 			alert("Tu compra se ha realizado correctamente");

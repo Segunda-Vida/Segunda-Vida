@@ -183,6 +183,7 @@ export const Perfil = () => {
 						<div className="tr" style={{ display: "table-row" }} key={item.id}>
 							<div className="td" style={{ display: "table-cell" }}>
 								<h1>{item.name}</h1>
+								<img src={item.product_image_url[0]} />
 							</div>
 						</div>
 					);
