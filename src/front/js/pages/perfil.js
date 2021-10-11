@@ -54,8 +54,6 @@ export const Perfil = () => {
 		}
 	};
 
-	console.log("devolucion", store.devolutionProd);
-
 	return (
 		<div className="imgFondo">
 			<Navbar />

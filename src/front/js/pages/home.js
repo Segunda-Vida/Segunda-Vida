@@ -41,10 +41,16 @@ export const Home = () => {
 	useEffect(() => {
 		actions.getPrAll();
 		actions.getUserNick();
+
 		if (store.isAuthenticate) {
 			actions.getPrUser();
 		}
-	}, [store.isAuthenticate]);
+		if (store.isBought) {
+			actions.devProd();
+		}
+	}, [store.isAuthenticate, store.isBought]);
+
+	console.log("ID", store.list);
 
 	return (
 		<div>
@@ -65,7 +71,6 @@ export const Home = () => {
 						</div>
 					)}
 				</div>
-
 				{store.list.map(item => {
 					let images = JSON.parse(item.product_image_url);
 					console.log(images);
@@ -74,7 +79,12 @@ export const Home = () => {
 						<div
 							className="container-fluid "
 							key={item.id}
-							style={{ width: "18rem", display: "inline-flex", flexDirection: "column", margin: "30px" }}>
+							style={{
+								width: "18rem",
+								display: "inline-flex",
+								flexDirection: "column",
+								margin: "30px"
+							}}>
 							<div className="card" style={{ border: "1px solid black" }}>
 								<img
 									src={images[0]}

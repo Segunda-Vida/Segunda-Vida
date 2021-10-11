@@ -301,6 +301,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let storeCopy = getStore();
 				let devol = storeCopy.cart;
 				setStore({ devolutionProd: devol });
+				if (devol) {
+					setStore({ isBougth: true });
+				}
 			}
 		}
 	};

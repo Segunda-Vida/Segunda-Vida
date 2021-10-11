@@ -118,7 +118,7 @@ export const Navbar = () => {
 											type="submit"
 											href="#"
 											style={{ marginRight: "5px" }}>
-											<i className="fas fa-shopping-cart"> Devoluciones</i>
+											<i className="fas fa-hand-holding-usd">Devoluciones</i>
 											<span> ({store.devolutionProd.length})</span>
 										</button>
 									</Link>
