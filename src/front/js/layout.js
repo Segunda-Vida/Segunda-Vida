@@ -11,7 +11,7 @@ import { ProductDetail } from "./pages/productDetail";
 import { ProductProfile } from "./pages/productProfile";
 import { Footer } from "./component/footer";
 import Products from "./pages/products";
-
+import { Devolucion } from "./pages/devolucion";
 import { CheckoutPage } from "./pages/checkout";
 import { Cart } from "./pages/cart";
 //create your first component
@@ -49,6 +49,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/cart">
 							<Cart />
+						</Route>
+						<Route exact path="/devolucion">
+							<Devolucion />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

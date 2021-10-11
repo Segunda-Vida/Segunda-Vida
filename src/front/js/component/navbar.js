@@ -112,7 +112,18 @@ export const Navbar = () => {
 										</button>
 									</Link>
 
-									<Link to="Perfil">
+									<Link to="/devolucion">
+										<button
+											className="btn btn-outline-success my-2 my-sm0"
+											type="submit"
+											href="#"
+											style={{ marginRight: "5px" }}>
+											<i className="fas fa-shopping-cart"> Devoluciones</i>
+											<span> ({store.devolutionProd.length})</span>
+										</button>
+									</Link>
+
+									<Link to="/Perfil">
 										<button
 											className="btn btn-outline-success my-2 my-sm0"
 											type="submit"
