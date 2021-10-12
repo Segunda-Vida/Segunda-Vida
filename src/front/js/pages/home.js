@@ -41,16 +41,14 @@ export const Home = () => {
 	useEffect(() => {
 		actions.getPrAll();
 		actions.getUserNick();
+		actions.bought();
 
 		if (store.isAuthenticate) {
 			actions.getPrUser();
 		}
-		if (store.isBought) {
-			actions.devProd();
-		}
-	}, [store.isAuthenticate, store.isBought]);
+	}, [store.isAuthenticate]);
 
-	console.log("ID", store.list);
+	console.log("comprado", store.isBougth);
 
 	return (
 		<div>
@@ -74,44 +72,49 @@ export const Home = () => {
 				{store.list.map(item => {
 					let images = JSON.parse(item.product_image_url);
 					console.log(images);
-
-					return (
-						<div
-							className="container-fluid "
-							key={item.id}
-							style={{
-								width: "18rem",
-								display: "inline-flex",
-								flexDirection: "column",
-								margin: "30px"
-							}}>
-							<div className="card" style={{ border: "1px solid black" }}>
-								<img
-									src={images[0]}
-									className="card-img-top"
-									style={{ width: "100px", height: "160px", alignSelf: "center" }}
-								/>
-								<div className="card-body">
-									<h5
-										className="card-title"
-										style={{ borderBottom: "3px solid green", textAlign: "center" }}>
-										{" "}
-										{item.name}
-									</h5>
-									<p className="card-text" style={{ borderBottom: "1px solid black" }}>
-										{item.description}
-									</p>
-									<p className="card-text">
-										<Link to={`/productDetail/${item.id}`}>
-											<button name="submitSave" className="btn btn-outline-success my-2 my-sm-0">
-												Para mas detalles, click aquí
-											</button>
-										</Link>
-									</p>
+					if (item === store.devolutionProd && store.isBougth === true) {
+						return null;
+					} else {
+						return (
+							<div
+								className="container-fluid "
+								key={item.id}
+								style={{
+									width: "18rem",
+									display: "inline-flex",
+									flexDirection: "column",
+									margin: "30px"
+								}}>
+								<div className="card" style={{ border: "1px solid black" }}>
+									<img
+										src={images[0]}
+										className="card-img-top"
+										style={{ width: "100px", height: "160px", alignSelf: "center" }}
+									/>
+									<div className="card-body">
+										<h5
+											className="card-title"
+											style={{ borderBottom: "3px solid green", textAlign: "center" }}>
+											{" "}
+											{item.name}
+										</h5>
+										<p className="card-text" style={{ borderBottom: "1px solid black" }}>
+											{item.description}
+										</p>
+										<p className="card-text">
+											<Link to={`/productDetail/${item.id}`}>
+												<button
+													name="submitSave"
+													className="btn btn-outline-success my-2 my-sm-0">
+													Para mas detalles, click aquí
+												</button>
+											</Link>
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					);
+						);
+					}
 				})}
 			</div>
 		</div>
