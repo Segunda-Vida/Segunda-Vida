@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+
+
+
+
 #li1{
     margin-top: 16px;
     margin-left: 100px !important
 }
 body{
-    background-color:#eceff1;
+   
+    background: linear-gradient(to right,rgb(19, 161, 19), #ffffff)
 
 }
 
@@ -20,4 +26,28 @@ body{
     color:rgb(5, 109, 5);
     text-decoration:"none";
     cursor:pointer
+}
+#Titulo{
+    font-family: 'Akronim', cursive;
+    font-size: 10em;
+    color:green
+}
+#Titulo2{
+    font-family: 'Akronim', cursive;
+    font-size: 3em;
+    
+}
+#Titulo3{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    
+}
+#p1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
+    
+}
+#cardTitle{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
 }

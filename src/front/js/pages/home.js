@@ -59,15 +59,20 @@ export const Home = () => {
 						<div>
 							{!!store.user_nick && (
 								<div>
-									<h2>Hola {store.user_nick.nickname} Bienvenido</h2>
+									<h2 id="Titulo2">Hola {store.user_nick.nickname} Bienvenido</h2>
 								</div>
 							)}
 						</div>
 					) : (
 						<div>
-							<h1>Bienvenido</h1>
+							<h2 id="Titulo2">Bienvenido</h2>
 						</div>
 					)}
+				</div>
+				<div>
+					<h2 id="Titulo3" className="text-center">
+						Productos disponibles a la venta
+					</h2>
 				</div>
 				{store.list.map(item => {
 					let images = JSON.parse(item.product_image_url);
@@ -85,7 +90,7 @@ export const Home = () => {
 									flexDirection: "column",
 									margin: "30px"
 								}}>
-								<div className="card" style={{ border: "1px solid black" }}>
+								<div className="card" style={{ border: "2px solid black" }}>
 									<img
 										src={images[0]}
 										className="card-img-top"
@@ -93,13 +98,21 @@ export const Home = () => {
 									/>
 									<div className="card-body">
 										<h5
+											id="cardTitle"
 											className="card-title"
-											style={{ borderBottom: "3px solid green", textAlign: "center" }}>
+											style={{
+												border: "3px solid green",
+												textAlign: "center",
+												textTransform: "uppercase"
+											}}>
 											{" "}
 											{item.name}
 										</h5>
-										<p className="card-text" style={{ borderBottom: "1px solid black" }}>
+										<p id="p1" className="card-text">
 											{item.description}
+										</p>
+										<p id="p1" className="card-text text-center">
+											{item.price}€
 										</p>
 										<p className="card-text">
 											<Link to={`/productDetail/${item.id}`}>
