@@ -7,9 +7,14 @@ import { useHistory } from "react-router-dom";
 export const StripeButton2 = props => {
 	const { store, actions } = useContext(Context);
 
+	let history = useHistory();
+
 	const getToken = token => {
 		console.log("pago", token);
 		if (token) {
+			actions.devProd();
+			actions.getPrAll();
+			history.push("/home");
 			alert("Tu devolución se ha realizado correctamente");
 		} else {
 			console.log("No se ha podido realizar tu devolución");
