@@ -78,7 +78,7 @@ def subir_p():
     
     user_id= get_jwt_identity()
 
-    Product.createP(name, price, description,brand,json.dumps(images),user_id)
+    Product.createP(name, price, description,brand,json.dumps(images),user_id,1)
 
     return jsonify({"msg": "Producto subido"}),200
 
@@ -166,4 +166,11 @@ def getUserNick():
     user_id= get_jwt_identity()
     user = User.getUserNick(user_id)
     return jsonify({"user": user})
-   
+
+@api.route("/prBough/<int:id>",methods=["GET"])
+@jwt_required()
+def prod_bough(id):
+    print("no funciona")
+    product = Product.productStatus(id)
+    return jsonify({"msg":"producto vendido"}),200
+

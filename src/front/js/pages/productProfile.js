@@ -13,54 +13,68 @@ export const ProductProfile = () => {
 	}, []);
 
 	return (
-		<div className="container">
+		<div>
 			<Navbar />
-			<div className="text-center mt-5">
-				<div className="container"></div>
-			</div>
-			<div className="text-center mt-5">
-				{store.isAuthenticate ? (
-					<div>
-						<h1>Tus productos</h1>
-					</div>
-				) : (
-					<>
-						<h1>Registrate</h1>
-					</>
-				)}
-			</div>
+			<div className="container">
+				<div className="text-center mt-5">
+					<div className="container"></div>
+				</div>
+				<div className="text-center mt-5">
+					{store.isAuthenticate ? (
+						<div>
+							<h1>Tus productos</h1>
+						</div>
+					) : (
+						<>
+							<h1>Registrate</h1>
+						</>
+					)}
+				</div>
 
-			{!!store.user_p &&
-				store.user_p.map(item => {
-					let images = JSON.parse(item.product_image_url);
-					console.log(images);
+				{!!store.user_p &&
+					store.user_p.map(item => {
+						let images = JSON.parse(item.product_image_url);
+						console.log(images);
 
-					return (
-						<div
-							className="container-fluid "
-							key={item.id}
-							style={{ width: "18rem", display: "inline-flex", flexDirection: "column", margin: "30px" }}>
-							<div className="card">
-								<img
-									src={images[0]}
-									className="card-img-top"
-									style={{ width: "100px", height: "160px", alignSelf: "center" }}
-								/>
-								<div className="card-body">
-									<h5 className="card-title"> {item.name}</h5>
-									<p className="card-text">{item.description}</p>
-									<p className="card-text">
-										<Link to={`/productDetail/${item.id}`}>
-											<button name="submitSave" className="btn btn-outline-success my-2 my-sm-0">
-												Para mas detalles, click aquí
-											</button>
-										</Link>
-									</p>
+						return (
+							<div
+								className="container-fluid "
+								key={item.id}
+								style={{
+									width: "18rem",
+									display: "inline-flex",
+									flexDirection: "column",
+									margin: "30px"
+								}}>
+								<div className="card">
+									<img
+										src={images[0]}
+										className="card-img-top"
+										style={{
+											width: "100px",
+											height: "160px",
+											alignSelf: "center",
+											marginTop: "5px"
+										}}
+									/>
+									<div className="card-body">
+										<h5 className="card-title card-text text-center "> {item.name}</h5>
+										<p className="card-text card-text text-center">{item.description}</p>
+										<p className="card-text">
+											<Link to={`/productDetail/${item.id}`}>
+												<button
+													name="submitSave"
+													className="btn btn-outline-success my-2 my-sm-0">
+													Para mas detalles, click aquí
+												</button>
+											</Link>
+										</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+			</div>
 		</div>
 	);
 };

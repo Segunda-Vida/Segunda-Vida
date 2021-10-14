@@ -299,8 +299,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			devProd: () => {
 				let storeCopy = getStore();
+
 				let devol = storeCopy.cart;
-				setStore({ devolutionProd: devol });
+				let cart = devol.map(item => {
+					let temp = Object.assign({}, item);
+					temp.is_bough = 0;
+					return temp;
+				});
+				console.log("el cart", cart);
+				for (let item of cart) {
+					console.log("item", item);
+					fetch(process.env.BACKEND_URL + "/api/prBough/" + item.id, {
+						method: "GET",
+						headers: {
+							"Content-type": "application/json",
+							Authorization: `Bearer ${localStorage.getItem("token")}`
+						}
+					})
+						.then(resp => {
+							if (resp.ok) {
+								return resp.json();
+							}
+						})
+						.then(data => {
+							console.log("la data", data);
+						});
+				}
+
+				setStore({ devolutionProd: cart });
 			},
 			bought: () => {
 				let storeCopy = getStore();

@@ -55,6 +55,7 @@ class Product(db.Model):
     description = db.Column(db.String(200), nullable=False)
     product_image_url = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey("user.id"))
+    is_bough = db.Column(db.Integer,nullable=False)
 
     def __repr__(self):
         return '<Product %r>' % self.name
@@ -70,16 +71,18 @@ class Product(db.Model):
             "price": self.price,
             "description": self.description,
             "product_image_url": self.product_image_url,
-            "user_id": self.user_id
+            "user_id": self.user_id,
+            "is_bough": self.is_bough
         }
     
     def getAllProducts():
         products = Product.query.all()
         products = list(map(lambda product: product.serialize(), products))
+
         return products
 
-    def createP(name, price, description, brand,product_image_url,user_id):
-        product = Product(name = name, price = price, description = description, brand = brand ,product_image_url=product_image_url,user_id=user_id)
+    def createP(name, price, description, brand,product_image_url,user_id,is_bough):
+        product = Product(name = name, price = price, description = description, brand = brand ,product_image_url=product_image_url,user_id=user_id,is_bough=is_bough)
         db.session.add(product)
         db.session.commit()
     
@@ -91,7 +94,7 @@ class Product(db.Model):
         return product
     
     def getPrAll():
-        products = Product.query.all()
+        products = Product.query.filter_by(is_bough=1).all()
         products = list(map(lambda product : product.serialize(), products))
         return products
 
@@ -102,4 +105,7 @@ class Product(db.Model):
         product = list(map(lambda product : product.serialize(), product))
         return product
     
-  
+    def productStatus(id):
+        product=Product.query.get(id)
+        product.is_bough = 0
+        db.session.commit()

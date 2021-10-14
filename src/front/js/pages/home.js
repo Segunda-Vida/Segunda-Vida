@@ -94,7 +94,12 @@ export const Home = () => {
 									<img
 										src={images[0]}
 										className="card-img-top"
-										style={{ width: "100px", height: "160px", alignSelf: "center" }}
+										style={{
+											width: "100px",
+											height: "160px",
+											alignSelf: "center",
+											marginTop: "5px"
+										}}
 									/>
 									<div className="card-body">
 										<h5
@@ -108,7 +113,7 @@ export const Home = () => {
 											{" "}
 											{item.name}
 										</h5>
-										<p id="p1" className="card-text">
+										<p id="p1" className="card-text text-center">
 											{item.description}
 										</p>
 										<p id="p1" className="card-text text-center">

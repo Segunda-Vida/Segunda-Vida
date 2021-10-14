@@ -14,6 +14,7 @@ export const StripeButton = props => {
 		if (token) {
 			actions.devProd();
 			actions.deleteCart();
+			actions.getPrAll();
 			history.push("/home");
 			alert("Tu compra se ha realizado correctamente");
 		} else {
@@ -24,7 +25,7 @@ export const StripeButton = props => {
 	return (
 		<StripeCheckout
 			label="Pagar ahora"
-			name="Tienda X"
+			name="Segunda Vida"
 			billingAddress
 			shippingAddress
 			description={`Tu total es ${props.totalAmount}`}

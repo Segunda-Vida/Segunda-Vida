@@ -57,10 +57,10 @@ export const Navbar = () => {
 
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-light bg-light">
+			<nav className="navbar navbar-expand-lg navbar-light bg-light nav">
 				<Link to="/Home">
 					<button
-						className="btn btn-outline-success my-2 my-sm0"
+						className="btn btn-outline-success my-2 my-sm0 text-dark"
 						type="submit"
 						href="#"
 						style={{ marginRight: "5px" }}>
