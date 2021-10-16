@@ -1,42 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Navbar } from "../component/navbar";
-
 import { Link } from "react-router-dom";
-import { nominalTypeHack } from "prop-types";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-
-	const login = () => {
-		actions.login(email, password);
-		setEmail("");
-		setPassword("");
-	};
-
-	const [text, setText] = useState("");
-	const [suggestions, setSuggestions] = useState([]);
-
-	useEffect(() => {
-		actions.buscador();
-	}, []);
-
-	const onChangeHandler = text => {
-		let matches = [];
-		if (text.length > 0) {
-			matches = store.products.filter(product => {
-				const regex = new RegExp(`${text}`, "gi");
-				return product.name.match(regex);
-			});
-		}
-		setSuggestions(matches);
-		setText(text);
-	};
 
 	useEffect(() => {
 		actions.getPrAll();

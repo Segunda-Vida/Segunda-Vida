@@ -8,8 +8,6 @@ export const Cart = () => {
 	const { store, actions } = useContext(Context);
 	const { id } = useParams();
 
-	const removeItem = () => console.log("remove");
-
 	const total = store.cart.reduce((acc, cur) => acc + 1 * cur.price, 0);
 	const iva = store.cart.reduce((acc, cur) => acc + 1 * cur.price * 1.21, 0);
 
@@ -17,14 +15,6 @@ export const Cart = () => {
 		actions.getProduct(id);
 		actions.getPrAll();
 	}, []);
-
-	const otherImages = imgList => {
-		let temp = [];
-		for (let i = 1; i < imgList.length; i++) {
-			temp.push(imgList[i]);
-		}
-		return temp;
-	};
 
 	return (
 		<div>

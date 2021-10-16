@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 
 import { Navbar } from "../component/navbar";
 

@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 export const Perfil = () => {
-	const [nickname, setNickname] = useState("");
-
 	const { store, actions } = useContext(Context);
 
 	const { user_id } = useParams();
