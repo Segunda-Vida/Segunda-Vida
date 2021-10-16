@@ -36,7 +36,7 @@ app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'apikey'
-app.config['MAIL_PASSWORD'] = "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"
+app.config['MAIL_PASSWORD'] = os.environ.get("MAIL_PASSWORD")
 app.config['MAIL_DEFAULT_SENDER'] = "martigracia2018@gmail.com"
 mail = Mail(app)
 
