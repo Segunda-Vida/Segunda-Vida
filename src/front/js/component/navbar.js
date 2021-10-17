@@ -15,6 +15,10 @@ export const Navbar = () => {
 
 	console.log(store.cart);
 
+	$("#staticBackdrop").on("hidden.bs.modal", function() {
+		location.reload();
+	});
+
 	const hideSignIn = () => $("#exampleModal").modal("hide");
 
 	const login = () => {
@@ -386,7 +390,7 @@ export const Navbar = () => {
 							<h5 className="modal-title" id="exampleModalLabel">
 								Subir Productos
 							</h5>
-							<button type="button" className="close " data-dismiss="modal" aria-label="Close">
+							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -438,12 +442,12 @@ export const Navbar = () => {
 									multiple
 								/>
 
-								<h1
-									className="btn btn-outline-success my-2 my-sm-0"
+								<button
+									className="btn btn-outline-primary my-2 my-sm-0"
 									type="submit"
 									onClick={() => pushProduct()}>
 									Subir
-								</h1>
+								</button>
 							</div>
 						</div>
 					</div>

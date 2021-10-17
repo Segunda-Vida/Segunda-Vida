@@ -21,7 +21,7 @@ export const Home = () => {
 	console.log("comprado", store.isBougth);
 
 	return (
-		<div>
+		<div id="cont1">
 			<div>
 				<Navbar />
 				<Sidebar />
@@ -30,20 +30,20 @@ export const Home = () => {
 			<div className="container">
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
-						<div>
+						<div style={{ backgroundColor: "white" }}>
 							{!!store.user_nick && (
-								<div>
+								<div style={{ backgroundColor: "white" }}>
 									<h2 id="Titulo2">Hola {store.user_nick.nickname} Bienvenido</h2>
 								</div>
 							)}
 						</div>
 					) : (
-						<div>
+						<div style={{ backgroundColor: "white" }}>
 							<h2 id="Titulo2">Bienvenido</h2>
 						</div>
 					)}
 				</div>
-				<div>
+				<div style={{ backgroundColor: "white" }}>
 					<h2 id="Titulo3" className="text-center">
 						Productos disponibles a la venta
 					</h2>
