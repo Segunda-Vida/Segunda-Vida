@@ -18,13 +18,13 @@ export const Inicio = () => {
 				<h2>Sin gastos de portes en el transporte de envios y de rapida entrega al cliente.</h2>
 				<h2>Metodos de pago seguros.</h2>
 				<h2>En caso de que el producto no sea de su agrado, es posible la devolución sin cargo</h2>
-				<Link to="/Home">
+				<Link to="/">
 					<button
 						className="btn btn-outline-success my-2 my-sm0"
 						type="submit"
 						href="#"
 						style={{ marginRight: "5px" }}>
-						<i className="fas fa-door-open">Entrar</i>
+						<i className="fas fa-door-open">Regresar</i>
 					</button>
 				</Link>
 			</div>

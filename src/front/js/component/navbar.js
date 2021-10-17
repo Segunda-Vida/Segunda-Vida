@@ -58,13 +58,15 @@ export const Navbar = () => {
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light nav">
-				<Link to="/Home">
+				<Link to="/">
 					<button
-						className="btn btn-outline-success my-2 my-sm0 text-dark"
+						className="btn btn-outline-primary my-2 my-sm0"
 						type="submit"
 						href="#"
 						style={{ marginRight: "5px" }}>
-						<i className="fas fa-home"> Segunda Vida</i>
+						<p id="Titulo4" style={{ margin: "1px" }}>
+							Segunda Vida
+						</p>
 					</button>
 				</Link>
 				<button
@@ -101,20 +103,18 @@ export const Navbar = () => {
 						<li className="nav-item active" id="li1">
 							{store.isAuthenticate ? (
 								<div>
-									<Link to="/cart">
-										<button
-											className="btn btn-outline-success my-2 my-sm0"
-											type="submit"
-											href="#"
-											style={{ marginRight: "5px" }}>
-											<i className="fas fa-shopping-cart"> Carrito</i>
-											<span> ({store.cart.length})</span>
-										</button>
-									</Link>
+									<button
+										type="button"
+										className="btn  btn-outline-primary my-2 my-sm0"
+										data-toggle="modal"
+										data-target="#exampleModal"
+										style={{ margin: "5px" }}>
+										<i className="fas fa-file-import"> Subir Productos</i>
+									</button>
 
 									<Link to="/devolucion">
 										<button
-											className="btn btn-outline-success my-2 my-sm0"
+											className="btn btn-outline-primary my-2 my-sm0"
 											type="submit"
 											href="#"
 											style={{ marginRight: "5px" }}>
@@ -125,16 +125,16 @@ export const Navbar = () => {
 
 									<Link to="/Perfil">
 										<button
-											className="btn btn-outline-success my-2 my-sm0"
+											className="btn btn-outline-primary my-2 my-sm0"
 											type="submit"
 											href="#"
 											style={{ marginRight: "5px" }}>
 											<i className="fas fa-users"> Perfil</i>
 										</button>
 									</Link>
-									<Link to="/Home">
+									<Link to="/">
 										<button
-											className="btn btn-outline-success my-2 my-sm0"
+											className="btn btn-outline-primary my-2 my-sm0"
 											type="submit"
 											onClick={() => actions.signOut()}>
 											<i className="fas fa-sign-out-alt"> Cerrar sesión</i>
@@ -145,11 +145,20 @@ export const Navbar = () => {
 								<div>
 									<button
 										onClick={() => hideSignIn()}
-										className="btn btn-outline-success my-2 my-sm-0"
+										className="btn btn-outline-primary my-2 my-sm-0"
 										type="submit"
 										data-toggle="modal"
-										data-target="#exampleModal">
-										<i className="fas fa-sign-in-alt"> Iniciar sesión</i>
+										data-target="#exampleModal"
+										style={{ margin: "5px" }}>
+										<i className="fas fa-sign-in-alt"> Regístrate o inicia sesión</i>
+									</button>
+									<button
+										type="button"
+										className="btn  btn-outline-primary my-2 my-sm0"
+										data-toggle="modal"
+										data-target="#exampleModal"
+										style={{ margin: "5px" }}>
+										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
 									<div
 										className="modal fade"
@@ -173,7 +182,7 @@ export const Navbar = () => {
 													</button>
 												</div>
 												<div className="modal-body" style={{ textAlign: "center" }}>
-													<h4>Login</h4>
+													<h4>Inicia sesión</h4>
 												</div>
 
 												<div className="text-center mt-5">
@@ -195,7 +204,7 @@ export const Navbar = () => {
 															onChange={e => setPassword(e.target.value)}
 														/>
 														<button
-															className="btn btn-outline-success my-2 my-sm-0"
+															className="btn btn-outline-primary my-2 my-sm-0"
 															style={{ margin: "10px" }}>
 															<i onClick={() => login()} className="fas fa-sign-in-alt">
 																{" "}
@@ -213,10 +222,10 @@ export const Navbar = () => {
 															onClick={() => hideSignIn()}
 															type="submit"
 															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0"
+															className="btn btn-outline-primary my-2 my-sm-0"
 															data-toggle="modal"
 															data-target="#myModal2">
-															<i className="fas fa-address-book"> Registrar</i>
+															<i className="fas fa-address-book"> Regístrate</i>
 														</button>
 													</div>
 													<div style={{ margin: "10px" }}>
@@ -224,7 +233,7 @@ export const Navbar = () => {
 															onClick={() => hideSignIn()}
 															type="submit"
 															name="submitSave"
-															className="btn btn-outline-success my-2 my-sm-0"
+															className="btn btn-outline-primary my-2 my-sm-0"
 															data-toggle="modal"
 															data-target="#myModal3"
 															style={{ margin: "20px" }}>
@@ -286,7 +295,7 @@ export const Navbar = () => {
 								/>
 								<div style={{ justifyContent: "center" }}>
 									<button
-										className="btn btn-outline-success my-2 my-sm-0"
+										className="btn btn-outline-primary my-2 my-sm-0"
 										data-dismiss="modal"
 										aria-hidden="true"
 										type="submit"
@@ -320,7 +329,7 @@ export const Navbar = () => {
 								onChange={e => setEmailForgot(e.target.value)}
 							/>
 							<button
-								className="btn btn-outline-success my-2 my-sm-0"
+								className="btn btn-outline-primary my-2 my-sm-0"
 								data-dismiss="modal"
 								aria-hidden="true"
 								type="submit"

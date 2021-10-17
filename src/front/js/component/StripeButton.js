@@ -15,7 +15,7 @@ export const StripeButton = props => {
 			actions.devProd();
 			actions.deleteCart();
 			actions.getPrAll();
-			history.push("/home");
+			history.push("/");
 			alert("Tu compra se ha realizado correctamente");
 		} else {
 			console.log("No se ha podido realizar tu compra");

@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.scss";
 import { Navbar } from "../component/navbar";
 import { Link } from "react-router-dom";
+import { Sidebar } from "../component/sidebar";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -22,6 +23,7 @@ export const Home = () => {
 	return (
 		<div>
 			<Navbar />
+			<Sidebar />
 			<div className="container">
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (

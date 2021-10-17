@@ -25,14 +25,10 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Switch>
-						<Route exact path="/">
-							<Inicio />
-						</Route>
-
 						<Route exact path="/products/:text">
 							<Products />
 						</Route>
-						<Route exact path="/home">
+						<Route exact path="/">
 							<Home />
 						</Route>
 						<Route exact path="/checkout">
@@ -52,6 +48,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/devolucion">
 							<Devolucion />
+						</Route>
+						<Route exact path="/inicio">
+							<Inicio />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

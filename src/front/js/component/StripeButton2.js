@@ -14,7 +14,7 @@ export const StripeButton2 = props => {
 		if (token) {
 			actions.devProd();
 			actions.getPrAll();
-			history.push("/home");
+			history.push("/");
 			alert("Tu devolución se ha realizado correctamente");
 		} else {
 			console.log("No se ha podido realizar tu devolución");

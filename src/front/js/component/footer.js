@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => (
 	<footer
@@ -8,10 +9,12 @@ export const Footer = () => (
 			<div style={{ width: "300px", justifyContent: "left" }}>
 				<p style={{ marginTop: "20px" }}>Términos y condiciones</p>
 			</div>
-
-			<div
-				className="container-fluid"
-				style={{ display: "flex", color: "green", fontSize: "25px", justifyContent: "right" }}>
+			<div style={{ width: "300px", justifyContent: "left" }}>
+				<Link to="/inicio">
+					<p style={{ marginTop: "20px" }}>Conócenos</p>
+				</Link>
+			</div>
+			<div className="container-fluid" style={{ display: "flex", fontSize: "25px", justifyContent: "right" }}>
 				<div style={{ display: "flex" }}>
 					<div style={{ margin: "10px" }}>
 						<a className="afooter" href="http://www.apple.com">
