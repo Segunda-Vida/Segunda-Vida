@@ -152,22 +152,6 @@ export const Perfil = () => {
 							</div>
 						</div>
 					</div>
-
-					<div className="col" style={{ marginTop: "10px", textAlign: "center" }}>
-						<div>
-							<Link to={`/productProfile`}>
-								<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-									Tus Productos
-								</button>
-							</Link>
-						</div>
-						<div>
-							<img
-								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUGS86E6j4Oaz7RO5xoPqA0rfnfibra5VLI7a6r8DUdAXq2MtdltWFk1O_mJSD8AEetYU&usqp=CAU"
-								style={{ width: "100px", height: "200px", marginLeft: "1px", marginTop: "5px" }}
-							/>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

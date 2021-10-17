@@ -22,8 +22,11 @@ export const Home = () => {
 
 	return (
 		<div>
-			<Navbar />
-			<Sidebar />
+			<div>
+				<Navbar />
+				<Sidebar />
+			</div>
+
 			<div className="container">
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
@@ -45,6 +48,7 @@ export const Home = () => {
 						Productos disponibles a la venta
 					</h2>
 				</div>
+
 				{store.list.map(item => {
 					let images = JSON.parse(item.product_image_url);
 					console.log(images);
