@@ -99,7 +99,7 @@ export const Navbar = () => {
 
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-light bg-light nav">
+			<nav className="navbar navbar-expand-lg navbar-light bg-light nav" id="navbar">
 				<Link to="/">
 					<button
 						className="btn btn-outline-primary my-2 my-sm0"

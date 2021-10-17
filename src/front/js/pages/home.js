@@ -27,7 +27,7 @@ export const Home = () => {
 				<Sidebar />
 			</div>
 
-			<div className="container">
+			<div className="container" style={{ marginTop: "92.67px" }}>
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
 						<div style={{ backgroundColor: "white" }}>
