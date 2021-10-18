@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
 
-#cont1{
-  background-image: url(https://thumbs.dreamstime.com/b/tilable-equipa-textura-del-fondo-28056643.jpg);
+body{
+  padding-top: 70px;
+  
 
 }
+
 #navbar{
     overflow: auto;
     background-color: #333;
-    position: fixed; 
+    position:fixed; 
     top: 0; 
-    width: 100%; 
+    width: 100%;
+    right: 0; 
+    left:0;
+    z-index: 10;
+    box-shadow: 0 0 3px 3px rgb(96, 96, 248);
 }
 
 #li1{
@@ -24,6 +30,7 @@
 .afooter{
     color:rgb(96, 96, 248);
     text-decoration: "none";
+    
 }
 .afooter:hover{
     color:rgb(76, 76, 248);
@@ -62,13 +69,15 @@
 }
 /* The side navigation menu */
 .sidebar {
-        margin: 0;
+        margin-top: 97px;
     padding: 0;
     width: 100px;
     background-color: white;
     position: fixed;
     height: 100%;
     overflow: auto;
+    top:0;
+    z-index: 10;
   }
   
   /* Sidebar links */

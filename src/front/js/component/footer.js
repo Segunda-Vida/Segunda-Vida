@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 export const Footer = () => (
 	<footer
 		className="footer mt-auto py-3 text-center"
-		style={{ position: "fixed", height: "100px", width: "100%", bottom: "0" }}>
+		style={{
+			position: "fixed",
+			height: "100px",
+			width: "100%",
+			bottom: "0"
+		}}>
 		<div style={{ display: "flex" }}>
 			<div style={{ width: "300px", justifyContent: "left" }}>
 				<p style={{ marginTop: "20px" }}>Términos y condiciones</p>

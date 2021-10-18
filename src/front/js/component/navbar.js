@@ -193,90 +193,6 @@ export const Navbar = () => {
 										style={{ margin: "5px" }}>
 										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
-									<div
-										className="modal fade"
-										id="exampleModal"
-										tabIndex="-1"
-										role="dialog"
-										aria-labelledby="exampleModalLabel"
-										aria-hidden="true">
-										<div className="modal-dialog" role="document">
-											<div className="modal-content" style={{ width: "600px" }}>
-												<div className="modal-header">
-													<h5 className="modal-title" id="exampleModalLabel">
-														Bienvenidos a Segunda Vida
-													</h5>
-													<button
-														type="button"
-														className="close "
-														data-dismiss="modal"
-														aria-label="Close">
-														<i className="fas fa-sign-out-alt"></i>
-													</button>
-												</div>
-												<div className="modal-body" style={{ textAlign: "center" }}>
-													<h4>Inicia sesión</h4>
-												</div>
-
-												<div className="text-center mt-5">
-													<div style={{ display: "flex" }}>
-														<input
-															className="form-control"
-															type="email"
-															placeholder="Ingresar correo electronico"
-															value={email}
-															style={{ width: "250px", margin: "10px" }}
-															onChange={e => setEmail(e.target.value)}
-														/>
-														<input
-															className="form-control"
-															type="password"
-															placeholder="Ingresar contraseña"
-															value={password}
-															style={{ width: "200px", margin: "10px" }}
-															onChange={e => setPassword(e.target.value)}
-														/>
-														<button
-															className="btn btn-outline-primary my-2 my-sm-0"
-															style={{ margin: "10px" }}>
-															<i onClick={() => login()} className="fas fa-sign-in-alt">
-																{" "}
-																Entrar
-															</i>
-														</button>
-													</div>
-												</div>
-
-												<div
-													className="modal-footer"
-													style={{ display: "block", textAlign: "center" }}>
-													<div style={{ margin: "10px" }}>
-														<button
-															onClick={() => hideSignIn()}
-															type="submit"
-															name="submitSave"
-															className="btn btn-outline-primary my-2 my-sm-0"
-															data-toggle="modal"
-															data-target="#myModal2">
-															<i className="fas fa-address-book"> Regístrate</i>
-														</button>
-													</div>
-													<div style={{ margin: "10px" }}>
-														<button
-															onClick={() => hideSignIn()}
-															type="submit"
-															name="submitSave"
-															className="btn btn-outline-primary my-2 my-sm-0"
-															data-toggle="modal"
-															data-target="#myModal3"
-															style={{ margin: "20px" }}>
-															<i className="fas fa-key"> Recuperar contraseña</i>
-														</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
 								</div>
 							)}
 						</li>
@@ -447,6 +363,87 @@ export const Navbar = () => {
 									type="submit"
 									onClick={() => pushProduct()}>
 									Subir
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				className="modal fade"
+				id="exampleModal"
+				tabIndex="-1"
+				role="dialog"
+				aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div className="modal-dialog" role="document">
+					<div className="modal-content" style={{ width: "600px" }}>
+						<div className="modal-header">
+							<h5 className="modal-title" id="exampleModalLabel">
+								Bienvenidos a Segunda Vida
+							</h5>
+							<button
+								type="button"
+								className="close "
+								data-dismiss="modal"
+								aria-label="Close"
+								data-backdrop="false">
+								<i className="fas fa-sign-out-alt"></i>
+							</button>
+						</div>
+						<div className="modal-body" style={{ textAlign: "center" }}>
+							<h4>Inicia sesión</h4>
+						</div>
+
+						<div className="text-center mt-5">
+							<div style={{ display: "flex" }}>
+								<input
+									className="form-control"
+									type="email"
+									placeholder="Ingresar correo electronico"
+									value={email}
+									style={{ width: "250px", margin: "10px" }}
+									onChange={e => setEmail(e.target.value)}
+								/>
+								<input
+									className="form-control"
+									type="password"
+									placeholder="Ingresar contraseña"
+									value={password}
+									style={{ width: "200px", margin: "10px" }}
+									onChange={e => setPassword(e.target.value)}
+								/>
+								<button className="btn btn-outline-primary my-2 my-sm-0" style={{ margin: "10px" }}>
+									<i onClick={() => login()} className="fas fa-sign-in-alt">
+										{" "}
+										Entrar
+									</i>
+								</button>
+							</div>
+						</div>
+
+						<div className="modal-footer" style={{ display: "block", textAlign: "center" }}>
+							<div style={{ margin: "10px" }}>
+								<button
+									onClick={() => hideSignIn()}
+									type="submit"
+									name="submitSave"
+									className="btn btn-outline-primary my-2 my-sm-0"
+									data-toggle="modal"
+									data-target="#myModal2">
+									<i className="fas fa-address-book"> Regístrate</i>
+								</button>
+							</div>
+							<div style={{ margin: "10px" }}>
+								<button
+									onClick={() => hideSignIn()}
+									type="submit"
+									name="submitSave"
+									className="btn btn-outline-primary my-2 my-sm-0"
+									data-toggle="modal"
+									data-target="#myModal3"
+									style={{ margin: "20px" }}>
+									<i className="fas fa-key"> Recuperar contraseña</i>
 								</button>
 							</div>
 						</div>
