@@ -15,9 +15,19 @@ export const StripeButton2 = props => {
 			actions.devProd();
 			actions.getPrAll();
 			history.push("/");
-			alert("Tu devolución se ha realizado correctamente");
+			toastr.success("Tu devolución se ha realizado correctamente", "Devolución Finalizada", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
 		} else {
-			console.log("No se ha podido realizar tu devolución");
+			toastr.error("No se ha podido realizar tu devolución", "Error en la devolución", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
 		}
 	};
 

@@ -3,9 +3,11 @@ import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Toastr from "toastr2";
 
 export const Perfil = () => {
 	const { store, actions } = useContext(Context);
+	const toastr = new Toastr();
 
 	const { user_id } = useParams();
 
@@ -45,7 +47,12 @@ export const Perfil = () => {
 
 	const changeFile = event => {
 		if (event.target.files.length > 3) {
-			alert("Solo puedes subir 3 imágenes");
+			toastr.warning("Solo puedes subir 3 imágenes", "Subida de archivos", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
 		} else {
 			setFile(event.target.files);
 			setSelected(true);

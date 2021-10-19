@@ -7,6 +7,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			products: [],
 			message: null,
 			product: null,
+			product_exist: false,
+			product_loaded: false,
+			product_loaded_error: false,
 			user_p: [],
 			user_nick: [],
 			demo: [
@@ -101,10 +104,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(resp => {
 						if (resp.ok) {
 							return resp.json();
+						} else if (resp.status === 401) {
+							setStore({ message: "Token authentication expired", product_loaded_error: true });
 						}
 					})
 					.then(json => {
-						console.log("json", json);
+						if (json !== undefined) {
+							console.log("json", json);
+							setStore({ message: "Producto cargado", product_loaded: true });
+						}
+					})
+					.catch(error => {
+						console.log("ERROR TO PUSH PRODUCT", error);
 					});
 			},
 			buscador: () => {

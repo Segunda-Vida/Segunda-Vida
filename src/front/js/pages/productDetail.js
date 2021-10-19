@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import { Navbar } from "../component/navbar";
+import Toastr from "toastr2";
 
 export const ProductDetail = () => {
 	const { store, actions } = useContext(Context);
 	const { id } = useParams();
-
+	const toastr = new Toastr();
 	useEffect(() => {
 		actions.getProduct(id);
 		actions.getPrAll();
@@ -98,15 +99,10 @@ export const ProductDetail = () => {
 							) : (
 								<button
 									className="btn btn-outline-success my-2 my-sm0"
-									type="submit"
+									onClick={() => actions.AddCart(store.product)}
 									href="#"
 									style={{ marginRight: "5px" }}>
-									<i
-										className="fas fa-cart-arrow-down"
-										onClick={() => actions.AddCart(store.product)}>
-										{" "}
-										Añadir al carrito
-									</i>
+									<i className="fas fa-cart-arrow-down"> Añadir al carrito</i>
 								</button>
 							)}
 						</div>

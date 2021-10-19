@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import Toastr from "toastr2";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -12,6 +13,7 @@ export const Navbar = () => {
 	const [recover, setRecover] = useState(false);
 	const [showForgotPassword, setShowForgotPassword] = useState(false);
 	const [emailForgot, setEmailForgot] = useState("");
+	const toastr = new Toastr();
 
 	console.log(store.cart);
 
@@ -47,6 +49,24 @@ export const Navbar = () => {
 	useEffect(() => {
 		actions.buscador();
 	}, []);
+
+	useEffect(() => {
+		toastr.success(store.message, "", {
+			timeOut: 2000,
+			closeButton: true,
+			progressBar: true,
+			preventDuplicates: true
+		});
+	}, [store.product_loaded]);
+
+	useEffect(() => {
+		toastr.error(store.message, "", {
+			timeOut: 2000,
+			closeButton: true,
+			progressBar: true,
+			preventDuplicates: true
+		});
+	}, [store.product_loaded_error]);
 
 	const onChangeHandler = text => {
 		let matches = [];
@@ -92,7 +112,12 @@ export const Navbar = () => {
 
 	const changeFile = event => {
 		if (event.target.files.length > 3) {
-			alert("Solo puedes subir 3 imágenes");
+			toastr.warning("Solo puedes subir 3 imágenes", "Subida de archivos", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
 		} else {
 			setFile(event.target.files);
 			setSelected(true);
@@ -136,7 +161,7 @@ export const Navbar = () => {
 						</div>
 						{suggestions &&
 							suggestions.map((suggestion, i) => (
-								<Link key={i} to="/productDetail/:id?">
+								<Link key={i} to={`/productDetail/${suggestion.id}`}>
 									<div className="suggestion col-md-12 justify-content-md-center">
 										{suggestion.name}
 									</div>
