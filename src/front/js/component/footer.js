@@ -11,10 +11,7 @@ export const Footer = () => (
 			bottom: "0"
 		}}>
 		<div style={{ display: "flex" }}>
-			<div style={{ width: "300px", justifyContent: "left" }}>
-				<p style={{ marginTop: "20px" }}>Términos y condiciones</p>
-			</div>
-			<div style={{ width: "300px", justifyContent: "left" }}>
+			<div style={{ width: "500px", justifyContent: "center" }}>
 				<Link to="/inicio">
 					<p style={{ marginTop: "20px" }}>Conócenos</p>
 				</Link>

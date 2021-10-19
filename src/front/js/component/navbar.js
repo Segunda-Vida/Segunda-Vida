@@ -181,17 +181,6 @@ export const Navbar = () => {
 										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
 
-									<Link to="/devolucion">
-										<button
-											className="btn btn-outline-primary my-2 my-sm0"
-											type="submit"
-											href="#"
-											style={{ marginRight: "5px" }}>
-											<i className="fas fa-hand-holding-usd">Devoluciones</i>
-											<span> ({store.devolutionProd.length})</span>
-										</button>
-									</Link>
-
 									<Link to="/">
 										<button
 											className="btn btn-outline-primary my-2 my-sm0"

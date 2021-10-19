@@ -30,7 +30,7 @@ export const Home = () => {
 			<div className="container">
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
-						<div style={{ backgroundColor: "white" }}>
+						<div>
 							{!!store.user_nick && (
 								<div style={{ backgroundColor: "white" }}>
 									<h2 id="Titulo2">Hola {store.user_nick.nickname} Bienvenido</h2>
@@ -38,12 +38,12 @@ export const Home = () => {
 							)}
 						</div>
 					) : (
-						<div style={{ backgroundColor: "white" }}>
+						<div>
 							<h2 id="Titulo2">Bienvenido</h2>
 						</div>
 					)}
 				</div>
-				<div style={{ backgroundColor: "white" }}>
+				<div>
 					<h2 id="Titulo3" className="text-center">
 						Productos disponibles a la venta
 					</h2>
@@ -57,52 +57,56 @@ export const Home = () => {
 					} else {
 						return (
 							<div
-								className="container-fluid "
+								className="flip-container "
 								key={item.id}
 								style={{
-									width: "18rem",
+									width: "300px",
+									height: "400px",
 									display: "inline-flex",
 									flexDirection: "column",
-									margin: "30px"
+									margin: "30px",
+									backgroundColor: "transparent",
+									perspective: "1000px",
+									border: "2px solid rgb(96, 96, 248)",
+									borderRadius: "25px 25px 25px 25px"
 								}}>
-								<div className="card" style={{ border: "2px solid black" }}>
-									<img
-										src={images[0]}
-										className="card-img-top"
-										style={{
-											width: "100px",
-											height: "160px",
-											alignSelf: "center",
-											marginTop: "5px"
-										}}
-									/>
-									<div className="card-body">
+								<div className="card">
+									<div className="front">
+										<img
+											src={images[0]}
+											className="card-img-top"
+											style={{
+												width: "100px",
+												height: "150px",
+												alignSelf: "center",
+												marginTop: "5px",
+												margin: "10px"
+											}}
+										/>
 										<h5
 											id="cardTitle"
 											className="card-title"
 											style={{
-												border: "3px solid green",
 												textAlign: "center",
-												textTransform: "uppercase"
+												textTransform: "uppercase",
+												margin: "10px"
 											}}>
 											{" "}
 											{item.name}
 										</h5>
+										<p id="p1" className="card-text text-center" style={{ margin: "10px" }}>
+											{item.price}€
+										</p>
+									</div>
+									<div className="back">
 										<p id="p1" className="card-text text-center">
 											{item.description}
 										</p>
-										<p id="p1" className="card-text text-center">
-											{item.price}€
-										</p>
-										<p className="card-text">
-											<Link to={`/productDetail/${item.id}`}>
-												<button
-													name="submitSave"
-													className="btn btn-outline-success my-2 my-sm-0">
-													Para mas detalles, click aquí
-												</button>
-											</Link>
-										</p>
+										<Link to={`/productDetail/${item.id}`}>
+											<button name="submitSave" className="btn btn-outline-primary my-2 my-sm-0">
+												Para mas detalles, click aquí
+											</button>
+										</Link>
 									</div>
 								</div>
 							</div>
