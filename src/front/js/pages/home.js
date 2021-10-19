@@ -10,11 +10,11 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.getPrAll();
-		actions.getUserNick();
 		actions.bought();
 
 		if (store.isAuthenticate) {
 			actions.getPrUser();
+			actions.getUserNick();
 		}
 	}, [store.isAuthenticate]);
 

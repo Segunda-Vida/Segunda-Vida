@@ -118,7 +118,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(json => {
 						console.log("data", json);
-						setStore({ products: json.data });
+						if (json !== undefined) {
+							setStore({ products: json.data });
+						} else {
+							setStore({ products: [] });
+						}
 					});
 			},
 			forgotPassword: email => {
@@ -176,7 +180,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(json => {
 						console.log("producto", json);
-						setStore({ list: json.producto });
+						if (json !== undefined) {
+							setStore({ list: json.producto });
+						} else {
+							setStore({ list: [] });
+						}
+					})
+					.catch(error => {
+						console.log("[ERROR TO GETPRALL]", error);
 					});
 			},
 			getPrUser: () => {

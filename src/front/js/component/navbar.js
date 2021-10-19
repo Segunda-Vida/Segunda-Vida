@@ -51,10 +51,12 @@ export const Navbar = () => {
 	const onChangeHandler = text => {
 		let matches = [];
 		if (text.length > 0) {
-			matches = store.products.filter(product => {
-				const regex = new RegExp(`${text}`, "gi");
-				return product.name.match(regex);
-			});
+			matches =
+				!!store.products &&
+				store.products.filter(product => {
+					const regex = new RegExp(`${text}`, "gi");
+					return product.name.match(regex);
+				});
 		}
 		setSuggestions(matches);
 		setText(text);

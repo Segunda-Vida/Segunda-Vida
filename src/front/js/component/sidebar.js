@@ -8,7 +8,9 @@ export const Sidebar = () => {
 	const { user_id } = useParams();
 
 	useEffect(() => {
-		actions.getPrUser(user_id);
+		if (store.isAuthenticate) {
+			actions.getPrUser(user_id);
+		}
 		actions.getPrAll();
 	}, []);
 
