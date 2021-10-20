@@ -133,9 +133,10 @@ export const Navbar = () => {
 						type="submit"
 						href="#"
 						style={{ marginRight: "5px" }}>
-						<p id="Titulo4" style={{ margin: "1px" }}>
-							Segunda Vida
-						</p>
+						<img
+							src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
+							style={{ width: "50px", height: "50px" }}
+						/>
 					</button>
 				</Link>
 				<button
