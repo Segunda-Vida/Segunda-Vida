@@ -68,7 +68,7 @@ export const Home = () => {
 									backgroundColor: "transparent",
 									perspective: "1000px",
 									border: "2px solid rgb(96, 96, 248)",
-									borderRadius: "25px 25px 25px 25px"
+									borderRadius: "25px"
 								}}>
 								<div className="card">
 									<div className="front">
@@ -76,8 +76,8 @@ export const Home = () => {
 											src={images[0]}
 											className="card-img-top"
 											style={{
-												width: "100px",
-												height: "150px",
+												width: "150px",
+												height: "250px",
 												alignSelf: "center",
 												marginTop: "5px",
 												margin: "10px"
@@ -88,8 +88,8 @@ export const Home = () => {
 											className="card-title"
 											style={{
 												textAlign: "center",
-												textTransform: "uppercase",
-												margin: "10px"
+												margin: "10px",
+												color: "rgb(96, 96, 248)"
 											}}>
 											{" "}
 											{item.name}
@@ -99,7 +99,7 @@ export const Home = () => {
 										</p>
 									</div>
 									<div className="back">
-										<p id="p1" className="card-text text-center">
+										<p id="p1" className="card-text text-center" style={{ margin: "50px" }}>
 											{item.description}
 										</p>
 										<Link to={`/productDetail/${item.id}`}>

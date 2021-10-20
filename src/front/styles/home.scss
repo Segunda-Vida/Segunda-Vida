@@ -30,7 +30,7 @@ body{
 }
 .front, .back {
   border: 0px solid blue;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 25px;
   position: absolute;
   display:block !important;
   width: 100%;
@@ -38,11 +38,11 @@ body{
   backface-visibility: hidden;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2em;
 }
 .front {
   background-color: rgb(235, 221, 221);
- 
+  
   display: flex;
 }
 

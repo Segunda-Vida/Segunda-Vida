@@ -44,7 +44,9 @@ export const ProductProfile = () => {
 									width: "18rem",
 									display: "inline-flex",
 									flexDirection: "column",
-									margin: "30px"
+									margin: "30px",
+									border: "2px solid rgb(96, 96, 248)",
+									borderRadius: "25px"
 								}}>
 								<div className="card">
 									<img
