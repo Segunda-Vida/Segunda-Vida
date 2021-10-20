@@ -9,6 +9,10 @@ export const Perfil = () => {
 
 	$("#myModal4").modal("hide");
 
+	useEffect(() => {
+		actions.getUserNick();
+	}, []);
+
 	return (
 		<div className="imgFondo">
 			<Navbar />
@@ -18,17 +22,14 @@ export const Perfil = () => {
 				<div className="row">
 					<div className="col" style={{ textAlign: "center" }}>
 						<div style={{ display: "block" }}>
-							<div>
-								<Link to="/devolucion">
-									<button
-										className="btn btn-outline-primary my-2 my-sm0"
-										type="submit"
-										href="#"
-										style={{ marginRight: "5px" }}>
-										<i className="fas fa-hand-holding-usd">Devoluciones</i>
-										<span> ({store.devolutionProd.length})</span>
-									</button>
-								</Link>
+							<div
+								style={{
+									border: "2px solid rgb(96, 96, 248)",
+									borderRadius: "25px"
+								}}>
+								<h2>DATOS PERSONALES</h2>
+								<h6>Nick de usuario: {store.user_nick.nickname}</h6>
+								<h6>E-mail: {store.user_nick.email}</h6>
 							</div>
 						</div>
 					</div>

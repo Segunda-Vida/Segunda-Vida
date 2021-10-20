@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../component/navbar";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
+import { Sidebar } from "../component/sidebar";
 
 export const ProductProfile = () => {
 	const { store, actions } = useContext(Context);
@@ -15,6 +16,7 @@ export const ProductProfile = () => {
 	return (
 		<div>
 			<Navbar />
+			<Sidebar />
 			<div className="container">
 				<div className="text-center mt-5">
 					<div className="container"></div>
@@ -66,7 +68,7 @@ export const ProductProfile = () => {
 											<Link to={`/productDetail/${item.id}`}>
 												<button
 													name="submitSave"
-													className="btn btn-outline-success my-2 my-sm-0">
+													className="btn btn-outline-primary my-2 my-sm-0">
 													Para mas detalles, click aquí
 												</button>
 											</Link>

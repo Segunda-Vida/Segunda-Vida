@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Navbar } from "../component/navbar.js";
 import { Context } from "../store/appContext";
 import { StripeButton2 } from "../component/StripeButton2";
+import { Sidebar } from "../component/sidebar.js";
 
 export const Devolucion = () => {
 	const { store, actions } = useContext(Context);
@@ -13,7 +14,7 @@ export const Devolucion = () => {
 	return (
 		<div>
 			<Navbar />
-
+			<Sidebar />
 			<div className="container">
 				<div className="table" style={{ border: "1px solid green", display: "table", marginTop: "50px" }}>
 					<div className="theader" style={{ display: "table-header-group" }}>

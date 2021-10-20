@@ -3,6 +3,7 @@ import { Navbar } from "../component/navbar.js";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import { StripeButton } from "../component/StripeButton.js";
+import { Sidebar } from "../component/sidebar.js";
 
 export const Cart = () => {
 	const { store, actions } = useContext(Context);
@@ -19,6 +20,7 @@ export const Cart = () => {
 	return (
 		<div>
 			<Navbar />
+			<Sidebar />
 
 			<div className="container">
 				<div className="table" style={{ border: "1px solid green", display: "table", marginTop: "50px" }}>

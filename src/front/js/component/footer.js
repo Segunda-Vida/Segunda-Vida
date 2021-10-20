@@ -8,7 +8,8 @@ export const Footer = () => (
 			position: "fixed",
 			height: "100px",
 			width: "100%",
-			bottom: "0"
+			bottom: "0",
+			marginLeft: "10px"
 		}}>
 		<div style={{ display: "flex" }}>
 			<div style={{ width: "500px", justifyContent: "center" }}>

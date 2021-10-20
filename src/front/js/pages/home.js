@@ -32,7 +32,7 @@ export const Home = () => {
 					{store.isAuthenticate ? (
 						<div>
 							{!!store.user_nick && (
-								<div style={{ backgroundColor: "white" }}>
+								<div>
 									<h2 id="Titulo2">Hola {store.user_nick.nickname} Bienvenido</h2>
 								</div>
 							)}

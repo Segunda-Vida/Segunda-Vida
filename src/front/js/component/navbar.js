@@ -128,16 +128,10 @@ export const Navbar = () => {
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light nav" id="navbar">
 				<Link to="/">
-					<button
-						className="btn btn-outline-primary my-2 my-sm0"
-						type="submit"
-						href="#"
-						style={{ marginRight: "5px" }}>
-						<img
-							src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
-							style={{ width: "50px", height: "50px" }}
-						/>
-					</button>
+					<img
+						src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
+						style={{ width: "80px", height: "80px", marginRight: "5px" }}
+					/>
 				</Link>
 				<button
 					className="navbar-toggler"
@@ -158,6 +152,7 @@ export const Navbar = () => {
 								className="col-md-12 input   rounded form-control input-lg"
 								onChange={e => onChangeHandler(e.target.value)}
 								value={text}
+								style={{ width: "700px", marginLeft: "10px" }}
 							/>
 						</div>
 						{suggestions &&
@@ -178,7 +173,7 @@ export const Navbar = () => {
 										className="btn  btn-outline-primary my-2 my-sm0"
 										data-toggle="modal"
 										data-target="#staticBackdrop"
-										style={{ margin: "5px" }}>
+										style={{ margin: "10x" }}>
 										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
 
@@ -199,7 +194,7 @@ export const Navbar = () => {
 										type="submit"
 										data-toggle="modal"
 										data-target="#exampleModal"
-										style={{ margin: "5px" }}>
+										style={{ margin: "10px" }}>
 										<i className="fas fa-sign-in-alt"> Regístrate o inicia sesión</i>
 									</button>
 									<button
@@ -207,7 +202,7 @@ export const Navbar = () => {
 										className="btn  btn-outline-primary my-2 my-sm0"
 										data-toggle="modal"
 										data-target="#exampleModal"
-										style={{ margin: "5px" }}>
+										style={{ margin: "10px" }}>
 										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
 								</div>

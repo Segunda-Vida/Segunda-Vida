@@ -38,6 +38,12 @@ export const Sidebar = () => {
 							Tus Productos
 						</i>
 					</Link>
+					<Link to="/devolucion">
+						<i className="fas fa-hand-holding-usd" style={{ color: "rgb(96, 96, 248)" }}>
+							Devoluciones
+						</i>
+						<span style={{ color: "rgb(96, 96, 248)" }}> ({store.devolutionProd.length})</span>
+					</Link>
 				</div>
 			</div>
 		</div>
