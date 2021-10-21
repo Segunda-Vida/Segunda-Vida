@@ -28,7 +28,7 @@ export const Home = () => {
 			</div>
 
 			<div className="container">
-				<div className="text-center mt-5">
+				<div className="text-center mt-5" style={{ width: "100%" }}>
 					{store.isAuthenticate ? (
 						<div>
 							{!!store.user_nick && (
