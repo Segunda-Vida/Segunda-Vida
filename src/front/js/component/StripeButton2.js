@@ -3,11 +3,12 @@ import StripeCheckout from "react-stripe-checkout";
 import PropTypes, { element } from "prop-types";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
-
+import Toastr from "toastr2";
 export const StripeButton2 = props => {
 	const { store, actions } = useContext(Context);
 
 	let history = useHistory();
+	const toastr = new Toastr();
 
 	const getToken = token => {
 		console.log("pago", token);

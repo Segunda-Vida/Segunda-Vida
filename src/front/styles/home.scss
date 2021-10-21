@@ -83,6 +83,7 @@ body{
     left:0;
     z-index: 10;
     box-shadow: 0 0 3px 3px rgb(96, 96, 248);
+    
 }
 
 #li1{
@@ -105,9 +106,11 @@ body{
     cursor:pointer
 }
 #Titulo{
-    font-family: 'Akronim', cursive;
-    font-size: 10em;
-    color:green
+  font-family: 'Akronim', cursive;
+  font-size: 3em;
+  
+
+  color:rgb(96, 96, 248);   
 }
 #Titulo2{
     font-family: 'Akronim', cursive;
@@ -150,6 +153,7 @@ body{
     overflow: auto;
     top:0;
     z-index: 10;
+    
     
   }
   

@@ -29,6 +29,8 @@ export const Cart = () => {
 						border: "1px solid rgb(96, 96, 248)",
 						display: "table",
 						marginTop: "50px",
+						marginLeft: "20px",
+						marginRight: "20px",
 						backgroundImage:
 							"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
 					}}>
@@ -73,7 +75,7 @@ export const Cart = () => {
 
 								<div className="td" style={{ display: "table-cell" }}>
 									<button
-										className="remove btn btn-outline-success my-2 my-sm0"
+										className="remove btn btn-outline-primary my-2 my-sm0"
 										onClick={() => actions.quitCart(item)}
 										type="submit"
 										href="#">

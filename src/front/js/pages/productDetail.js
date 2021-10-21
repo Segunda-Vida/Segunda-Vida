@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 
 import { Navbar } from "../component/navbar";
 import Toastr from "toastr2";
+import { Sidebar } from "../component/sidebar";
 
 export const ProductDetail = () => {
 	const { store, actions } = useContext(Context);
@@ -27,9 +28,21 @@ export const ProductDetail = () => {
 	return !!store.product ? (
 		<div>
 			<Navbar />
+			<Sidebar />
 			<center>
 				<div className="container">
-					<div className="card-deck" style={{ display: "inline-block" }}>
+					<div
+						className="card-deck"
+						style={{
+							display: "inline-block",
+							marginTop: "50px",
+							border: "1px solid rgb(96, 96, 248)",
+							borderRadius: "25px",
+							backgroundImage:
+								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)",
+							width: "600px",
+							height: "700px"
+						}}>
 						<div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
 							<div className="carousel-inner">
 								<div className="carousel-item active">
@@ -41,7 +54,7 @@ export const ProductDetail = () => {
 											width: "300px",
 											height: "400px",
 											margin: "5px",
-											border: "1px solid black"
+											border: "1px solid rgb(96, 96, 248)"
 										}}
 									/>
 								</div>
@@ -53,7 +66,7 @@ export const ProductDetail = () => {
 												width: "300px",
 												height: "400px",
 												margin: "5px",
-												border: "1px solid black"
+												border: "1px rgb(96, 96, 248)"
 											}}
 										/>
 									</div>
@@ -66,7 +79,10 @@ export const ProductDetail = () => {
 								role="button"
 								data-slide="prev">
 								<span style={{ fontSize: "50px" }}>
-									<i className="fa fa-angle-left" aria-hidden="true" style={{ color: "green" }}></i>
+									<i
+										className="fa fa-angle-left"
+										aria-hidden="true"
+										style={{ color: "rgb(96, 96, 248)" }}></i>
 								</span>
 								<span className="sr-only">Previous</span>
 							</a>
@@ -76,7 +92,11 @@ export const ProductDetail = () => {
 								role="button"
 								data-slide="next">
 								<span style={{ fontSize: "50px" }}>
-									<i className="fa fa-angle-right" aria-hidden="true" style={{ color: "green" }} />
+									<i
+										className="fa fa-angle-right"
+										aria-hidden="true"
+										style={{ color: "rgb(96, 96, 248)" }}
+									/>
 								</span>
 								<span className="sr-only">Next</span>
 							</a>
@@ -98,7 +118,7 @@ export const ProductDetail = () => {
 								</button>
 							) : (
 								<button
-									className="btn btn-outline-success my-2 my-sm0"
+									className="btn btn-outline-primary my-2 my-sm0"
 									onClick={() => actions.AddCart(store.product)}
 									href="#"
 									style={{ marginRight: "5px" }}>

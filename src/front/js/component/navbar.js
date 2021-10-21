@@ -158,7 +158,9 @@ export const Navbar = () => {
 						{suggestions &&
 							suggestions.map((suggestion, i) => (
 								<Link key={i} to={`/productDetail/${suggestion.id}`}>
-									<div className="suggestion col-md-12 justify-content-md-center">
+									<div
+										className="suggestion col-md-12 justify-content-md-center"
+										style={{ color: "white" }}>
 										{suggestion.name}
 									</div>
 								</Link>
@@ -170,17 +172,18 @@ export const Navbar = () => {
 								<div>
 									<button
 										type="button"
-										className="btn  btn-outline-primary my-2 my-sm0"
+										className="btn  btn-outline-light my-2 my-sm0"
 										data-toggle="modal"
 										data-target="#staticBackdrop"
-										style={{ margin: "10x" }}>
+										style={{ margin: "10px" }}>
 										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
 
 									<Link to="/">
 										<button
-											className="btn btn-outline-primary my-2 my-sm0"
+											className="btn btn-outline-light my-2 my-sm0"
 											type="submit"
+											style={{ margin: "10px" }}
 											onClick={() => actions.signOut()}>
 											<i className="fas fa-sign-out-alt"> Cerrar sesión</i>
 										</button>
@@ -190,7 +193,7 @@ export const Navbar = () => {
 								<div>
 									<button
 										onClick={() => hideSignIn()}
-										className="btn btn-outline-primary my-2 my-sm-0"
+										className="btn btn-outline-light my-2 my-sm-0"
 										type="submit"
 										data-toggle="modal"
 										data-target="#exampleModal"
@@ -199,7 +202,7 @@ export const Navbar = () => {
 									</button>
 									<button
 										type="button"
-										className="btn  btn-outline-primary my-2 my-sm0"
+										className="btn  btn-outline-light my-2 my-sm0"
 										data-toggle="modal"
 										data-target="#exampleModal"
 										style={{ margin: "10px" }}>

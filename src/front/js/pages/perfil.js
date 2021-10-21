@@ -18,7 +18,7 @@ export const Perfil = () => {
 			<Navbar />
 			<Sidebar />
 
-			<div className="container" style={{ width: "100%" }}>
+			<div className="container">
 				<div className="row">
 					<div className="col" style={{ textAlign: "center" }}>
 						<div style={{ display: "block" }}>
@@ -29,7 +29,7 @@ export const Perfil = () => {
 									backgroundImage:
 										"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
 								}}>
-								<h2>DATOS PERSONALES</h2>
+								<h2 id="Titulo">DATOS PERSONALES</h2>
 								<h6>Nick de usuario: {store.user_nick.nickname}</h6>
 								<h6>E-mail: {store.user_nick.email}</h6>
 							</div>

@@ -20,20 +20,20 @@ export const Sidebar = () => {
 				<div style={{ display: "block" }}></div>
 				<div className="Carrito" style={{ margin: "5px" }}>
 					<Link to="/Perfil">
-						<i className="fas fa-users" style={{ color: "rgb(96, 96, 248)" }}>
+						<i className="fas fa-users" style={{ color: "rgb(96, 96, 248)", marginBottom: "60px" }}>
 							{" "}
 							Perfil
 						</i>
 					</Link>
 					<Link to="/cart">
-						<i className="fas fa-shopping-cart" style={{ color: "rgb(96, 96, 248)" }}>
+						<i className="fas fa-shopping-cart" style={{ color: "rgb(96, 96, 248)", marginBottom: "60px" }}>
 							{" "}
 							Carrito
 						</i>
 						<span style={{ color: "rgb(96, 96, 248)" }}> ({store.cart.length})</span>
 					</Link>
 					<Link to={`/productProfile`}>
-						<i className="fas fa-box-open" style={{ color: "rgb(96, 96, 248)" }}>
+						<i className="fas fa-box-open" style={{ color: "rgb(96, 96, 248)", marginBottom: "60px" }}>
 							<br className="text-center" />
 							Tus Productos
 						</i>

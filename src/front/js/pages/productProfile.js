@@ -24,11 +24,11 @@ export const ProductProfile = () => {
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
 						<div>
-							<h1>Tus productos</h1>
+							<h1 id="Titulo2">Tus productos</h1>
 						</div>
 					) : (
 						<>
-							<h1>Registrate</h1>
+							<h1 id="Titulo2">Registrate</h1>
 						</>
 					)}
 				</div>
@@ -40,39 +40,56 @@ export const ProductProfile = () => {
 
 						return (
 							<div
-								className="container-fluid "
+								className="flip-container "
 								key={item.id}
 								style={{
-									width: "18rem",
+									width: "300px",
+									height: "400px",
 									display: "inline-flex",
 									flexDirection: "column",
 									margin: "30px",
+									backgroundColor: "transparent",
+									perspective: "1000px",
 									border: "2px solid rgb(96, 96, 248)",
 									borderRadius: "25px"
 								}}>
 								<div className="card">
-									<img
-										src={images[0]}
-										className="card-img-top"
-										style={{
-											width: "100px",
-											height: "160px",
-											alignSelf: "center",
-											marginTop: "5px"
-										}}
-									/>
-									<div className="card-body">
-										<h5 className="card-title card-text text-center "> {item.name}</h5>
-										<p className="card-text card-text text-center">{item.description}</p>
-										<p className="card-text">
-											<Link to={`/productDetail/${item.id}`}>
-												<button
-													name="submitSave"
-													className="btn btn-outline-primary my-2 my-sm-0">
-													Para mas detalles, click aquí
-												</button>
-											</Link>
+									<div className="front">
+										<img
+											src={images[0]}
+											className="card-img-top"
+											style={{
+												width: "150px",
+												height: "250px",
+												alignSelf: "center",
+												marginTop: "5px",
+												margin: "10px"
+											}}
+										/>
+										<h5
+											id="cardTitle"
+											className="card-title"
+											style={{
+												textAlign: "center",
+												margin: "10px",
+												color: "rgb(96, 96, 248)"
+											}}>
+											{" "}
+											{item.name}
+										</h5>
+										<p id="p1" className="card-text text-center" style={{ margin: "10px" }}>
+											{item.price}€
 										</p>
+									</div>
+									<div className="back">
+										<p id="p1" className="card-text text-center" style={{ margin: "50px" }}>
+											{item.description}
+										</p>
+										<Link to={`/productDetail/${item.id}`}>
+											<button name="submitSave" className="btn btn-outline-primary my-2 my-sm-0">
+												Para mas detalles, click aquí
+											</button>
+										</Link>
 									</div>
 								</div>
 							</div>

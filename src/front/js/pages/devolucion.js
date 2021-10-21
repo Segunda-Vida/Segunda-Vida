@@ -22,6 +22,8 @@ export const Devolucion = () => {
 						border: "1px solid rgb(96, 96, 248)",
 						display: "table",
 						marginTop: "50px",
+						marginLeft: "20px",
+						marginRight: "20px",
 						backgroundImage:
 							"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
 					}}>
