@@ -25,7 +25,9 @@ export const Perfil = () => {
 							<div
 								style={{
 									border: "2px solid rgb(96, 96, 248)",
-									borderRadius: "25px"
+									borderRadius: "25px",
+									backgroundImage:
+										"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
 								}}>
 								<h2>DATOS PERSONALES</h2>
 								<h6>Nick de usuario: {store.user_nick.nickname}</h6>

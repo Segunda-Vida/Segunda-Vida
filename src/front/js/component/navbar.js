@@ -220,7 +220,12 @@ export const Navbar = () => {
 					aria-labelledby="exampleModalLabel"
 					aria-hidden="true">
 					<div className="modal-dialog">
-						<div className="modal-content">
+						<div
+							className="modal-content"
+							style={{
+								backgroundImage:
+									"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+							}}>
 							<div className="modal-header">
 								<h4 className="modal-title">Registrarse</h4>
 								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
@@ -272,7 +277,12 @@ export const Navbar = () => {
 
 			<div className="modal" id="myModal3" data-backdrop="static">
 				<div className="modal-dialog">
-					<div className="modal-content">
+					<div
+						className="modal-content"
+						style={{
+							backgroundImage:
+								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+						}}>
 						<div className="modal-header">
 							<h4 className="modal-title">Recuperar contraseña</h4>
 							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
@@ -313,7 +323,12 @@ export const Navbar = () => {
 				aria-labelledby="staticBackdropLabel"
 				aria-hidden="true">
 				<div className="modal-dialog">
-					<div className="modal-content">
+					<div
+						className="modal-content"
+						style={{
+							backgroundImage:
+								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+						}}>
 						<div className="modal-header">
 							<h5 className="modal-title" id="exampleModalLabel">
 								Subir Productos
@@ -389,7 +404,13 @@ export const Navbar = () => {
 				aria-labelledby="exampleModalLabel"
 				aria-hidden="true">
 				<div className="modal-dialog" role="document">
-					<div className="modal-content" style={{ width: "600px" }}>
+					<div
+						className="modal-content"
+						style={{
+							width: "600px",
+							backgroundImage:
+								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+						}}>
 						<div className="modal-header">
 							<h5 className="modal-title" id="exampleModalLabel">
 								Bienvenidos a Segunda Vida
