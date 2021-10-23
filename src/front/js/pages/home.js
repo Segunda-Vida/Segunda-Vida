@@ -21,16 +21,16 @@ export const Home = () => {
 	console.log("comprado", store.isBougth);
 
 	return (
-		<div id="cont1">
+		<div>
 			<div>
 				<Navbar />
 				<Sidebar />
 			</div>
 
-			<div className="container">
+			<div className="container-fluid" id="cont1">
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
-						<div style={{ width: "100%" }}>
+						<div style={{ width: "95%" }}>
 							{!!store.user_nick && (
 								<div>
 									<img
