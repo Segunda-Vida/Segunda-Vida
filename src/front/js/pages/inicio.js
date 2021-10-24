@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Inicio = () => {
+	useEffect(() => {
+		setTimeout(function() {
+			window.location.href = "/";
+		}, 5000);
+	}, []);
+
 	return (
 		<div className="container text-center">
 			<div

@@ -30,7 +30,7 @@ export const Home = () => {
 			<div className="container-fluid" id="cont1">
 				<div className="text-center mt-5">
 					{store.isAuthenticate ? (
-						<div style={{ width: "95%" }}>
+						<div>
 							{!!store.user_nick && (
 								<div>
 									<img
@@ -65,14 +65,14 @@ export const Home = () => {
 					} else {
 						return (
 							<div
-								className="flip-container "
+								className="flip-container"
 								key={item.id}
 								style={{
 									width: "300px",
 									height: "400px",
 									display: "inline-flex",
 									flexDirection: "column",
-									margin: "30px",
+									margin: "30px 80px 80px 30px",
 									backgroundColor: "transparent",
 									perspective: "1000px",
 									border: "2px solid rgb(96, 96, 248)",

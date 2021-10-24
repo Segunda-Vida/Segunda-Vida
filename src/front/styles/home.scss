@@ -5,7 +5,7 @@ body{
   
 }
 #cont1{
-  margin-left: 150px;
+  padding-left: 160px;
 }
 .imgFondo{
   padding-top: 70px;
@@ -195,3 +195,7 @@ body{
       float: none;
     }
   }
+#app{
+  width: auto !important;
+  height: auto !important;
+}
