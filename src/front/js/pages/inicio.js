@@ -31,6 +31,11 @@ export const Inicio = () => {
 						<i className="fas fa-door-open">Regresar</i>
 					</button>
 				</Link>
+				<div className="text-center">
+					<div className="spinner-border text-primary" role="status">
+						<span className="sr-only">Loading...</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
