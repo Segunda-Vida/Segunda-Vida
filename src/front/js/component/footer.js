@@ -12,11 +12,6 @@ export const Footer = () => (
 			marginLeft: "10px"
 		}}>
 		<div style={{ display: "flex" }}>
-			<div style={{ width: "500px", justifyContent: "center" }}>
-				<Link to="/inicio">
-					<p style={{ marginTop: "20px" }}>Conócenos</p>
-				</Link>
-			</div>
 			<div className="container-fluid" style={{ display: "flex", fontSize: "25px", justifyContent: "right" }}>
 				<div style={{ display: "flex" }}>
 					<div style={{ margin: "10px" }}>

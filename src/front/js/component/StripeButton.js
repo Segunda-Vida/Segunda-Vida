@@ -16,7 +16,7 @@ export const StripeButton = props => {
 			actions.devProd();
 			actions.deleteCart();
 			actions.getPrAll();
-			history.push("/");
+			history.push("/home");
 			toastr.success("Tu compra se ha realizado correctamente", "Compra Finalizada", {
 				timeOut: 2000,
 				closeButton: true,

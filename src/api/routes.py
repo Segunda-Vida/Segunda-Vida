@@ -174,3 +174,4 @@ def prod_bough(id):
     product = Product.productStatus(id)
     return jsonify({"msg":"producto vendido"}),200
 
+

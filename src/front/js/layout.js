@@ -28,7 +28,7 @@ const Layout = () => {
 						<Route exact path="/products/:text">
 							<Products />
 						</Route>
-						<Route exact path="/">
+						<Route exact path="/home">
 							<Home />
 						</Route>
 						<Route exact path="/checkout">
@@ -49,7 +49,7 @@ const Layout = () => {
 						<Route exact path="/devolucion">
 							<Devolucion />
 						</Route>
-						<Route exact path="/inicio">
+						<Route exact path="/">
 							<Inicio />
 						</Route>
 						<Route>

@@ -305,6 +305,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				setStore({ devolutionProd: cart });
 			},
+
 			bought: () => {
 				let storeCopy = getStore();
 				let devol = storeCopy.devolutionProd;

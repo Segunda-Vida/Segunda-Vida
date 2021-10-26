@@ -15,7 +15,7 @@ export const StripeButton2 = props => {
 		if (token) {
 			actions.devProd();
 			actions.getPrAll();
-			history.push("/");
+			history.push("/home");
 			toastr.success("Tu devolución se ha realizado correctamente", "Devolución Finalizada", {
 				timeOut: 2000,
 				closeButton: true,

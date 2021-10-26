@@ -127,7 +127,7 @@ export const Navbar = () => {
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light nav" id="navbar">
-				<Link to="/">
+				<Link to="/home">
 					<img
 						src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
 						style={{ width: "80px", height: "80px", marginRight: "5px" }}
@@ -179,7 +179,7 @@ export const Navbar = () => {
 										<i className="fas fa-file-import"> Subir Productos</i>
 									</button>
 
-									<Link to="/">
+									<Link to="/home">
 										<button
 											className="btn btn-outline-light my-2 my-sm0"
 											type="submit"

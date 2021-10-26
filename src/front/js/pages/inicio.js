@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Inicio = () => {
 	useEffect(() => {
 		setTimeout(function() {
-			window.location.href = "/";
+			window.location.href = "/home";
 		}, 5000);
 	}, []);
 
@@ -16,7 +16,13 @@ export const Inicio = () => {
 					style={{ width: "200px", height: "200px" }}
 				/>
 				<div className="text-center">
-					<div className="spinner-border text-primary" role="status">
+					<div className="spinner-grow spinner-grow-sm text-primary" role="status" style={{ margin: "2px" }}>
+						<span className="sr-only">Loading...</span>
+					</div>
+					<div className="spinner-grow  spinner-grow-sm text-primary" role="status" style={{ margin: "2px" }}>
+						<span className="sr-only">Loading...</span>
+					</div>
+					<div className="spinner-grow spinner-grow-sm text-primary" role="status" style={{ margin: "2px" }}>
 						<span className="sr-only">Loading...</span>
 					</div>
 				</div>
