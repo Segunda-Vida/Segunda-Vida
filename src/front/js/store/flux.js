@@ -6,12 +6,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			list: [],
 			products: [],
 			message: null,
+			mensaje: null,
 			product: null,
 			product_exist: false,
 			product_loaded: false,
 			product_loaded_error: false,
 			user_p: [],
 			user_nick: [],
+			user_regis: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -87,7 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						setStore({ message: data.msg });
-
+						setStore({ mensaje: "Usuario registrado", user_regis: true });
 						setStore({ isRegistered: true });
 					});
 			},

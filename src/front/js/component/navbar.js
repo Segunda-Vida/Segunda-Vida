@@ -68,6 +68,15 @@ export const Navbar = () => {
 		});
 	}, [store.product_loaded_error]);
 
+	useEffect(() => {
+		toastr.success(store.mensaje, "", {
+			timeOut: 2000,
+			closeButton: true,
+			progressBar: true,
+			preventDuplicates: true
+		});
+	}, [store.user_regis]);
+
 	const onChangeHandler = text => {
 		let matches = [];
 		if (text.length > 0) {
