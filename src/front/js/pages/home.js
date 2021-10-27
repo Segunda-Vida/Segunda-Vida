@@ -37,7 +37,9 @@ export const Home = () => {
 										src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
 										style={{ width: "150px", height: "150px" }}
 									/>
-									<h2 id="Titulo2">Hola {store.user_nick.nickname} Bienvenido</h2>
+									<h2 id="Titulo2">
+										Estos son nuestros productos a la venta, {store.user_nick.nickname}
+									</h2>
 								</div>
 							)}
 						</div>
@@ -47,14 +49,9 @@ export const Home = () => {
 								src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
 								style={{ width: "150px", height: "150px" }}
 							/>
-							<h2 id="Titulo2">Bienvenido</h2>
+							<h2 id="Titulo2">Bienvenido, estos son nuestros productos a la venta</h2>
 						</div>
 					)}
-				</div>
-				<div>
-					<h2 id="Titulo3" className="text-center">
-						Productos disponibles a la venta
-					</h2>
 				</div>
 
 				{store.list.map(item => {

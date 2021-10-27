@@ -13,6 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			product_loaded_error: false,
 			user_p: [],
 			user_nick: [],
+			user_log: null,
 			user_regis: null,
 			demo: [
 				{
@@ -53,11 +54,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						localStorage.setItem("token", data.token);
 						setStore({ isAuthenticate: true });
+						setStore({ mensaje: "¡Bienvenido/a!", user_log: true });
 					});
 			},
 			signOut: () => {
 				localStorage.removeItem("token");
 				setStore({ isAuthenticate: false, user_nick: [] });
+				setStore({ mensaje: "¡Hasta pronto!", user_log: false });
 			},
 
 			verifySession: () => {

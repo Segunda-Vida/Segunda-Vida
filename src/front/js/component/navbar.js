@@ -77,6 +77,24 @@ export const Navbar = () => {
 		});
 	}, [store.user_regis]);
 
+	useEffect(() => {
+		if (store.user_log === true) {
+			toastr.success(store.mensaje, "", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
+		} else {
+			toastr.error(store.mensaje, "", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
+		}
+	}, [store.user_log]);
+
 	const onChangeHandler = text => {
 		let matches = [];
 		if (text.length > 0) {
