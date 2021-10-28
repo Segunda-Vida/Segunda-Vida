@@ -220,7 +220,7 @@ export const Navbar = () => {
 								<div>
 									<button
 										onClick={() => hideSignIn()}
-										className="btn btn-outline-light my-2 my-sm-0"
+										className="btn btn-navmain"
 										type="submit"
 										data-toggle="modal"
 										data-target="#exampleModal"
@@ -229,7 +229,7 @@ export const Navbar = () => {
 									</button>
 									<button
 										type="button"
-										className="btn  btn-outline-light my-2 my-sm0"
+										className="btn btn-navmain"
 										data-toggle="modal"
 										data-target="#exampleModal"
 										style={{ margin: "10px" }}>
@@ -353,12 +353,7 @@ export const Navbar = () => {
 				aria-labelledby="staticBackdropLabel"
 				aria-hidden="true">
 				<div className="modal-dialog">
-					<div
-						className="modal-content"
-						style={{
-							backgroundImage:
-								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
-						}}>
+					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="exampleModalLabel">
 								Subir Productos
