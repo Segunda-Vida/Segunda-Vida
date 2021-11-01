@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body{
   padding-top: 70px;
-  
-}
-#cont1{
-  padding-left: 160px;
+  background-color: #ECEFF1;
 }
 .imgFondo{
   padding-top: 70px;
@@ -109,14 +107,12 @@ body{
     cursor:pointer
 }
 #Titulo{
-  font-family: 'Akronim', cursive;
+  font-family:'Lobster', cursive;
   font-size: 3em;
-  
-
   color:rgb(96, 96, 248);   
 }
 #Titulo2{
-    font-family: 'Akronim', cursive;
+    font-family: 'Lobster', cursive;
     font-size: 3em;
     border:1px solid rgb(96, 96, 248);
     border-radius: 25px;
@@ -126,8 +122,6 @@ body{
 #Titulo3{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 2em;
-    
-    
 }
 #Titulo4{
     font-family: 'Akronim', cursive;
@@ -231,4 +225,8 @@ border-radius: 100%;
 }
 .Header{
   display: flex;
+}
+.h2ini{
+  font-family: 'Lobster', cursive;
+  color: rgb(96, 96, 248);
 }
