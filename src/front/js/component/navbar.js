@@ -204,7 +204,10 @@ export const Navbar = () => {
 											data-toggle="modal"
 											data-target="#staticBackdrop"
 											style={{ margin: "10px" }}>
-											<i className="fas fa-file-import"> Subir Productos</i>
+											<i className="fas fa-file-import">
+												{" "}
+												<p id="p1">Subir Productos</p>
+											</i>
 										</button>
 
 										<Link to="/home">
@@ -213,7 +216,10 @@ export const Navbar = () => {
 												type="submit"
 												style={{ margin: "10px" }}
 												onClick={() => actions.signOut()}>
-												<i className="fas fa-sign-out-alt"> Cerrar sesión</i>
+												<i className="fas fa-sign-out-alt">
+													{" "}
+													<p id="p1">Cerrar sesión</p>
+												</i>
 											</button>
 										</Link>
 									</div>
