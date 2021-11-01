@@ -6,7 +6,7 @@ body{
   background-color: #ECEFF1;
 }
 .imgFondo{
-  padding-top: 70px;
+  padding-top: 180px;
 }
 .card {
   border: 0px solid blue;
@@ -108,7 +108,7 @@ body{
 #Titulo{
   font-family:'Lobster', cursive;
   font-size: 3em;
-  color:rgb(96, 96, 248);   
+  color:white;   
 }
 #Titulo2{
     font-family: 'Lobster', cursive;
@@ -121,7 +121,8 @@ body{
 }
 #Titulo3{
     font-family:'Lobster', cursive;
-    font-size: 2em;
+    font-size: 3em;
+    color:rgb(96, 96, 248)
 }
 #Titulo4{
     font-family:'Lobster', cursive;
@@ -253,4 +254,7 @@ border-radius: 100%;
 .th,.td{
   color:  #ECEFF1;
   border-bottom: 1px solid white;
+}
+.prodPer{
+  margin-top: 150px;
 }

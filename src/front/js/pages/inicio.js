@@ -27,7 +27,7 @@ export const Inicio = () => {
 					</div>
 				</div>
 				<div>
-					<h2 id="Titulo"> CARGANDO PAGINA</h2>
+					<h2 id="Titulo3"> CARGANDO PAGINA</h2>
 
 					<h2 className="h2ini">Bienvenidos a nuestra tienda online de productos de segunda mano.</h2>
 					<h2 className="h2ini">Vais a encontrar productos de buena calidad y vendedores de confianza.</h2>

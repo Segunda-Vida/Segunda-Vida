@@ -26,7 +26,7 @@ export const Cart = () => {
 					style={{
 						border: "1px solid rgb(96, 96, 248)",
 						display: "table",
-						marginTop: "100px"
+						marginTop: "150px"
 					}}>
 					<div className="theader" style={{ display: "table-header-group" }}>
 						<div className="tr" style={{ display: "table-row" }}>

@@ -16,8 +16,7 @@ export const ProductProfile = () => {
 	return (
 		<div>
 			<Navbar />
-			<Sidebar />
-			<div className="container">
+			<div className="container-fluid prodPer">
 				<div className="text-center mt-5">
 					<div className="container"></div>
 				</div>

@@ -200,12 +200,10 @@ export const Navbar = () => {
 									<div>
 										<button
 											type="button"
-											className="btn btn-navmain"
+											className="btn btn-logout"
 											data-toggle="modal"
-											data-target="#staticBackdrop"
-											style={{ margin: "10px" }}>
+											data-target="#staticBackdrop">
 											<i className="fas fa-file-import">
-												{" "}
 												<p id="p1">Subir Productos</p>
 											</i>
 										</button>
@@ -227,20 +225,25 @@ export const Navbar = () => {
 									<div>
 										<button
 											onClick={() => hideSignIn()}
-											className="btn btn-navmain"
+											className="btn btn-logout"
 											type="submit"
 											data-toggle="modal"
 											data-target="#exampleModal"
 											style={{ margin: "10px" }}>
-											<i className="fas fa-sign-in-alt"> Regístrate o inicia sesión</i>
+											<i className="fas fa-sign-in-alt">
+												{" "}
+												<p id="p1">Regístrate o inicia sesión</p>
+											</i>
 										</button>
 										<button
 											type="button"
-											className="btn btn-navmain"
+											className="btn btn-logout"
 											data-toggle="modal"
 											data-target="#exampleModal"
 											style={{ margin: "10px" }}>
-											<i className="fas fa-file-import"> Subir Productos</i>
+											<i className="fas fa-file-import">
+												<p id="p1">Subir Productos</p>
+											</i>
 										</button>
 									</div>
 								)}
@@ -337,12 +340,7 @@ export const Navbar = () => {
 
 			<div className="modal" id="myModal3" data-backdrop="static">
 				<div className="modal-dialog">
-					<div
-						className="modal-content"
-						style={{
-							backgroundImage:
-								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
-						}}>
+					<div className="modal-content">
 						<div className="modal-header">
 							<h4 className="modal-title">Recuperar contraseña</h4>
 							<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
@@ -360,7 +358,7 @@ export const Navbar = () => {
 								onChange={e => setEmailForgot(e.target.value)}
 							/>
 							<button
-								className="btn btn-outline-primary my-2 my-sm-0"
+								className="btn btn-navmain my-2 my-sm-0"
 								data-dismiss="modal"
 								aria-hidden="true"
 								type="submit"

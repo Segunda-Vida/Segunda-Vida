@@ -14,42 +14,30 @@ export const Devolucion = () => {
 	return (
 		<div>
 			<Navbar />
-			<Sidebar />
+
 			<div className="container">
 				<div
 					className="table"
 					style={{
 						border: "1px solid rgb(96, 96, 248)",
 						display: "table",
-						marginTop: "50px",
+						marginTop: "150px",
 						marginLeft: "20px",
-						marginRight: "20px",
-						backgroundImage:
-							"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+						marginRight: "20px"
 					}}>
 					<div className="theader" style={{ display: "table-header-group" }}>
 						<div className="tr" style={{ display: "table-row" }}>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Imagen</strong>
+							<div className="th" style={{ display: "table-cell" }}>
+								<p id="p1">Imagen</p>
 							</div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Producto</strong>
+							<div className="th" style={{ display: "table-cell" }}>
+								<p id="p1">Producto</p>
 							</div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Precio</strong>
+							<div className="th" style={{ display: "table-cell" }}>
+								<p id="p1">Precio</p>
 							</div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}></div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}></div>
+							<div className="th" style={{ display: "table-cell" }}></div>
+							<div className="th" style={{ display: "table-cell" }}></div>
 						</div>
 					</div>
 
@@ -60,10 +48,10 @@ export const Devolucion = () => {
 									<img src={item.product_image_url[0]} style={{ height: "50px", width: "50px" }} />
 								</div>
 								<div className="td" style={{ display: "table-cell" }}>
-									{item.name}
+									<p id="p1">{item.name}</p>
 								</div>
 								<div className="td" style={{ display: "table-cell" }}>
-									{item.price}
+									<p id="p1">{item.price}</p>
 								</div>
 
 								<div className="td" style={{ display: "table-cell" }}></div>
@@ -72,21 +60,13 @@ export const Devolucion = () => {
 					</div>
 					<div className="tfooter" style={{ display: "table-footer-group", justifyContent: "center" }}>
 						<div className="tr" style={{ display: "table-row" }}>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}></div>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}></div>
+							<div className="td" style={{ display: "table-cell" }}></div>
+							<div className="td" style={{ display: "table-cell" }}></div>
 
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Total con Iva: {devol}€</strong>
+							<div className="td" style={{ display: "table-cell" }}>
+								<p id="p1">Total con Iva: {devol}€</p>
 							</div>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}>
+							<div className="td" style={{ display: "table-cell" }}>
 								<StripeButton2 totalAmount={devol} />
 							</div>
 						</div>

@@ -16,22 +16,25 @@ export const Perfil = () => {
 	return (
 		<div className="imgFondo">
 			<Navbar />
-			<Sidebar />
-
 			<div className="container">
 				<div className="row">
 					<div className="col" style={{ textAlign: "center" }}>
 						<div style={{ display: "block" }}>
 							<div
 								style={{
+									borderRadius: "100%",
 									border: "2px solid rgb(96, 96, 248)",
-									borderRadius: "25px",
-									backgroundImage:
-										"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+									backgroundColor: "rgb(96,96,248)",
+									padding: "50px",
+									boxShadow: "0 0 5px 5px rgb(96,96,248)"
 								}}>
 								<h2 id="Titulo">DATOS PERSONALES</h2>
-								<h6>Nick de usuario: {store.user_nick.nickname}</h6>
-								<h6>E-mail: {store.user_nick.email}</h6>
+								<p id="p1" style={{ color: "white" }}>
+									Nick de usuario: {store.user_nick.nickname}
+								</p>
+								<p id="p1" style={{ color: "white" }}>
+									E-mail: {store.user_nick.email}
+								</p>
 							</div>
 						</div>
 					</div>
