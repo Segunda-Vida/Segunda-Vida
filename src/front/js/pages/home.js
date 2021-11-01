@@ -24,7 +24,6 @@ export const Home = () => {
 		<div>
 			<div>
 				<Navbar />
-				<Sidebar />
 			</div>
 
 			<div className="container-fluid" id="cont1">

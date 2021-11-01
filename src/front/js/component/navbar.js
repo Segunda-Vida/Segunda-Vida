@@ -154,93 +154,114 @@ export const Navbar = () => {
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light nav" id="navbar">
-				<Link to="/home">
-					<img
-						className="img-logo"
-						src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
-					/>
-				</Link>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon"></span>
-				</button>
+				<div className="Header">
+					<Link to="/home">
+						<img
+							className="img-logo"
+							src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
+						/>
+					</Link>
+					<button
+						className="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span className="navbar-toggler-icon"></span>
+					</button>
 
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<form className="form-inline my-2 my-lg-0 ">
-						<div>
-							<input
-								type="text"
-								className="col-md-12 input   rounded form-control input-lg"
-								onChange={e => onChangeHandler(e.target.value)}
-								value={text}
-								style={{ width: "700px", marginLeft: "10px" }}
-							/>
-						</div>
-						{suggestions &&
-							suggestions.map((suggestion, i) => (
-								<Link key={i} to={`/productDetail/${suggestion.id}`}>
-									<div
-										className="suggestion col-md-12 justify-content-md-center"
-										style={{ color: "white" }}>
-										{suggestion.name}
-									</div>
-								</Link>
-							))}
-					</form>
-					<ul className="navbar-nav ml-auto">
-						<li className="nav-item active" id="li1">
-							{store.isAuthenticate ? (
-								<div>
-									<button
-										type="button"
-										className="btn btn-navmain"
-										data-toggle="modal"
-										data-target="#staticBackdrop"
-										style={{ margin: "10px" }}>
-										<i className="fas fa-file-import"> Subir Productos</i>
-									</button>
-
-									<Link to="/home">
-										<button
-											className="btn btn-logout"
-											type="submit"
-											style={{ margin: "10px" }}
-											onClick={() => actions.signOut()}>
-											<i className="fas fa-sign-out-alt"> Cerrar sesión</i>
-										</button>
+					<div className="collapse navbar-collapse" id="navbarSupportedContent">
+						<form className="form-inline my-2 my-lg-0 ">
+							<div>
+								<input
+									type="text"
+									className="col-md-12 input   rounded form-control input-lg"
+									onChange={e => onChangeHandler(e.target.value)}
+									value={text}
+									style={{ width: "700px", marginLeft: "10px" }}
+								/>
+							</div>
+							{suggestions &&
+								suggestions.map((suggestion, i) => (
+									<Link key={i} to={`/productDetail/${suggestion.id}`}>
+										<div
+											className="suggestion col-md-12 justify-content-md-center"
+											style={{ color: "white" }}>
+											{suggestion.name}
+										</div>
 									</Link>
-								</div>
-							) : (
-								<div>
-									<button
-										onClick={() => hideSignIn()}
-										className="btn btn-navmain"
-										type="submit"
-										data-toggle="modal"
-										data-target="#exampleModal"
-										style={{ margin: "10px" }}>
-										<i className="fas fa-sign-in-alt"> Regístrate o inicia sesión</i>
-									</button>
-									<button
-										type="button"
-										className="btn btn-navmain"
-										data-toggle="modal"
-										data-target="#exampleModal"
-										style={{ margin: "10px" }}>
-										<i className="fas fa-file-import"> Subir Productos</i>
-									</button>
-								</div>
-							)}
-						</li>
-					</ul>
+								))}
+						</form>
+						<ul className="navbar-nav ml-auto">
+							<li className="nav-item active" id="li1">
+								{store.isAuthenticate ? (
+									<div>
+										<button
+											type="button"
+											className="btn btn-navmain"
+											data-toggle="modal"
+											data-target="#staticBackdrop"
+											style={{ margin: "10px" }}>
+											<i className="fas fa-file-import"> Subir Productos</i>
+										</button>
+
+										<Link to="/home">
+											<button
+												className="btn btn-logout"
+												type="submit"
+												style={{ margin: "10px" }}
+												onClick={() => actions.signOut()}>
+												<i className="fas fa-sign-out-alt"> Cerrar sesión</i>
+											</button>
+										</Link>
+									</div>
+								) : (
+									<div>
+										<button
+											onClick={() => hideSignIn()}
+											className="btn btn-navmain"
+											type="submit"
+											data-toggle="modal"
+											data-target="#exampleModal"
+											style={{ margin: "10px" }}>
+											<i className="fas fa-sign-in-alt"> Regístrate o inicia sesión</i>
+										</button>
+										<button
+											type="button"
+											className="btn btn-navmain"
+											data-toggle="modal"
+											data-target="#exampleModal"
+											style={{ margin: "10px" }}>
+											<i className="fas fa-file-import"> Subir Productos</i>
+										</button>
+									</div>
+								)}
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div className="nav-panel_row">
+					<div className="Carrito text-center">
+						<Link to="/Perfil">
+							<i className="fas fa-users jrl"> Perfil</i>
+						</Link>
+						<Link to="/cart">
+							<i className="fas fa-shopping-cart jrl"> Carrito</i>
+							<span className="jrl2"> ({store.cart.length})</span>
+						</Link>
+						<Link to={`/productProfile`}>
+							<i className="fas fa-box-open jrl"> Tus Productos</i>
+						</Link>
+						<Link to="/devolucion">
+							<i className="fas fa-hand-holding-usd jrl">Devoluciones</i>
+							<span className="jrl2"> ({store.devolutionProd.length})</span>
+						</Link>
+					</div>
 				</div>
 			</nav>
+
 			<div>
 				<div
 					className="modal fade"
