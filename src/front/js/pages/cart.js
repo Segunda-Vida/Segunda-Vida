@@ -20,43 +20,27 @@ export const Cart = () => {
 	return (
 		<div>
 			<Navbar />
-			<Sidebar />
-
 			<div className="container">
 				<div
 					className="table"
 					style={{
 						border: "1px solid rgb(96, 96, 248)",
 						display: "table",
-						marginTop: "50px",
-						marginLeft: "20px",
-						marginRight: "20px",
-						backgroundImage:
-							"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
+						marginTop: "100px"
 					}}>
 					<div className="theader" style={{ display: "table-header-group" }}>
 						<div className="tr" style={{ display: "table-row" }}>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Imagen</strong>
+							<div className="th" style={{ display: "table-cell" }}>
+								<p id="p1">Imagen</p>
 							</div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Producto</strong>
+							<div className="th" style={{ display: "table-cell" }}>
+								<p id="p1">Producto</p>
 							</div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Precio</strong>
+							<div className="th" style={{ display: "table-cell" }}>
+								<p id="p1">Precio</p>
 							</div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}></div>
-							<div
-								className="th"
-								style={{ display: "table-cell", borderBottom: "1px solid rgb(96, 96, 248)" }}></div>
+							<div className="th" style={{ display: "table-cell" }}></div>
+							<div className="th" style={{ display: "table-cell" }}></div>
 						</div>
 					</div>
 
@@ -66,16 +50,16 @@ export const Cart = () => {
 								<div className="td" style={{ display: "table-cell" }}>
 									<img src={item.product_image_url[0]} style={{ height: "50px", width: "50px" }} />
 								</div>
-								<div className="td" style={{ display: "table-cell" }}>
+								<div className="td" style={{ display: "table-cell", fontFamily: "Lobster, cursive" }}>
 									{item.name}
 								</div>
-								<div className="td" style={{ display: "table-cell" }}>
+								<div className="td" style={{ display: "table-cell", fontFamily: "Lobster, cursive" }}>
 									{item.price}
 								</div>
 
 								<div className="td" style={{ display: "table-cell" }}>
 									<button
-										className="remove btn btn-outline-primary my-2 my-sm0"
+										className="remove btn btn-navmain"
 										onClick={() => actions.quitCart(item)}
 										type="submit"
 										href="#">
@@ -88,21 +72,13 @@ export const Cart = () => {
 					</div>
 					<div className="tfooter" style={{ display: "table-footer-group", justifyContent: "center" }}>
 						<div className="tr" style={{ display: "table-row" }}>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}></div>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}></div>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Total sin IVA: {total}€</strong>
+							<div className="td" style={{ display: "table-cell" }}></div>
+							<div className="td" style={{ display: "table-cell" }}></div>
+							<div className="td" style={{ display: "table-cell" }}>
+								<p id="p1">Total sin IVA: {total}€</p>
 							</div>
-							<div
-								className="td"
-								style={{ display: "table-cell", borderTop: "1px solid rgb(96, 96, 248)" }}>
-								<strong>Total con Iva: {iva}€</strong>
+							<div className="td" style={{ display: "table-cell" }}>
+								<p id="p1">Total con Iva: {iva}€</p>
 							</div>
 							<div
 								className="td"

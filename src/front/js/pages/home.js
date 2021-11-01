@@ -34,7 +34,10 @@ export const Home = () => {
 								<div>
 									<img
 										src="https://ci6.googleusercontent.com/proxy/f58kg40ctZ-DjhiD6L9M9vEpMSPGkplGEqNHtYRsfVq_6h6l-DjWCLl8TnIbby73psRpjEHcNTu6_70ATCRiqT3BPAqvUv5aJEYg4-sFQ1Tcu_3lpaTb_pMAMmci9apZMibcvAXe5fZ3t2Wk4_RaEFg0eQ=s0-d-e1-ft#https://api.freelogodesign.org/files/287dfdcf9dcb476399e52fabe7cd0308/thumb/logo_200x200.png?v=0"
-										style={{ width: "150px", height: "150px" }}
+										style={{
+											width: "150px",
+											height: "150px"
+										}}
 									/>
 									<h2 id="Titulo2">
 										Estos son nuestros productos a la venta, {store.user_nick.nickname}
@@ -93,7 +96,8 @@ export const Home = () => {
 											style={{
 												textAlign: "center",
 												margin: "10px",
-												color: "rgb(96, 96, 248)"
+												color: "rgb(96, 96, 248)",
+												fontFamily: "Lobster, cursive"
 											}}>
 											{" "}
 											{item.name}

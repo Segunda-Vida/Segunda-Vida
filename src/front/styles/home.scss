@@ -84,8 +84,7 @@ body{
     z-index: 10;
     box-shadow: 0 0 3px 3px rgb(96, 96, 248);
     display: block;
-}
-
+  }
 #li1{
     margin-top: 8px;
     margin-left: 100px !important
@@ -117,25 +116,26 @@ body{
     border:1px solid rgb(96, 96, 248);
     border-radius: 25px;
     background-color: rgb(96, 96, 248);
-    color:white;    
+    color:white;
+    box-shadow: 0px 5px 8px 0px rgb(96, 96, 248); 
 }
 #Titulo3{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:'Lobster', cursive;
     font-size: 2em;
 }
 #Titulo4{
-    font-family: 'Akronim', cursive;
+    font-family:'Lobster', cursive;
     font-size: 30px;
     
 }
 
 #p1{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:'Lobster', cursive;
     font-size: 1em;
     
 }
 #cardTitle{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:'Lobster', cursive;
     font-size: 1em;
 }
 /* The side navigation menu */
@@ -197,6 +197,7 @@ body{
   border: 1px solid rgb(96, 96, 248);
   background-color: white;
   color:rgb(96, 96, 248);
+  box-shadow: 0 0 1px 1px rgb(96, 96, 248);
 
 }
 .btn-logout{
@@ -212,16 +213,26 @@ background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(96,96,248,1) 1
 border-radius: 100%;
 }
 .modal-content{
-  background-color: white;
+  background-color: #ECEFF1;
   color:rgb(96, 96, 248);
+  width: 600px;
+}
+.modal-header{
+  background-color: rgb(96, 96, 248);
+}
+.modal-title{
+  color:white;
+}
+.modal-body {
+  background-color: #ECEFF1;
 }
 .jrl{
   color:white;
-  margin:10px
-  
+  margin-inline:10px;  
 }
 .jrl2{
   color:white;
+  font-family:'Lobster', cursive;
 }
 .Header{
   display: flex;
@@ -229,4 +240,17 @@ border-radius: 100%;
 .h2ini{
   font-family: 'Lobster', cursive;
   color: rgb(96, 96, 248);
+}
+.fa-sign-out-alt{
+  color:white;
+}
+.table{
+  background-color: rgb(96, 96, 248);
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 0 3px 3px rgb(96, 96, 248);
+}
+.th,.td{
+  color:  #ECEFF1;
+  border-bottom: 1px solid white;
 }

@@ -245,17 +245,25 @@ export const Navbar = () => {
 				<div className="nav-panel_row">
 					<div className="Carrito text-center">
 						<Link to="/Perfil">
-							<i className="fas fa-users jrl"> Perfil</i>
+							<i className="fas fa-users jrl">
+								<p id="p1"> Perfil</p>
+							</i>
 						</Link>
 						<Link to="/cart">
-							<i className="fas fa-shopping-cart jrl"> Carrito</i>
-							<span className="jrl2"> ({store.cart.length})</span>
+							<i className="fas fa-shopping-cart jrl">
+								<p id="p1"> Carrito</p>
+							</i>
+							<span className="jrl2">({store.cart.length})</span>
 						</Link>
 						<Link to={`/productProfile`}>
-							<i className="fas fa-box-open jrl"> Tus Productos</i>
+							<i className="fas fa-box-open jrl">
+								<p id="p1">Tus Productos</p>
+							</i>
 						</Link>
 						<Link to="/devolucion">
-							<i className="fas fa-hand-holding-usd jrl">Devoluciones</i>
+							<i className="fas fa-hand-holding-usd jrl">
+								<p id="p1">Devoluciones</p>
+							</i>
 							<span className="jrl2"> ({store.devolutionProd.length})</span>
 						</Link>
 					</div>
@@ -271,12 +279,7 @@ export const Navbar = () => {
 					aria-labelledby="exampleModalLabel"
 					aria-hidden="true">
 					<div className="modal-dialog">
-						<div
-							className="modal-content"
-							style={{
-								backgroundImage:
-									"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
-							}}>
+						<div className="modal-content">
 							<div className="modal-header">
 								<h4 className="modal-title">Registrarse</h4>
 								<button type="button" className="close" data-dismiss="modal" aria-hidden="true">
@@ -312,7 +315,7 @@ export const Navbar = () => {
 								/>
 								<div style={{ justifyContent: "center" }}>
 									<button
-										className="btn btn-outline-primary my-2 my-sm-0"
+										className="btn btn-navmain"
 										data-dismiss="modal"
 										aria-hidden="true"
 										type="submit"
@@ -375,8 +378,8 @@ export const Navbar = () => {
 				aria-hidden="true">
 				<div className="modal-dialog">
 					<div className="modal-content">
-						<div className="modal-header" style={{ backgroundColor: "rgb(96,96,248" }}>
-							<h5 className="modal-title" id="exampleModalLabel" style={{ color: "white" }}>
+						<div className="modal-header">
+							<h5 className="modal-title" id="exampleModalLabel">
 								Subir Productos
 							</h5>
 							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -431,10 +434,7 @@ export const Navbar = () => {
 									multiple
 								/>
 
-								<button
-									className="btn btn-outline-primary my-2 my-sm-0"
-									type="submit"
-									onClick={() => pushProduct()}>
+								<button className="btn btn-navmain" type="submit" onClick={() => pushProduct()}>
 									Subir
 								</button>
 							</div>
@@ -450,13 +450,7 @@ export const Navbar = () => {
 				aria-labelledby="exampleModalLabel"
 				aria-hidden="true">
 				<div className="modal-dialog" role="document">
-					<div
-						className="modal-content"
-						style={{
-							width: "600px",
-							backgroundImage:
-								"url(https://www.wallpapertip.com/wmimgs/3-34573_blue-wallpaper-hd-blue-and-white-hd.jpg)"
-						}}>
+					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="exampleModalLabel">
 								Bienvenidos a Segunda Vida
@@ -492,7 +486,7 @@ export const Navbar = () => {
 									style={{ width: "200px", margin: "10px" }}
 									onChange={e => setPassword(e.target.value)}
 								/>
-								<button className="btn btn-outline-primary my-2 my-sm-0" style={{ margin: "10px" }}>
+								<button className="btn btn-navmain" style={{ margin: "10px" }}>
 									<i onClick={() => login()} className="fas fa-sign-in-alt">
 										{" "}
 										Entrar
@@ -507,7 +501,7 @@ export const Navbar = () => {
 									onClick={() => hideSignIn()}
 									type="submit"
 									name="submitSave"
-									className="btn btn-outline-primary my-2 my-sm-0"
+									className="btn btn-navmain"
 									data-toggle="modal"
 									data-target="#myModal2">
 									<i className="fas fa-address-book"> Regístrate</i>
@@ -518,10 +512,9 @@ export const Navbar = () => {
 									onClick={() => hideSignIn()}
 									type="submit"
 									name="submitSave"
-									className="btn btn-outline-primary my-2 my-sm-0"
+									className="btn btn-navmain"
 									data-toggle="modal"
-									data-target="#myModal3"
-									style={{ margin: "20px" }}>
+									data-target="#myModal3">
 									<i className="fas fa-key"> Recuperar contraseña</i>
 								</button>
 							</div>
