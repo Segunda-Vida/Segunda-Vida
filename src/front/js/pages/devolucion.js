@@ -7,11 +7,27 @@ import { Sidebar } from "../component/sidebar.js";
 export const Devolucion = () => {
 	const { store, actions } = useContext(Context);
 
-	const [productSelected, setProductSelected] = useState(null);
+	const [productSelected, setProductSelected] = useState([]);
+	const [devol, setDevol] = useState(0);
 
-	const devol = store.devolutionProd.reduce((acc, cur) => acc + 1 * cur.price * 1.21 * -1, 0);
+	const addProductDevolution = item => {
+		console.log("entre a addproductdevolution");
+		if (!productSelected.includes(item)) {
+			console.log("entre a agregar producto");
+			setProductSelected(oldProducts => [...oldProducts, item]);
+		}
+	};
 
-	console.log("devolucion", store.devolutionProd);
+	const removeDev = item => {
+		if (productSelected.includes(item)) {
+			setProductSelected(productSelected.filter(itemOr => itemOr.id !== item.id));
+		}
+	};
+
+	useEffect(() => {
+		let calc = productSelected.reduce((acc, cur) => acc + 1 * cur.price * 1.21 * -1, 0);
+		setDevol(calc);
+	}, [productSelected]);
 
 	return (
 		<div>
@@ -49,7 +65,7 @@ export const Devolucion = () => {
 								className="tr"
 								style={{ display: "table-row", cursor: "pointer" }}
 								key={key}
-								onClick={() => setProductSelected(item)}>
+								onClick={() => addProductDevolution(item)}>
 								<div className="td" style={{ display: "table-cell" }}>
 									<img src={item.product_image_url[0]} style={{ height: "50px", width: "50px" }} />
 								</div>
@@ -59,9 +75,17 @@ export const Devolucion = () => {
 								<div className="td" style={{ display: "table-cell" }}>
 									<p id="p1">{item.price}</p>
 								</div>
-								{!!productSelected && item.id === productSelected.id ? (
+								{productSelected.length > 0 && productSelected.includes(item) ? (
 									<div className="td" style={{ display: "table-cell" }}>
 										<p style={{ color: "white" }}>✓</p>
+									</div>
+								) : null}
+								{productSelected.length > 0 && productSelected.includes(item) ? (
+									<div
+										className="td"
+										style={{ display: "table-cell" }}
+										onClick={() => removeDev(item)}>
+										<p style={{ color: "red" }}>X</p>
 									</div>
 								) : null}
 								<div className="td" style={{ display: "table-cell" }}></div>
@@ -79,7 +103,7 @@ export const Devolucion = () => {
 							<div className="td" style={{ display: "table-cell" }}>
 								<StripeButton2
 									totalAmount={devol}
-									product_id={productSelected ? productSelected.id : ""}
+									product_id={productSelected.length > 0 ? productSelected : []}
 								/>
 							</div>
 						</div>
