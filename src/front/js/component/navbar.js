@@ -204,7 +204,7 @@ export const Navbar = () => {
 											data-toggle="modal"
 											data-target="#staticBackdrop">
 											<i className="fas fa-file-import">
-												<p id="p1">Subir Productos</p>
+												<p>Subir Productos</p>
 											</i>
 										</button>
 
@@ -216,7 +216,7 @@ export const Navbar = () => {
 												onClick={() => actions.signOut()}>
 												<i className="fas fa-sign-out-alt">
 													{" "}
-													<p id="p1">Cerrar sesión</p>
+													<p>Cerrar sesión</p>
 												</i>
 											</button>
 										</Link>
@@ -232,7 +232,7 @@ export const Navbar = () => {
 											style={{ margin: "10px" }}>
 											<i className="fas fa-sign-in-alt">
 												{" "}
-												<p id="p1">Regístrate o inicia sesión</p>
+												<p>Regístrate o inicia sesión</p>
 											</i>
 										</button>
 										<button
@@ -242,7 +242,7 @@ export const Navbar = () => {
 											data-target="#exampleModal"
 											style={{ margin: "10px" }}>
 											<i className="fas fa-file-import">
-												<p id="p1">Subir Productos</p>
+												<p>Subir Productos</p>
 											</i>
 										</button>
 									</div>
@@ -251,32 +251,33 @@ export const Navbar = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="nav-panel_row">
+				{store.isAuthenticate ? (
 					<div className="Carrito text-center">
 						<Link to="/Perfil">
 							<i className="fas fa-users jrl">
-								<p id="p1"> Perfil</p>
+								<p> Perfil</p>
 							</i>
 						</Link>
 						<Link to="/cart">
 							<i className="fas fa-shopping-cart jrl">
-								<p id="p1"> Carrito</p>
+								<p> Carrito</p>
 							</i>
-							<span className="jrl2">({store.cart.length})</span>
+							<span className="jrl3">({store.cart.length})</span>
 						</Link>
 						<Link to={`/productProfile`}>
 							<i className="fas fa-box-open jrl">
-								<p id="p1">Tus Productos</p>
+								<p>Tus Productos</p>
 							</i>
 						</Link>
 						<Link to="/devolucion">
 							<i className="fas fa-hand-holding-usd jrl">
-								<p id="p1">Devoluciones</p>
+								<p>Devoluciones</p>
 							</i>
-							<span className="jrl2"> ({store.devolutionProd.length})</span>
+							<span className="jrl3"> ({store.devolutionProd.length})</span>
 						</Link>
 					</div>
-				</div>
+				) : null}
+				<div className="nav-panel_row"></div>
 			</nav>
 
 			<div>

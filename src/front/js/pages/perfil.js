@@ -22,7 +22,7 @@ export const Perfil = () => {
 						<div style={{ display: "block" }}>
 							<div
 								style={{
-									borderRadius: "100%",
+									borderRadius: "25px",
 									border: "2px solid rgb(96, 96, 248)",
 									backgroundColor: "rgb(96,96,248)",
 									padding: "50px",
