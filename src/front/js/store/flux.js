@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user_nick: [],
 			user_log: null,
 			user_regis: null,
+			dev: false,
 			demo: [
 				{
 					title: "FIRST",
@@ -319,6 +320,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} else {
 					setStore({ isBougth: false });
 				}
+			},
+			Devbought: id => {
+				fetch(process.env.BACKEND_URL + "/api/prBoughDev/" + id, {
+					method: "GET",
+					headers: {
+						"Content-type": "application/json",
+						Authorization: `Bearer ${localStorage.getItem("token")}`
+					}
+				})
+					.then(resp => {
+						if (resp.ok) {
+							return resp.json();
+						} else {
+							setStore({ dev: false });
+						}
+					})
+					.then(data => {
+						console.log("data3", data);
+						setStore({ dev: true });
+					})
+					.catch(error => {
+						console.error("[ERROR]");
+						setStore({ dev: false });
+					});
 			}
 		}
 	};

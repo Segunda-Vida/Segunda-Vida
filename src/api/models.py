@@ -109,3 +109,8 @@ class Product(db.Model):
         product=Product.query.get(id)
         product.is_bough = 0
         db.session.commit()
+    
+    def productStatusDev(id):
+        product=Product.query.get(id)
+        product.is_bough = 1
+        db.session.commit()

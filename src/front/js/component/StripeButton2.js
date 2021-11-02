@@ -22,6 +22,7 @@ export const StripeButton2 = props => {
 				progressBar: true,
 				preventDuplicates: true
 			});
+			actions.Devbought(props.product_id);
 		} else {
 			toastr.error("No se ha podido realizar tu devolución", "Error en la devolución", {
 				timeOut: 2000,
@@ -50,5 +51,6 @@ export const StripeButton2 = props => {
 };
 
 StripeButton2.propTypes = {
-	totalAmount: PropTypes.number
+	totalAmount: PropTypes.number,
+	product_id: PropTypes.string
 };

@@ -18,6 +18,9 @@ export const Home = () => {
 		}
 	}, [store.isAuthenticate]);
 
+	useEffect(() => {
+		actions.getPrAll();
+	}, []);
 	console.log("comprado", store.isBougth);
 
 	return (

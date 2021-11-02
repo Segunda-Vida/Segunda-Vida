@@ -174,4 +174,10 @@ def prod_bough(id):
     product = Product.productStatus(id)
     return jsonify({"msg":"producto vendido"}),200
 
+@api.route("/prBoughDev/<int:id>",methods=["GET"])
+@jwt_required()
+def prod_bought(id):
+    print("no funciona")
+    product = Product.productStatusDev(id)
+    return jsonify({"msg":"producto devuelto"}),200
 

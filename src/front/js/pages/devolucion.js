@@ -7,6 +7,8 @@ import { Sidebar } from "../component/sidebar.js";
 export const Devolucion = () => {
 	const { store, actions } = useContext(Context);
 
+	const [productSelected, setProductSelected] = useState(null);
+
 	const devol = store.devolutionProd.reduce((acc, cur) => acc + 1 * cur.price * 1.21 * -1, 0);
 
 	console.log("devolucion", store.devolutionProd);
@@ -43,7 +45,11 @@ export const Devolucion = () => {
 
 					<div className="tbody" style={{ display: "table-row-group" }}>
 						{store.devolutionProd.map((item, key) => (
-							<div className="tr" style={{ display: "table-row" }} key={key}>
+							<div
+								className="tr"
+								style={{ display: "table-row", cursor: "pointer" }}
+								key={key}
+								onClick={() => setProductSelected(item)}>
 								<div className="td" style={{ display: "table-cell" }}>
 									<img src={item.product_image_url[0]} style={{ height: "50px", width: "50px" }} />
 								</div>
@@ -53,7 +59,11 @@ export const Devolucion = () => {
 								<div className="td" style={{ display: "table-cell" }}>
 									<p id="p1">{item.price}</p>
 								</div>
-
+								{!!productSelected && item.id === productSelected.id ? (
+									<div className="td" style={{ display: "table-cell" }}>
+										<p style={{ color: "white" }}>✓</p>
+									</div>
+								) : null}
 								<div className="td" style={{ display: "table-cell" }}></div>
 							</div>
 						))}
@@ -67,7 +77,10 @@ export const Devolucion = () => {
 								<p id="p1">Total con Iva: {devol}€</p>
 							</div>
 							<div className="td" style={{ display: "table-cell" }}>
-								<StripeButton2 totalAmount={devol} />
+								<StripeButton2
+									totalAmount={devol}
+									product_id={productSelected ? productSelected.id : ""}
+								/>
 							</div>
 						</div>
 					</div>
