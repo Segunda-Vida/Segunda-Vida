@@ -26,6 +26,7 @@ export const Inicio = () => {
 						<span className="sr-only">Loading...</span>
 					</div>
 				</div>
+				<br />
 				<div>
 					<h2 id="Titulo3"> CARGANDO PAGINA</h2>
 

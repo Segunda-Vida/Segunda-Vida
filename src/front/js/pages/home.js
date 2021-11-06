@@ -3,10 +3,11 @@ import { Context } from "../store/appContext";
 import "../../styles/home.scss";
 import { Navbar } from "../component/navbar";
 import { Link } from "react-router-dom";
-import { Sidebar } from "../component/sidebar";
+import Toastr from "toastr2";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
+	const toastr = new Toastr();
 
 	useEffect(() => {
 		actions.getPrAll();
@@ -22,6 +23,33 @@ export const Home = () => {
 		actions.getPrAll();
 	}, []);
 	console.log("comprado", store.isBougth);
+
+	useEffect(() => {
+		toastr.success(store.mensaje, "", {
+			timeOut: 2000,
+			closeButton: true,
+			progressBar: true,
+			preventDuplicates: true
+		});
+	}, [store.user_regis]);
+
+	useEffect(() => {
+		if (store.user_log === true) {
+			toastr.success(store.mensaje, "", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
+		} else {
+			toastr.error(store.mensaje, "", {
+				timeOut: 2000,
+				closeButton: true,
+				progressBar: true,
+				preventDuplicates: true
+			});
+		}
+	}, [store.user_log]);
 
 	return (
 		<div>

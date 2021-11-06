@@ -68,33 +68,6 @@ export const Navbar = () => {
 		});
 	}, [store.product_loaded_error]);
 
-	useEffect(() => {
-		toastr.success(store.mensaje, "", {
-			timeOut: 2000,
-			closeButton: true,
-			progressBar: true,
-			preventDuplicates: true
-		});
-	}, [store.user_regis]);
-
-	useEffect(() => {
-		if (store.user_log === true) {
-			toastr.success(store.mensaje, "", {
-				timeOut: 2000,
-				closeButton: true,
-				progressBar: true,
-				preventDuplicates: true
-			});
-		} else {
-			toastr.error(store.mensaje, "", {
-				timeOut: 2000,
-				closeButton: true,
-				progressBar: true,
-				preventDuplicates: true
-			});
-		}
-	}, [store.user_log]);
-
 	const onChangeHandler = text => {
 		let matches = [];
 		if (text.length > 0) {
@@ -325,7 +298,7 @@ export const Navbar = () => {
 								/>
 								<div style={{ justifyContent: "center" }}>
 									<button
-										className="btn btn-navmain"
+										className="btn btn-navmain2"
 										data-dismiss="modal"
 										aria-hidden="true"
 										type="submit"
@@ -359,7 +332,7 @@ export const Navbar = () => {
 								onChange={e => setEmailForgot(e.target.value)}
 							/>
 							<button
-								className="btn btn-navmain my-2 my-sm-0"
+								className="btn btn-navmain2"
 								data-dismiss="modal"
 								aria-hidden="true"
 								type="submit"
@@ -439,7 +412,7 @@ export const Navbar = () => {
 									multiple
 								/>
 
-								<button className="btn btn-navmain" type="submit" onClick={() => pushProduct()}>
+								<button className="btn btn-navmain2" type="submit" onClick={() => pushProduct()}>
 									Subir
 								</button>
 							</div>
@@ -491,7 +464,7 @@ export const Navbar = () => {
 									style={{ width: "200px", margin: "10px" }}
 									onChange={e => setPassword(e.target.value)}
 								/>
-								<button className="btn btn-navmain" style={{ margin: "10px" }}>
+								<button className="btn btn-navmain2">
 									<i onClick={() => login()} className="fas fa-sign-in-alt">
 										{" "}
 										Entrar
@@ -506,7 +479,7 @@ export const Navbar = () => {
 									onClick={() => hideSignIn()}
 									type="submit"
 									name="submitSave"
-									className="btn btn-navmain"
+									className="btn btn-navmain2"
 									data-toggle="modal"
 									data-target="#myModal2">
 									<i className="fas fa-address-book"> Regístrate</i>
@@ -517,7 +490,7 @@ export const Navbar = () => {
 									onClick={() => hideSignIn()}
 									type="submit"
 									name="submitSave"
-									className="btn btn-navmain"
+									className="btn btn-navmain2"
 									data-toggle="modal"
 									data-target="#myModal3">
 									<i className="fas fa-key"> Recuperar contraseña</i>
