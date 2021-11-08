@@ -150,22 +150,24 @@ export const Navbar = () => {
 							<div>
 								<input
 									type="text"
+									placeholder="Buscar un producto"
 									className="col-md-12 input   rounded form-control input-lg"
 									onChange={e => onChangeHandler(e.target.value)}
 									value={text}
 									style={{ width: "700px", marginLeft: "10px" }}
 								/>
 							</div>
-							{suggestions &&
-								suggestions.map((suggestion, i) => (
-									<Link key={i} to={`/productDetail/${suggestion.id}`}>
-										<div
+							<ul id="myResults">
+								{suggestions &&
+									suggestions.map((suggestion, i) => (
+										<li
+											key={i}
 											className="suggestion col-md-12 justify-content-md-center"
 											style={{ color: "white" }}>
-											{suggestion.name}
-										</div>
-									</Link>
-								))}
+											<Link to={`/productDetail/${suggestion.id}`}>{suggestion.name}</Link>
+										</li>
+									))}
+							</ul>
 						</form>
 						<ul className="navbar-nav ml-auto">
 							<li className="nav-item active" id="li1">

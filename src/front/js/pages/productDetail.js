@@ -105,26 +105,26 @@ export const ProductDetail = () => {
 							<p id="p1">Description: {store.product.description}</p>
 
 							<p id="p1">Precio: {store.product.price}</p>
-
-							{store.cart.length > 0 && store.cart.includes(store.product) ? (
-								<button className="btn btn-navmain" style={{ marginRight: "5px", border: "none" }}>
-									<i className="fas fa-cart-arrow-down">
-										{" "}
-										<p id="p1">Ya en el carrito</p>
-									</i>
-								</button>
-							) : (
-								<button
-									className="btn btn-logout my-2 my-sm0"
-									onClick={() => actions.AddCart(store.product)}
-									href="#"
-									style={{ marginRight: "5px" }}>
-									<i className="fas fa-cart-arrow-down">
-										{" "}
-										<p id="p1">Añadir al carrito</p>
-									</i>
-								</button>
-							)}
+							{store.isAuthenticate ? (
+								store.cart.length > 0 && store.cart.includes(store.product) ? (
+									<button className="btn btn-navmain" style={{ marginRight: "5px", border: "none" }}>
+										<i className="fas fa-cart-arrow-down">
+											{" "}
+											<p id="p1">Ya en el carrito</p>
+										</i>
+									</button>
+								) : (
+									<button
+										className="btn btn-add-product my-2 my-sm0"
+										onClick={() => actions.AddCart(store.product)}
+										style={{ marginRight: "5px", cursor: "pointer" }}>
+										<i className="fas fa-cart-arrow-down">
+											{" "}
+											<p id="p1">Añadir al carrito</p>
+										</i>
+									</button>
+								)
+							) : null}
 						</div>
 					</div>
 				</div>

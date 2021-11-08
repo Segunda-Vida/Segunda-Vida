@@ -96,16 +96,20 @@ export const Devolucion = () => {
 						<div className="tr" style={{ display: "table-row" }}>
 							<div className="td" style={{ display: "table-cell" }}></div>
 							<div className="td" style={{ display: "table-cell" }}></div>
+							{store.devolutionProd.length > 0 ? (
+								<>
+									<div className="td" style={{ display: "table-cell" }}>
+										<p id="p1">Total con Iva: {devol}€</p>
+									</div>
 
-							<div className="td" style={{ display: "table-cell" }}>
-								<p id="p1">Total con Iva: {devol}€</p>
-							</div>
-							<div className="td" style={{ display: "table-cell" }}>
-								<StripeButton2
-									totalAmount={devol}
-									product_id={productSelected.length > 0 ? productSelected : []}
-								/>
-							</div>
+									<div className="td" style={{ display: "table-cell" }}>
+										<StripeButton2
+											totalAmount={devol}
+											product_id={productSelected.length > 0 ? productSelected : []}
+										/>
+									</div>
+								</>
+							) : null}
 						</div>
 					</div>
 				</div>

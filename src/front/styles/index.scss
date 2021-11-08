@@ -8,6 +8,45 @@
     box-sizing: border-box;
 }
 
+#myResults{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+svg {
+    color: #fff;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px
+}
+
+#search_button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+#form {
+    border-radius: 5px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+#myResults li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: rgb(59, 59, 209);
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 30%;
+}
+
 .checkout-page {
     background: #fff;
     width: 60vw;

@@ -321,29 +321,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ isBougth: false });
 				}
 			},
-			Devbought: id => {
-				fetch(process.env.BACKEND_URL + "/api/prBoughDev/" + id, {
-					method: "GET",
-					headers: {
-						"Content-type": "application/json",
-						Authorization: `Bearer ${localStorage.getItem("token")}`
-					}
-				})
-					.then(resp => {
-						if (resp.ok) {
-							return resp.json();
-						} else {
-							setStore({ dev: false });
+			Devbought: products => {
+				console.log("products dev", products);
+				for (let item of products) {
+					fetch(process.env.BACKEND_URL + "/api/prBoughDev/" + item.id, {
+						method: "GET",
+						headers: {
+							"Content-type": "application/json",
+							Authorization: `Bearer ${localStorage.getItem("token")}`
 						}
 					})
-					.then(data => {
-						console.log("data3", data);
-						setStore({ dev: true });
-					})
-					.catch(error => {
-						console.error("[ERROR]");
-						setStore({ dev: false });
-					});
+						.then(resp => {
+							if (resp.ok) {
+								return resp.json();
+							} else {
+								setStore({ dev: false });
+							}
+						})
+						.then(data => {
+							console.log("data3", data);
+						})
+						.catch(error => {
+							console.error("[ERROR]");
+							setStore({ dev: false });
+						});
+				}
+				setStore({ dev: true });
 			}
 		}
 	};
