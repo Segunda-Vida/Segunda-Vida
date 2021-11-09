@@ -36,7 +36,7 @@ export const ProductDetail = () => {
 							display: "inline-block",
 							marginTop: "150px",
 							border: "1px solid rgb(96, 96, 248)",
-							borderRadius: "100%",
+							borderRadius: "25%",
 							width: "400px",
 							height: "500px",
 							backgroundColor: "rgb(96,96,248)",
@@ -110,7 +110,7 @@ export const ProductDetail = () => {
 									<button className="btn btn-navmain" style={{ marginRight: "5px", border: "none" }}>
 										<i className="fas fa-cart-arrow-down">
 											{" "}
-											<p id="p1">Ya en el carrito</p>
+											<p id="p2">Ya en el carrito</p>
 										</i>
 									</button>
 								) : (
@@ -120,7 +120,7 @@ export const ProductDetail = () => {
 										style={{ marginRight: "5px", cursor: "pointer" }}>
 										<i className="fas fa-cart-arrow-down">
 											{" "}
-											<p id="p1">Añadir al carrito</p>
+											<p id="p2">Añadir al carrito</p>
 										</i>
 									</button>
 								)

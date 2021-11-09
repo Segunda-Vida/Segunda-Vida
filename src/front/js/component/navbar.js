@@ -179,7 +179,7 @@ export const Navbar = () => {
 											data-toggle="modal"
 											data-target="#staticBackdrop">
 											<i className="fas fa-file-import">
-												<p>Subir Productos</p>
+												<p id="p2">Subir Productos</p>
 											</i>
 										</button>
 
@@ -191,7 +191,7 @@ export const Navbar = () => {
 												onClick={() => actions.signOut()}>
 												<i className="fas fa-sign-out-alt">
 													{" "}
-													<p>Cerrar sesión</p>
+													<p id="p2">Cerrar sesión</p>
 												</i>
 											</button>
 										</Link>
@@ -207,7 +207,7 @@ export const Navbar = () => {
 											style={{ margin: "10px" }}>
 											<i className="fas fa-sign-in-alt">
 												{" "}
-												<p>Regístrate o inicia sesión</p>
+												<p id="p2">Regístrate o inicia sesión</p>
 											</i>
 										</button>
 										<button
@@ -217,7 +217,7 @@ export const Navbar = () => {
 											data-target="#exampleModal"
 											style={{ margin: "10px" }}>
 											<i className="fas fa-file-import">
-												<p>Subir Productos</p>
+												<p id="p2">Subir Productos</p>
 											</i>
 										</button>
 									</div>
@@ -230,23 +230,23 @@ export const Navbar = () => {
 					<div className="Carrito text-center">
 						<Link to="/Perfil">
 							<i className="fas fa-users jrl">
-								<p> Perfil</p>
+								<p id="p2"> Perfil</p>
 							</i>
 						</Link>
 						<Link to="/cart">
 							<i className="fas fa-shopping-cart jrl">
-								<p> Carrito</p>
+								<p id="p2"> Carrito</p>
 							</i>
 							<span className="jrl3">({store.cart.length})</span>
 						</Link>
 						<Link to={`/productProfile`}>
 							<i className="fas fa-box-open jrl">
-								<p>Tus Productos</p>
+								<p id="p2">Tus Productos</p>
 							</i>
 						</Link>
 						<Link to="/devolucion">
 							<i className="fas fa-hand-holding-usd jrl">
-								<p>Devoluciones</p>
+								<p id="p2">Devoluciones</p>
 							</i>
 							<span className="jrl3"> ({store.devolutionProd.length})</span>
 						</Link>
