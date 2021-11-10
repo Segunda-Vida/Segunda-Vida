@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-
+import { Link } from "react-router-dom";
 import { Navbar } from "../component/navbar";
 import Toastr from "toastr2";
 import { Sidebar } from "../component/sidebar";
+import { whileStatement } from "@babel/types";
 
 export const ProductDetail = () => {
 	const { store, actions } = useContext(Context);
@@ -25,7 +26,7 @@ export const ProductDetail = () => {
 		}
 		return temp;
 	};
-	return !!store.product ? (
+	return !!store.product && store.product.is_bough === 1 ? (
 		<div>
 			<Navbar />
 			<center>
@@ -131,6 +132,25 @@ export const ProductDetail = () => {
 			</center>
 		</div>
 	) : (
-		<h1>Cargando...</h1>
+		<Link to="/home">
+			<div
+				className="center"
+				style={{
+					border: "1px solid rgb(96, 96, 248)",
+					borderRadius: "25%",
+					width: "200px",
+					height: "200px",
+					backgroundColor: "rgb(96,96,248)",
+					padding: "30px",
+					boxShadow: " 0 0 3px 3px rgb(96,96,248)",
+					color: "white",
+					fontFamily: "Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+					marginLeft: "auto",
+					marginRight: "auto",
+					alignItems: "center"
+				}}>
+				<p id="2">Producto ya comprado o no existe, click aquí para regresar a home...</p>
+			</div>
+		</Link>
 	);
 };
