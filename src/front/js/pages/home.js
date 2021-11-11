@@ -102,7 +102,7 @@ export const Home = () => {
 									height: "400px",
 									display: "inline-flex",
 									flexDirection: "column",
-									margin: "30px 80px 80px 30px",
+									margin: "30px 30px 80px 30px",
 									backgroundColor: "transparent",
 									perspective: "1000px",
 									border: "2px solid rgb(96, 96, 248)",
