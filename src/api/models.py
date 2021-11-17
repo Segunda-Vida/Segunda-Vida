@@ -10,6 +10,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     nickname = db.Column(db.String(16), unique=True, nullable= False)
+    user_img = db.Column(db.Text)
     product = db.relationship("Product")
 
     def __repr__(self):
@@ -20,6 +21,7 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "nickname":self.nickname,
+            "user_img":self.user_img
             # do not serialize the password, its a security breach
         }
     def getUser(email, password):
@@ -45,6 +47,11 @@ class User(db.Model):
     def getUserNick(user_id):
         usersNicks= User.query.filter_by(id=user_id).first()
         user =  usersNicks.serialize()
+        return user
+    
+    def getUserImg(user_id):
+        usersImgs = User.query.filter_by(id=user_id).first()
+        user = usersImgs.serialize()
         return user
 
 class Product(db.Model):
