@@ -48,11 +48,6 @@ class User(db.Model):
         usersNicks= User.query.filter_by(id=user_id).first()
         user =  usersNicks.serialize()
         return user
-    
-    def getUserImg(user_id):
-        usersImgs = User.query.filter_by(id=user_id).first()
-        user = usersImgs.serialize()
-        return user
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)

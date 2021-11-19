@@ -182,22 +182,16 @@ def prod_bought(id):
     return jsonify({"msg":"producto devuelto"}),200
 
 @api.route("/userImg", methods=["POST"])
-@jwt_required()
-def us_img():
-    print(request.files)
-    image = request.files["File"]
-    print(image)
+def upload_image():
+    image = request.files
+
     if image is None:
         return jsonify({"msg":"Error to get image"}),400
 
     upload_result = cloudinary.uploader.upload(image)
 
-    user = user.get_jwt_identity()
-
-    print(upload_result)
-
     user.user_img = upload_result["secure_url"]
 
-    db.session.commit()
+    db. session.commit()
 
-    return jsonify({"msg": "Imagen subida con éxito"}),200
+    return jsonify({"msg":"File upload fine"}),200
