@@ -124,6 +124,29 @@ export const Navbar = () => {
 		}
 	};
 
+	const [filo, setFilo] = useState();
+
+	const uploadImage = () => {
+		evt.preventDefault();
+		console.log(file);
+
+		const formData = new FormData();
+		formData.append("File", filo);
+
+		fetch(process.env.BACKEND_URL + "api/userImg", {
+			method: "POST",
+			body: formData
+		})
+			.then(resp => {
+				if (resp.ok) {
+					return resp.json();
+				}
+			})
+			.then(data => {
+				console.log("data4", data);
+			});
+	};
+
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light nav" id="navbar">
@@ -298,6 +321,7 @@ export const Navbar = () => {
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
+								<input className="form-control" type="file" name="file" />
 								<div style={{ justifyContent: "center" }}>
 									<button
 										className="btn btn-navmain2"

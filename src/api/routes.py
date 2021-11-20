@@ -182,8 +182,8 @@ def prod_bought(id):
     return jsonify({"msg":"producto devuelto"}),200
 
 @api.route("/userImg", methods=["POST"])
-def upload_image():
-    image = request.files
+def up_image():
+    image = request.files["File"]
 
     if image is None:
         return jsonify({"msg":"Error to get image"}),400
