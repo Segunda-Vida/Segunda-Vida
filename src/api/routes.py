@@ -180,18 +180,3 @@ def prod_bought(id):
     print("no funciona")
     product = Product.productStatusDev(id)
     return jsonify({"msg":"producto devuelto"}),200
-
-@api.route("/userImg", methods=["POST"])
-def up_image():
-    image = request.files["File"]
-
-    if image is None:
-        return jsonify({"msg":"Error to get image"}),400
-
-    upload_result = cloudinary.uploader.upload(image)
-
-    user.user_img = upload_result["secure_url"]
-
-    db. session.commit()
-
-    return jsonify({"msg":"File upload fine"}),200
