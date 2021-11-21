@@ -26,9 +26,11 @@ export const Perfil = () => {
 									border: "2px solid rgb(96, 96, 248)",
 									backgroundColor: "rgb(96,96,248)",
 									padding: "50px",
-									boxShadow: "0 0 5px 5px rgb(96,96,248)"
+									boxShadow: "0 0 5px 5px rgb(96,96,248)",
+									display: "block"
 								}}>
 								<h2 id="Titulo">DATOS PERSONALES</h2>
+								<img className="perfImg" src={store.user_nick.user_img} />
 								<p id="p1" style={{ color: "white" }}>
 									Nick de usuario: {store.user_nick.nickname}
 								</p>

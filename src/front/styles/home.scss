@@ -44,7 +44,6 @@ body{
 }
 .front {
   
-  
   display: flex;
 }
 
@@ -279,4 +278,12 @@ border-radius: 100%;
 }
 .btn-navmain2:hover{
   box-shadow: 0 0 3px 3px rgb(96, 96, 248);
+}
+.perfImg{
+  width: 100px; 
+  height: 100px; 
+  margin-right: 5px;
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(96,96,248,1) 100%);
+border-radius: 100%;
 }

@@ -114,11 +114,10 @@ export const Home = () => {
 											src={images[0]}
 											className="card-img-top"
 											style={{
-												width: "150px",
-												height: "250px",
+												width: "200px",
+												height: "200px",
 												alignSelf: "center",
-												marginTop: "5px",
-												margin: "10px"
+												margin: "20px"
 											}}
 										/>
 										<h5
@@ -126,7 +125,7 @@ export const Home = () => {
 											className="card-title"
 											style={{
 												textAlign: "center",
-												margin: "10px",
+												marginTop: "40px",
 												color: "rgb(96, 96, 248)",
 												fontFamily: "Lobster, cursive"
 											}}>
