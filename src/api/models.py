@@ -28,8 +28,8 @@ class User(db.Model):
         user = User.query.filter_by(email=email, password=password).first()
         return user
 
-    def create(nickname, email, password):
-        user = User(nickname=nickname, email=email, password=password)
+    def create(nickname, email, password, user_img):
+        user = User(nickname=nickname, email=email, password=password, user_img=user_img)
         db.session.add(user)
         db.session.commit()
 

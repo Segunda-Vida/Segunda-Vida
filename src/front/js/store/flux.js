@@ -72,19 +72,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ isAuthenticate: false });
 				}
 			},
-			register: (nickname, email, password) => {
+			register: formData => {
 				const store = getStore();
 
 				fetch(process.env.BACKEND_URL + "/api/register", {
 					method: "POST",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					body: JSON.stringify({
-						nickname: nickname,
-						email: email,
-						password: password
-					})
+
+					body: formData
 				})
 					.then(resp => {
 						if (resp.ok) {

@@ -10,6 +10,7 @@ export const Navbar = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [nickname, setNickname] = useState("");
+	const [filo, setFilo] = useState();
 	const [recover, setRecover] = useState(false);
 	const [showForgotPassword, setShowForgotPassword] = useState(false);
 	const [emailForgot, setEmailForgot] = useState("");
@@ -31,10 +32,12 @@ export const Navbar = () => {
 	};
 
 	const register = () => {
-		actions.register(nickname, email, password);
-		setNickname("");
-		setEmail("");
-		setPassword("");
+		const formData = new FormData();
+		formData.append("nickname", nickname);
+		formData.append("email", email);
+		formData.append("password", password);
+		formData.append("File", filo);
+		actions.register(formData);
 	};
 
 	const forgotPassword = () => {
@@ -298,7 +301,12 @@ export const Navbar = () => {
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
-
+								<input
+									className="form-control"
+									type="file"
+									name="file"
+									onChange={e => setFilo(e.target.files[0])}
+								/>
 								<div style={{ justifyContent: "center" }}>
 									<button
 										className="btn btn-navmain2"

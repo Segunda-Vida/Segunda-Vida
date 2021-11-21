@@ -39,16 +39,20 @@ def sign_in():
 
 @api.route('/register', methods=['POST'])
 def sign_up():
-    body = request.get_json()
-    if body is None:
-        return jsonify({"msg": "Body is empty or null"})
+    image = request.files["File"]
 
-    nickname = body["nickname"]
-    email = body["email"]
-    password = body["password"]
+    if image is None:
+        return jsonify({"msg":"Error to get image"}), 400
+    
+
+    nickname = request.form["nickname"]
+    email = request.form["email"]
+    password = request.form["password"]
+    upload_result = cloudinary.uploader.upload(image)
+    user_img = upload_result["secure_url"]
 
 
-    User.create(nickname, email, password)
+    user_create = User.create(nickname, email, password, user_img)
 
     return jsonify({"msg": "User created"}), 200
 
