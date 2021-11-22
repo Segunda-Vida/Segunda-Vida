@@ -11,6 +11,7 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     nickname = db.Column(db.String(16), unique=True, nullable= False)
     user_img = db.Column(db.Text)
+    country = db.Column(db.String(255), unique=True, nullable=False)
     product = db.relationship("Product")
 
     def __repr__(self):
@@ -21,15 +22,16 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "nickname":self.nickname,
-            "user_img":self.user_img
+            "user_img":self.user_img,
+            "country": self.country
             # do not serialize the password, its a security breach
         }
     def getUser(email, password):
         user = User.query.filter_by(email=email, password=password).first()
         return user
 
-    def create(nickname, email, password, user_img):
-        user = User(nickname=nickname, email=email, password=password, user_img=user_img)
+    def create(nickname, email, password, user_img, country):
+        user = User(nickname=nickname, email=email, password=password, user_img=user_img, country=country)
         db.session.add(user)
         db.session.commit()
 

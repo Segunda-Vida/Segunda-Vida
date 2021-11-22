@@ -37,6 +37,9 @@ export const Perfil = () => {
 								<p id="p1" style={{ color: "white" }}>
 									E-mail: {store.user_nick.email}
 								</p>
+								<p id="p1" style={{ color: "white" }}>
+									País : {store.user_nick.country}
+								</p>
 							</div>
 						</div>
 					</div>

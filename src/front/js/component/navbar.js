@@ -11,6 +11,8 @@ export const Navbar = () => {
 	const [password, setPassword] = useState("");
 	const [nickname, setNickname] = useState("");
 	const [filo, setFilo] = useState();
+	const [country, setCountry] = useState("");
+	const [countries, setCountries] = useState([]);
 	const [recover, setRecover] = useState(false);
 	const [showForgotPassword, setShowForgotPassword] = useState(false);
 	const [emailForgot, setEmailForgot] = useState("");
@@ -37,6 +39,7 @@ export const Navbar = () => {
 		formData.append("email", email);
 		formData.append("password", password);
 		formData.append("File", filo);
+		formData.append("country", country);
 		actions.register(formData);
 	};
 
@@ -70,6 +73,20 @@ export const Navbar = () => {
 			preventDuplicates: true
 		});
 	}, [store.product_loaded_error]);
+
+	useEffect(() => {
+		fetch("https://countriesnow.space/api/v0.1/countries")
+			.then(resp => {
+				if (resp.ok) {
+					return resp.json();
+				}
+			})
+			.then(data => {
+				console.log(data);
+				setCountries(data.data);
+			})
+			.catch(error => console.error("[ERROR GET COUNTRIES]", error));
+	}, []);
 
 	const onChangeHandler = text => {
 		let matches = [];
@@ -301,6 +318,18 @@ export const Navbar = () => {
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
+								<select
+									className="form-control"
+									aria-label="Default select example"
+									value={country}
+									onChange={e => setCountry(e.target.value)}>
+									{countries.length > 0 &&
+										countries.map((item, key) => (
+											<option key={key} value={item.country}>
+												{item.country}
+											</option>
+										))}
+								</select>
 								<input
 									className="form-control"
 									type="file"
