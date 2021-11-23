@@ -247,29 +247,82 @@ export const Navbar = () => {
 					</div>
 				</div>
 				{store.isAuthenticate ? (
-					<div className="Carrito text-center">
-						<Link to="/Perfil">
-							<i className="fas fa-users jrl">
-								<p id="p2"> Perfil</p>
-							</i>
-						</Link>
-						<Link to="/cart">
-							<i className="fas fa-shopping-cart jrl">
-								<p id="p2"> Carrito</p>
-							</i>
-							<span className="jrl3">({store.cart.length})</span>
-						</Link>
-						<Link to={`/productProfile`}>
-							<i className="fas fa-box-open jrl">
-								<p id="p2">Tus Productos</p>
-							</i>
-						</Link>
-						<Link to="/devolucion">
-							<i className="fas fa-hand-holding-usd jrl">
-								<p id="p2">Devoluciones</p>
-							</i>
-							<span className="jrl3"> ({store.devolutionProd.length})</span>
-						</Link>
+					<div>
+						<div className="Carrito text-center">
+							<Link to="/Perfil">
+								<i className="fas fa-users jrl">
+									<p id="p2"> Perfil</p>
+								</i>
+							</Link>
+							<Link to="/cart">
+								<i className="fas fa-shopping-cart jrl">
+									<p id="p2"> Carrito</p>
+								</i>
+								<span className="jrl3">({store.cart.length})</span>
+							</Link>
+							<Link to={`/productProfile`}>
+								<i className="fas fa-box-open jrl">
+									<p id="p2">Tus Productos</p>
+								</i>
+							</Link>
+							<Link to="/devolucion">
+								<i className="fas fa-hand-holding-usd jrl">
+									<p id="p2">Devoluciones</p>
+								</i>
+								<span className="jrl3"> ({store.devolutionProd.length})</span>
+							</Link>
+						</div>
+						<div className="Categorías text-center">
+							<div className="dropdown">
+								<button
+									className="btn btn-logout jrl dropdown-toggle"
+									type="button"
+									id="dropdownMenuButton"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false">
+									Dropdown button
+								</button>
+								<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<a className="dropdown-item" href="#">
+										Todas las categorías
+									</a>
+									<a className="dropdown-item" href="#">
+										Moda y accesorios
+									</a>
+									<a className="dropdown-item" href="#">
+										Electrodomésticos
+									</a>
+									<a className="dropdown-item" href="#">
+										Tv, audio y foto
+									</a>
+									<a className="dropdown-item" href="#">
+										Motor
+									</a>
+									<a className="dropdown-item" href="#">
+										Móviles y telefonía
+									</a>
+									<a className="dropdown-item" href="#">
+										Deporte y ocio
+									</a>
+									<a className="dropdown-item" href="#">
+										Consolas y videojuegos
+									</a>
+									<a className="dropdown-item" href="#">
+										Hogar y jardín
+									</a>
+									<a className="dropdown-item" href="#">
+										Cine, libros y música
+									</a>
+									<a className="dropdown-item" href="#">
+										Niños y bebés
+									</a>
+									<a className="dropdown-item" href="#">
+										Joyería
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				) : null}
 				<div className="nav-panel_row"></div>
