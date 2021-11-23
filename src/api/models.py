@@ -60,6 +60,7 @@ class Product(db.Model):
     product_image_url = db.Column(db.Text)
     user_id = db.Column(db.Integer,db.ForeignKey("user.id"))
     is_bough = db.Column(db.Integer,nullable=False)
+    category = db.Column(db.String(256), nullable=False)
 
     def __repr__(self):
         return '<Product %r>' % self.name
@@ -76,7 +77,8 @@ class Product(db.Model):
             "description": self.description,
             "product_image_url": self.product_image_url,
             "user_id": self.user_id,
-            "is_bough": self.is_bough
+            "is_bough": self.is_bough,
+            "category": self.category
         }
     
     def getAllProducts():
@@ -85,8 +87,8 @@ class Product(db.Model):
 
         return products
 
-    def createP(name, price, description, brand,product_image_url,user_id,is_bough):
-        product = Product(name = name, price = price, description = description, brand = brand ,product_image_url=product_image_url,user_id=user_id,is_bough=is_bough)
+    def createP(name, price, description, brand,product_image_url,user_id,is_bough, category):
+        product = Product(name = name, price = price, description = description, brand = brand ,product_image_url=product_image_url,user_id=user_id,is_bough=is_bough,category=category)
         db.session.add(product)
         db.session.commit()
     

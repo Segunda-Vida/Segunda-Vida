@@ -79,11 +79,12 @@ def subir_p():
     price = request.form["price"]
     description = request.form["description"]
     brand = request.form["brand"]
+    category = request.form["category"]
     
     
     user_id= get_jwt_identity()
 
-    Product.createP(name, price, description,brand,json.dumps(images),user_id,1)
+    Product.createP(name, price, description,brand,json.dumps(images),user_id,1, category)
 
     return jsonify({"msg": "Producto subido"}),200
 

@@ -109,6 +109,7 @@ export const Navbar = () => {
 	const [price, setPrice] = useState("");
 	const [brand, setBrand] = useState("");
 	const [description, setDescription] = useState("");
+	const [category, setCategory] = useState("");
 
 	const pushProduct = () => {
 		const formData = new FormData();
@@ -122,12 +123,14 @@ export const Navbar = () => {
 		formData.append("price", price);
 		formData.append("brand", brand);
 		formData.append("description", description);
+		formData.append("category", category);
 		actions.pushProduct(formData);
 
 		setBrand("");
 		setName("");
 		setPrice("");
 		setDescription("");
+		setCategory("");
 	};
 
 	const changeFile = event => {
@@ -273,45 +276,33 @@ export const Navbar = () => {
 							</Link>
 						</div>
 						<div className="Categorías text-center">
-							<div className="dropdown">
-								<button
-									className="btn btn-logout jrl dropdown-toggle"
-									type="button"
-									id="dropdownMenuButton"
-									data-toggle="dropdown"
-									aria-expanded="false">
-									Menu
-								</button>
-								<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<div style={{ display: "flex", zIndex: "10" }}>
-										<a className="dropdown-item" href="#">
-											Todas las categorías
-										</a>
-										<a className="dropdown-item" href="#">
-											Moda y accesorios
-										</a>
-										<a className="dropdown-item" href="#">
-											Electrodomésticos
-										</a>
-										<a className="dropdown-item" href="#">
-											Tv, audio y foto
-										</a>
-										<a className="dropdown-item" href="#">
-											Motor
-										</a>
-										<a className="dropdown-item" href="#">
-											Móviles y tecnología
-										</a>
+							<div style={{ display: "flex", zIndex: "10" }}>
+								<a className="dropdown-item" href="#">
+									Todas las categorías
+								</a>
+								<a className="dropdown-item" href="#">
+									Moda y accesorios
+								</a>
+								<a className="dropdown-item" href="#">
+									Electrodomésticos
+								</a>
+								<a className="dropdown-item" href="#">
+									Tv, audio y foto
+								</a>
+								<a className="dropdown-item" href="#">
+									Vehículos
+								</a>
+								<a className="dropdown-item" href="#">
+									Móviles y tecnología
+								</a>
 
-										<a className="dropdown-item" href="#">
-											Hogar y jardín
-										</a>
+								<a className="dropdown-item" href="#">
+									Hogar y jardín
+								</a>
 
-										<a className="dropdown-item" href="#">
-											Otros
-										</a>
-									</div>
-								</div>
+								<a className="dropdown-item" href="#">
+									Otros
+								</a>
 							</div>
 						</div>
 					</div>
@@ -484,6 +475,21 @@ export const Navbar = () => {
 								style={{ marginBottom: "10px" }}
 								onChange={e => setDescription(e.target.value)}
 							/>
+							<select
+								className="form-control"
+								aria-label="Default select example"
+								value={category}
+								style={{ marginBottom: "10px" }}
+								onChange={e => setCategory(e.target.value)}>
+								<option>Seleccione una categoría</option>
+								<option>Moda y accesorios</option>
+								<option>Electrodomésticos</option>
+								<option>Tv, audio y foto</option>
+								<option>Vehículos</option>
+								<option>Móviles y tecnología</option>
+								<option>Hogar y jardín</option>
+								<option>Otros</option>
+							</select>
 
 							<div style={{ display: "flex" }}>
 								<input
