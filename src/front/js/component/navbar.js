@@ -277,15 +277,17 @@ export const Navbar = () => {
 						</div>
 						<div className="Categorías text-center">
 							<div style={{ display: "flex", zIndex: "10" }}>
-								<a className="dropdown-item" href="#">
-									Todas las categorías
-								</a>
+								<Link to="/home">
+									<a className="dropdown-item">Todas las categorías</a>
+								</Link>
 								<a className="dropdown-item" href="#">
 									Moda y accesorios
 								</a>
-								<a className="dropdown-item" href="#">
-									Electrodomésticos
-								</a>
+								<Link to="/electrodomesticos">
+									<a className="dropdown-item" href="#">
+										Electrodomésticos
+									</a>
+								</Link>
 								<a className="dropdown-item" href="#">
 									Tv, audio y foto
 								</a>
