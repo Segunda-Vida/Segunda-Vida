@@ -280,31 +280,37 @@ export const Navbar = () => {
 								<Link to="/home">
 									<a className="dropdown-item">Todas las categorías</a>
 								</Link>
-								<a className="dropdown-item" href="#">
-									Moda y accesorios
-								</a>
+								<Link to="/modacc">
+									<a className="dropdown-item">Moda y accesorios</a>
+								</Link>
 								<Link to="/electrodomesticos">
 									<a className="dropdown-item" href="#">
 										Electrodomésticos
 									</a>
 								</Link>
-								<a className="dropdown-item" href="#">
-									Tv, audio y foto
-								</a>
-								<a className="dropdown-item" href="#">
-									Vehículos
-								</a>
-								<a className="dropdown-item" href="#">
-									Móviles y tecnología
-								</a>
-
-								<a className="dropdown-item" href="#">
-									Hogar y jardín
-								</a>
-
-								<a className="dropdown-item" href="#">
-									Otros
-								</a>
+								<Link to="/tv">
+									<a className="dropdown-item" href="#">
+										Tv, audio y foto
+									</a>
+								</Link>
+								<Link to="vehiculos">
+									<a className="dropdown-item" href="#">
+										Vehículos
+									</a>
+								</Link>
+								<Link to="/moviles">
+									<a className="dropdown-item" href="#">
+										Móviles y tecnología
+									</a>
+								</Link>
+								<Link to="/hogar">
+									<a className="dropdown-item">Hogar y jardín</a>
+								</Link>
+								<Link to="/otros">
+									<a className="dropdown-item" href="#">
+										Otros
+									</a>
+								</Link>
 							</div>
 						</div>
 					</div>

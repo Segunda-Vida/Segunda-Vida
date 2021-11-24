@@ -15,6 +15,13 @@ import { Devolucion } from "./pages/devolucion";
 import { CheckoutPage } from "./pages/checkout";
 import { Cart } from "./pages/cart";
 import { Electrodomesticos } from "./pages/electrodomesticos";
+import { Hogar } from "./pages/hogar";
+import { Modacc } from "./pages/modacc";
+import { Moviles } from "./pages/moviles";
+import { Tv } from "./pages/tv";
+import { Vehiculos } from "./pages/vehiculos";
+import { Otros } from "./pages/otros";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -55,6 +62,24 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/electrodomesticos">
 							<Electrodomesticos />
+						</Route>
+						<Route exact path="/hogar">
+							<Hogar />
+						</Route>
+						<Route exact path="/modacc">
+							<Modacc />
+						</Route>
+						<Route exact path="/moviles">
+							<Moviles />
+						</Route>
+						<Route exact path="/tv">
+							<Tv />
+						</Route>
+						<Route exact path="/vehiculos">
+							<Vehiculos />
+						</Route>
+						<Route exact path="/otros">
+							<Otros />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
