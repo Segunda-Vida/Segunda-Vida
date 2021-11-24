@@ -276,7 +276,7 @@ export const Navbar = () => {
 							</Link>
 						</div>
 						<div className="Categorías text-center">
-							<div style={{ display: "flex", zIndex: "10" }}>
+							<div style={{ display: "flex", zIndex: "10", marginLeft: "150px", marginRight: "100px" }}>
 								<Link to="/home">
 									<a className="dropdown-item">Todas las categorías</a>
 								</Link>
