@@ -3,7 +3,6 @@ import { Navbar } from "../component/navbar.js";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 import { StripeButton } from "../component/StripeButton.js";
-import { Sidebar } from "../component/sidebar.js";
 
 export const Cart = () => {
 	const { store, actions } = useContext(Context);
@@ -15,6 +14,7 @@ export const Cart = () => {
 	useEffect(() => {
 		actions.getProduct(id);
 		actions.getPrAll();
+		actions.getUserNick();
 	}, []);
 
 	return (
@@ -86,6 +86,34 @@ export const Cart = () => {
 								<StripeButton totalAmount={iva} />
 							</div>
 						</div>
+					</div>
+				</div>
+				<div
+					className="table text-center"
+					style={{
+						border: "1px solid rgb(96, 96, 248)",
+						display: "table",
+						marginTop: "50px"
+					}}>
+					<div>
+						<h2 id="Titulo">DIRECCIÓN ENVÍOS</h2>
+					</div>
+					<div style={{ display: "flex", justifyContent: "center" }}>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							{" "}
+							Dirección : {store.user_nick.direction}
+						</p>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							{" "}
+							{store.user_nick.postal_code}
+						</p>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							{" "}
+							{store.user_nick.poblation}, {store.user_nick.provence}
+						</p>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							({store.user_nick.country})
+						</p>
 					</div>
 				</div>
 			</div>

@@ -11,7 +11,12 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     nickname = db.Column(db.String(16), unique=True, nullable= False)
     user_img = db.Column(db.Text)
+    postal_code = db.Column(db.String(5), nullable=False)
+    direction = db.Column(db.String(250), unique=True, nullable=False)
+    poblation = db.Column(db.String(250), nullable=False)
+    provence = db.Column(db.String(250), nullable=False)
     country = db.Column(db.String(255), unique=True, nullable=False)
+
     product = db.relationship("Product")
 
     def __repr__(self):
@@ -23,15 +28,19 @@ class User(db.Model):
             "email": self.email,
             "nickname":self.nickname,
             "user_img":self.user_img,
-            "country": self.country
+            "country": self.country,
+            "postal_code":self.postal_code,
+            "direction":self.direction,
+            "poblation":self.poblation,
+            "provence":self.provence
             # do not serialize the password, its a security breach
         }
     def getUser(email, password):
         user = User.query.filter_by(email=email, password=password).first()
         return user
 
-    def create(nickname, email, password, user_img, country):
-        user = User(nickname=nickname, email=email, password=password, user_img=user_img, country=country)
+    def create(nickname, email, password, user_img, country, postal_code, direction, poblation, provence):
+        user = User(nickname=nickname, email=email, password=password, user_img=user_img, country=country, postal_code=postal_code, direction=direction, poblation=poblation, provence=provence)
         db.session.add(user)
         db.session.commit()
 

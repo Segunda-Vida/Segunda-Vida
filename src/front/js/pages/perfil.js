@@ -37,9 +37,26 @@ export const Perfil = () => {
 								<p id="p1" style={{ color: "white" }}>
 									E-mail: {store.user_nick.email}
 								</p>
-								<p id="p1" style={{ color: "white" }}>
-									País : {store.user_nick.country}
-								</p>
+								<div>
+									<h2 id="Titulo">DIRECCIÓN ENVÍOS</h2>
+								</div>
+								<div style={{ display: "flex", justifyContent: "center" }}>
+									<p id="p1" style={{ color: "white", margin: "5px" }}>
+										{" "}
+										Dirección : {store.user_nick.direction}
+									</p>
+									<p id="p1" style={{ color: "white", margin: "5px" }}>
+										{" "}
+										{store.user_nick.postal_code}
+									</p>
+									<p id="p1" style={{ color: "white", margin: "5px" }}>
+										{" "}
+										{store.user_nick.poblation}, {store.user_nick.provence}
+									</p>
+									<p id="p1" style={{ color: "white", margin: "5px" }}>
+										({store.user_nick.country})
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>

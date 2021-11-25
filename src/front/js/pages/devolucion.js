@@ -18,6 +18,10 @@ export const Devolucion = () => {
 		}
 	};
 
+	useEffect(() => {
+		actions.getUserNick();
+	}, []);
+
 	const removeDev = item => {
 		if (productSelected.includes(item)) {
 			setProductSelected(productSelected.filter(itemOr => itemOr.id !== item.id));
@@ -111,6 +115,34 @@ export const Devolucion = () => {
 								</>
 							) : null}
 						</div>
+					</div>
+				</div>
+				<div
+					className="table text-center"
+					style={{
+						border: "1px solid rgb(96, 96, 248)",
+						display: "table",
+						marginTop: "50px"
+					}}>
+					<div>
+						<h2 id="Titulo">DIRECCIÓN DEVOLUCIONES</h2>
+					</div>
+					<div style={{ display: "flex", justifyContent: "center" }}>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							{" "}
+							Dirección : {store.user_nick.direction}
+						</p>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							{" "}
+							{store.user_nick.postal_code}
+						</p>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							{" "}
+							{store.user_nick.poblation}, {store.user_nick.provence}
+						</p>
+						<p id="p1" style={{ color: "white", margin: "5px" }}>
+							({store.user_nick.country})
+						</p>
 					</div>
 				</div>
 			</div>

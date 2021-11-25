@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { useHistory } from "react-router-dom";
 import Toastr from "toastr2";
 
 export const Navbar = () => {
@@ -12,8 +11,10 @@ export const Navbar = () => {
 	const [nickname, setNickname] = useState("");
 	const [filo, setFilo] = useState();
 	const [country, setCountry] = useState("");
-	const [countries, setCountries] = useState([]);
-	const [recover, setRecover] = useState(false);
+	const [postal_code, setPostal_code] = useState("");
+	const [direction, setDirection] = useState("");
+	const [poblation, setPoblation] = useState("");
+	const [provence, setProvence] = useState("");
 	const [showForgotPassword, setShowForgotPassword] = useState(false);
 	const [emailForgot, setEmailForgot] = useState("");
 	const toastr = new Toastr();
@@ -40,6 +41,10 @@ export const Navbar = () => {
 		formData.append("password", password);
 		formData.append("File", filo);
 		formData.append("country", country);
+		formData.append("postal_code", postal_code);
+		formData.append("direction", direction);
+		formData.append("poblation", poblation);
+		formData.append("provence", provence);
 		actions.register(formData);
 	};
 
@@ -73,20 +78,6 @@ export const Navbar = () => {
 			preventDuplicates: true
 		});
 	}, [store.product_loaded_error]);
-
-	useEffect(() => {
-		fetch("https://countriesnow.space/api/v0.1/countries")
-			.then(resp => {
-				if (resp.ok) {
-					return resp.json();
-				}
-			})
-			.then(data => {
-				console.log(data);
-				setCountries(data.data);
-			})
-			.catch(error => console.error("[ERROR GET COUNTRIES]", error));
-	}, []);
 
 	const onChangeHandler = text => {
 		let matches = [];
@@ -275,8 +266,8 @@ export const Navbar = () => {
 								<span className="jrl3"> ({store.devolutionProd.length})</span>
 							</Link>
 						</div>
-						<div className="Categorías text-center">
-							<div style={{ display: "flex", zIndex: "10", marginLeft: "150px", marginRight: "100px" }}>
+						<div className="Categorías">
+							<div style={{ display: "flex", zIndex: "10", justifyContent: "center" }}>
 								<Link to="/home">
 									<a className="dropdown-item">Todas las categorías</a>
 								</Link>
@@ -361,18 +352,36 @@ export const Navbar = () => {
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
-								<select
+								<input
 									className="form-control"
-									aria-label="Default select example"
+									type="direction"
+									placeholder="Ingresa tu dirección"
+									value={direction}
+									onChange={e => setDirection(e.target.value)}></input>
+								<input
+									className="form-control"
+									type="postal_code"
+									placeholder="Ingresa código postal"
+									value={postal_code}
+									onChange={e => setPostal_code(e.target.value)}></input>
+								<input
+									className="form-control"
+									type="poblation"
+									placeholder="Ingresa población"
+									value={poblation}
+									onChange={e => setPoblation(e.target.value)}></input>
+								<input
+									className="form-control"
+									type="provence"
+									placeholder="Ingresa Provincia"
+									value={provence}
+									onChange={e => setProvence(e.target.value)}></input>
+								<input
+									className="form-control"
+									type="country"
+									placeholder="Ingresa país"
 									value={country}
-									onChange={e => setCountry(e.target.value)}>
-									{countries.length > 0 &&
-										countries.map((item, key) => (
-											<option key={key} value={item.country}>
-												{item.country}
-											</option>
-										))}
-								</select>
+									onChange={e => setCountry(e.target.value)}></input>
 								<input
 									className="form-control"
 									type="file"

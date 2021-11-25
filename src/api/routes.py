@@ -51,9 +51,13 @@ def sign_up():
     upload_result = cloudinary.uploader.upload(image)
     user_img = upload_result["secure_url"]
     country = request.form["country"]
+    postal_code = request.form["postal_code"]
+    direction = request.form["direction"]
+    poblation = request.form["poblation"]
+    provence = request.form["provence"]
 
 
-    user_create = User.create(nickname, email, password, user_img, country)
+    user_create = User.create(nickname, email, password, user_img, country, postal_code, direction, poblation, provence)
 
     return jsonify({"msg": "User created"}), 200
 
